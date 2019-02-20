@@ -1,0 +1,29 @@
+#N canvas 0 0 692 370 10;
+#X obj 105 127 f 0;
+#X obj 66 235 spigot;
+#X obj 66 89 t f f b;
+#X obj 85 170 !=;
+#X text 132 127 old value;
+#X text 113 169 compare old vs new value;
+#X text 111 217 if comparism is true \; spigot receives a 1 \; and
+opens up;
+#X obj 66 37 inlet hidKnobTurn;
+#X obj 66 301 outlet filteredKnobTurn;
+#X text 300 38 18th October 2018 I found that the hid-object \; is
+a little bit unprecise in reading the turns of my self-built HID-controller's
+endless knobs. \; When I turn a knob \, the value detection \; sometimes
+works ok: press: 1----0 But sometimes ONE turn is recognized as \;
+TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
+only lets a number come through \; when the number before was not the
+same \; as the current number. \; The Moses object at the bottom lets
+only the value 1 \; pass to the output.;
+#X obj 66 269 moses 1;
+#X connect 0 0 3 1;
+#X connect 1 0 0 1;
+#X connect 1 0 10 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 0;
+#X connect 2 2 0 0;
+#X connect 3 0 1 1;
+#X connect 7 0 2 0;
+#X connect 10 0 8 0;

@@ -223,760 +223,35 @@ only the value 1 \; pass to the output.;
 #X connect 3 0 1 1;
 #X connect 7 0 2 0;
 #X connect 10 0 8 0;
-#X restore 514 956 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 533 976 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 556 995 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 584 1014 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 605 1033 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 625 1051 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 648 1069 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 670 1088 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 690 1106 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 710 1125 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 731 1144 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 749 1164 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 769 1183 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 789 1202 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 806 1220 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 824 1238 pd MY_RSP_HID_PRECISER;
-#N canvas 87 234 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
 #X restore 1080 1368 pd MY_RSP_HID_PRECISER;
-#N canvas 86 233 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 62 704 pd MY_RSP_HID_PRECISER;
-#N canvas 86 233 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 136 746 pd MY_RSP_HID_PRECISER;
-#N canvas 86 233 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 245 787 pd MY_RSP_HID_PRECISER;
-#N canvas 86 233 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 386 797 pd MY_RSP_HID_PRECISER;
-#N canvas 86 233 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 536 807 pd MY_RSP_HID_PRECISER;
-#N canvas 86 233 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 672 807 pd MY_RSP_HID_PRECISER;
-#N canvas 86 233 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 822 807 pd MY_RSP_HID_PRECISER;
-#N canvas 86 233 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 833 757 pd MY_RSP_HID_PRECISER;
-#N canvas 86 233 655 350 MY_RSP_HID_PRECISER 0;
-#X obj 95 127 f 0;
-#X obj 56 235 spigot;
-#X obj 56 89 t f f b;
-#X obj 75 170 !=;
-#X text 122 127 old value;
-#X text 103 169 compare old vs new value;
-#X text 101 217 if comparism is true \; spigot receives a 1 \; and
-opens up;
-#X obj 56 37 inlet hidKnobTurn;
-#X obj 56 301 outlet filteredKnobTurn;
-#X text 290 38 18th October 2018 I found that the hid-object \; is
-a little bit unprecise in reading the turns of my self-built HID-controller's
-endless knobs. \; When I turn a knob \, the value detection \; sometimes
-works ok: press: 1----0 But sometimes ONE turn is recognized as \;
-TWO turns: \; press: 1-1-0-0 So this patch acts as a filter \; and
-only lets a number come through \; when the number before was not the
-same \; as the current number. \; The Moses object at the bottom lets
-only the value 1 \; pass to the output.;
-#X obj 56 269 moses 1;
-#X connect 0 0 3 1;
-#X connect 1 0 0 1;
-#X connect 1 0 10 0;
-#X connect 2 0 1 0;
-#X connect 2 1 3 0;
-#X connect 2 2 0 0;
-#X connect 3 0 1 1;
-#X connect 7 0 2 0;
-#X connect 10 0 8 0;
-#X restore 862 701 pd MY_RSP_HID_PRECISER;
 #X obj 824 505 clip 0 4086;
 #X obj 316 69 r hidInitBang;
 #X obj 316 95 t b b;
+#X obj 62 704 MY_RSP_HID_PRECISER;
+#X obj 136 746 MY_RSP_HID_PRECISER;
+#X obj 245 787 MY_RSP_HID_PRECISER;
+#X obj 386 797 MY_RSP_HID_PRECISER;
+#X obj 536 807 MY_RSP_HID_PRECISER;
+#X obj 672 807 MY_RSP_HID_PRECISER;
+#X obj 862 701 MY_RSP_HID_PRECISER;
+#X obj 833 757 MY_RSP_HID_PRECISER;
+#X obj 822 807 MY_RSP_HID_PRECISER;
+#X obj 514 956 MY_RSP_HID_PRECISER;
+#X obj 533 976 MY_RSP_HID_PRECISER;
+#X obj 556 995 MY_RSP_HID_PRECISER;
+#X obj 584 1014 MY_RSP_HID_PRECISER;
+#X obj 605 1033 MY_RSP_HID_PRECISER;
+#X obj 625 1051 MY_RSP_HID_PRECISER;
+#X obj 648 1069 MY_RSP_HID_PRECISER;
+#X obj 670 1088 MY_RSP_HID_PRECISER;
+#X obj 690 1106 MY_RSP_HID_PRECISER;
+#X obj 710 1125 MY_RSP_HID_PRECISER;
+#X obj 731 1144 MY_RSP_HID_PRECISER;
+#X obj 749 1164 MY_RSP_HID_PRECISER;
+#X obj 769 1183 MY_RSP_HID_PRECISER;
+#X obj 789 1202 MY_RSP_HID_PRECISER;
+#X obj 806 1220 MY_RSP_HID_PRECISER;
+#X obj 824 1238 MY_RSP_HID_PRECISER;
 #X connect 0 0 29 0;
 #X connect 4 0 16 0;
 #X connect 5 0 16 0;
@@ -1010,7 +285,7 @@ only the value 1 \; pass to the output.;
 #X connect 68 0 69 0;
 #X connect 69 0 72 0;
 #X connect 70 0 73 0;
-#X connect 71 0 123 0;
+#X connect 71 0 98 0;
 #X connect 74 0 75 0;
 #X connect 75 0 76 0;
 #X connect 77 0 78 0;
@@ -1019,31 +294,31 @@ only the value 1 \; pass to the output.;
 #X connect 81 0 82 0;
 #X connect 84 0 16 0;
 #X connect 85 0 16 0;
-#X connect 86 0 97 0;
-#X connect 86 1 98 0;
-#X connect 86 2 99 0;
-#X connect 86 3 100 0;
-#X connect 86 4 101 0;
-#X connect 86 5 102 0;
-#X connect 86 6 103 0;
-#X connect 86 7 104 0;
-#X connect 86 8 105 0;
-#X connect 86 9 106 0;
-#X connect 86 10 107 0;
-#X connect 86 11 108 0;
-#X connect 86 12 109 0;
-#X connect 86 13 110 0;
-#X connect 86 14 111 0;
-#X connect 86 15 112 0;
-#X connect 88 0 114 0;
-#X connect 88 1 115 0;
-#X connect 88 2 116 0;
-#X connect 88 3 117 0;
-#X connect 88 4 118 0;
-#X connect 88 5 119 0;
-#X connect 88 6 120 0;
-#X connect 88 7 121 0;
-#X connect 88 8 122 0;
+#X connect 86 0 110 0;
+#X connect 86 1 111 0;
+#X connect 86 2 112 0;
+#X connect 86 3 113 0;
+#X connect 86 4 114 0;
+#X connect 86 5 115 0;
+#X connect 86 6 116 0;
+#X connect 86 7 117 0;
+#X connect 86 8 118 0;
+#X connect 86 9 119 0;
+#X connect 86 10 120 0;
+#X connect 86 11 121 0;
+#X connect 86 12 122 0;
+#X connect 86 13 123 0;
+#X connect 86 14 124 0;
+#X connect 86 15 125 0;
+#X connect 88 0 101 0;
+#X connect 88 1 102 0;
+#X connect 88 2 103 0;
+#X connect 88 3 104 0;
+#X connect 88 4 105 0;
+#X connect 88 5 106 0;
+#X connect 88 6 109 0;
+#X connect 88 7 108 0;
+#X connect 88 8 107 0;
 #X connect 90 0 86 0;
 #X connect 90 1 88 0;
 #X connect 90 2 91 0;
@@ -1055,35 +330,35 @@ only the value 1 \; pass to the output.;
 #X connect 91 5 53 0;
 #X connect 91 6 54 0;
 #X connect 91 7 55 0;
-#X connect 97 0 30 0;
-#X connect 98 0 96 0;
-#X connect 99 0 31 0;
-#X connect 100 0 32 0;
-#X connect 101 0 34 0;
-#X connect 102 0 33 0;
-#X connect 103 0 35 0;
-#X connect 104 0 36 0;
-#X connect 105 0 37 0;
-#X connect 106 0 38 0;
-#X connect 107 0 40 0;
-#X connect 108 0 39 0;
-#X connect 109 0 42 0;
-#X connect 110 0 41 0;
-#X connect 111 0 43 0;
-#X connect 112 0 44 0;
-#X connect 114 0 45 0;
-#X connect 115 0 46 0;
-#X connect 116 0 47 0;
-#X connect 117 0 48 0;
-#X connect 118 0 49 0;
-#X connect 119 0 89 0;
-#X connect 120 0 50 0;
-#X connect 121 0 51 0;
-#X connect 122 0 83 0;
-#X connect 123 0 70 0;
-#X connect 124 0 125 0;
-#X connect 125 0 0 0;
-#X connect 125 1 26 0;
+#X connect 98 0 70 0;
+#X connect 99 0 100 0;
+#X connect 100 0 0 0;
+#X connect 100 1 26 0;
+#X connect 101 0 45 0;
+#X connect 102 0 46 0;
+#X connect 103 0 47 0;
+#X connect 104 0 48 0;
+#X connect 105 0 49 0;
+#X connect 106 0 89 0;
+#X connect 107 0 83 0;
+#X connect 108 0 51 0;
+#X connect 109 0 50 0;
+#X connect 110 0 30 0;
+#X connect 111 0 96 0;
+#X connect 112 0 31 0;
+#X connect 113 0 32 0;
+#X connect 114 0 34 0;
+#X connect 115 0 33 0;
+#X connect 116 0 35 0;
+#X connect 117 0 36 0;
+#X connect 118 0 37 0;
+#X connect 119 0 38 0;
+#X connect 120 0 40 0;
+#X connect 121 0 39 0;
+#X connect 122 0 42 0;
+#X connect 123 0 41 0;
+#X connect 124 0 43 0;
+#X connect 125 0 44 0;
 #X coords 0 623 400 622 400 30 0;
 #X restore 26 38 pd My_HID_CONTROLLER;
 #X obj 114 215 bng 40 100 50 0 empty empty empty 17 7 0 10 -191407
@@ -1136,11 +411,11 @@ only the value 1 \; pass to the output.;
 #X obj 207 427 r subVol3;
 #X obj 207 595 s vol3;
 #X obj 297 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 22 1;
+-1 -33289 0 1;
 #X obj 297 427 r subVol4;
 #X obj 297 595 s vol4;
 #X obj 390 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 19 1;
+-1 -33289 0 1;
 #X obj 480 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
 -1 -33289 0 1;
 #X obj 573 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
@@ -1182,80 +457,22 @@ only the value 1 \; pass to the output.;
 #X text 94 433 list = short for list append;
 #X obj 40 475 t a;
 #N canvas 207 137 535 334 Sample-Array-Subpatch1 0;
-#X obj 220 60 table SampleArray1_1_right;
-#X obj 40 60 table SampleArray1_1_left;
-#X obj 220 80 table SampleArray1_2_right;
-#X obj 40 80 table SampleArray1_2_left;
 #X restore 761 14 pd Sample-Array-Subpatch1;
 #X obj 40 20 inlet createTables;
 #X text 51 45 1 - 8 go in here;
 #N canvas 199 113 535 334 Sample-Array-Subpatch2 0;
-#X obj 220 60 table SampleArray2_1_right;
-#X obj 40 60 table SampleArray2_1_left;
-#X obj 220 80 table SampleArray2_2_right;
-#X obj 40 80 table SampleArray2_2_left;
-#X obj 220 100 table SampleArray2_3_right;
-#X obj 40 100 table SampleArray2_3_left;
-#X obj 220 120 table SampleArray2_4_right;
-#X obj 40 120 table SampleArray2_4_left;
 #X restore 761 36 pd Sample-Array-Subpatch2;
 #N canvas 201 115 535 334 Sample-Array-Subpatch3 0;
-#X obj 220 60 table SampleArray3_1_right;
-#X obj 40 60 table SampleArray3_1_left;
-#X obj 220 80 table SampleArray3_2_right;
-#X obj 40 80 table SampleArray3_2_left;
-#X obj 220 100 table SampleArray3_3_right;
-#X obj 40 100 table SampleArray3_3_left;
-#X obj 220 120 table SampleArray3_4_right;
-#X obj 40 120 table SampleArray3_4_left;
 #X restore 761 59 pd Sample-Array-Subpatch3;
 #N canvas 203 117 535 334 Sample-Array-Subpatch4 0;
-#X obj 220 60 table SampleArray4_1_right;
-#X obj 40 60 table SampleArray4_1_left;
-#X obj 220 80 table SampleArray4_2_right;
-#X obj 40 80 table SampleArray4_2_left;
-#X obj 220 100 table SampleArray4_3_right;
-#X obj 40 100 table SampleArray4_3_left;
-#X obj 220 120 table SampleArray4_4_right;
-#X obj 40 120 table SampleArray4_4_left;
 #X restore 761 81 pd Sample-Array-Subpatch4;
 #N canvas 202 116 535 334 Sample-Array-Subpatch5 0;
-#X obj 220 60 table SampleArray5_1_right;
-#X obj 40 60 table SampleArray5_1_left;
-#X obj 220 80 table SampleArray5_2_right;
-#X obj 40 80 table SampleArray5_2_left;
-#X obj 220 100 table SampleArray5_3_right;
-#X obj 40 100 table SampleArray5_3_left;
-#X obj 220 120 table SampleArray5_4_right;
-#X obj 40 120 table SampleArray5_4_left;
 #X restore 761 104 pd Sample-Array-Subpatch5;
 #N canvas 202 116 535 334 Sample-Array-Subpatch6 0;
-#X obj 220 60 table SampleArray6_1_right;
-#X obj 40 60 table SampleArray6_1_left;
-#X obj 220 80 table SampleArray6_2_right;
-#X obj 40 80 table SampleArray6_2_left;
-#X obj 220 100 table SampleArray6_3_right;
-#X obj 40 100 table SampleArray6_3_left;
-#X obj 220 120 table SampleArray6_4_right;
-#X obj 40 120 table SampleArray6_4_left;
 #X restore 761 127 pd Sample-Array-Subpatch6;
 #N canvas 204 118 535 334 Sample-Array-Subpatch7 0;
-#X obj 220 60 table SampleArray7_1_right;
-#X obj 40 60 table SampleArray7_1_left;
-#X obj 220 80 table SampleArray7_2_right;
-#X obj 40 80 table SampleArray7_2_left;
-#X obj 220 100 table SampleArray7_3_right;
-#X obj 40 100 table SampleArray7_3_left;
 #X restore 761 150 pd Sample-Array-Subpatch7;
 #N canvas 202 116 535 334 Sample-Array-Subpatch8 0;
-#X obj 220 60 table SampleArray8_1_right;
-#X obj 40 60 table SampleArray8_1_left;
-#X obj 220 80 table SampleArray8_2_right;
-#X obj 40 80 table SampleArray8_2_left;
-#X obj 220 100 table SampleArray8_3_right;
-#X obj 40 100 table SampleArray8_3_left;
-#X obj 220 120 table SampleArray8_4_right;
-#X obj 40 120 table SampleArray8_4_left;
 #X restore 761 172 pd Sample-Array-Subpatch8;
 #X msg 361 144 \; \$1 clear;
 #X msg 334 77 symbol pd-Sample-Array-Subpatch\$1;
@@ -6054,7 +5271,7 @@ to the pi \; to show that loading the parent patch is done;
 #X obj 31 105 syncjams \$0/jakki \, bpm 122 \, namespace syncjams \,
 port 23232;
 #X obj 31 143 route tick node-id node-list joined left message state
-init-event sub-tick, f 67;
+init-event sub-tick;
 #X floatatom 385 204 10 0 0 0 - - -;
 #X obj 385 224 int;
 #X obj 469 257 change;
@@ -6221,7 +5438,7 @@ patch. The default bpm is 122 bpm.;
 12 0 10 -233017 -66577 0;
 #X text 568 668 playing;
 #X text 566 618 selected;
-#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected 1uhg_jumpy_wander_to_atmo_cut16 takte
+#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected 1uhg_jumpy_wander_to_atmo_cut16
 20 12 0 14 -233017 -66577 0;
 #X obj 663 686 cnv 15 81 20 empty SP8CurrentlyPlaying 2Klackern32 0
 12 0 10 -233017 -66577 0;
