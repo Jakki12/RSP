@@ -399,23 +399,23 @@ only the value 1 \; pass to the output.;
 #X obj 662 289 r pk8;
 #X obj 1127 463 r initBang;
 #X obj 24 452 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 19 1;
 #X obj 24 594 s vol1;
 #X obj 24 428 r subVol1;
 #X obj 114 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 472 1;
 #X obj 114 595 s vol2;
 #X obj 114 427 r subVol2;
 #X obj 207 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 8156 1;
 #X obj 207 427 r subVol3;
 #X obj 207 595 s vol3;
 #X obj 297 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 7780 1;
 #X obj 297 427 r subVol4;
 #X obj 297 595 s vol4;
 #X obj 390 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 8731 1;
 #X obj 480 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
 -1 -33289 0 1;
 #X obj 573 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
@@ -457,22 +457,86 @@ only the value 1 \; pass to the output.;
 #X text 94 433 list = short for list append;
 #X obj 40 475 t a;
 #N canvas 207 137 535 334 Sample-Array-Subpatch1 0;
+#X obj 220 60 table SampleArray1_1_right;
+#X obj 40 60 table SampleArray1_1_left;
+#X obj 220 80 table SampleArray1_2_right;
+#X obj 40 80 table SampleArray1_2_left;
+#X obj 220 100 table SampleArray1_3_right;
+#X obj 40 100 table SampleArray1_3_left;
+#X obj 220 120 table SampleArray1_4_right;
+#X obj 40 120 table SampleArray1_4_left;
 #X restore 761 14 pd Sample-Array-Subpatch1;
 #X obj 40 20 inlet createTables;
 #X text 51 45 1 - 8 go in here;
 #N canvas 199 113 535 334 Sample-Array-Subpatch2 0;
+#X obj 220 60 table SampleArray2_1_right;
+#X obj 40 60 table SampleArray2_1_left;
+#X obj 220 80 table SampleArray2_2_right;
+#X obj 40 80 table SampleArray2_2_left;
+#X obj 220 100 table SampleArray2_3_right;
+#X obj 40 100 table SampleArray2_3_left;
+#X obj 220 120 table SampleArray2_4_right;
+#X obj 40 120 table SampleArray2_4_left;
 #X restore 761 36 pd Sample-Array-Subpatch2;
 #N canvas 201 115 535 334 Sample-Array-Subpatch3 0;
+#X obj 220 60 table SampleArray3_1_right;
+#X obj 40 60 table SampleArray3_1_left;
+#X obj 220 80 table SampleArray3_2_right;
+#X obj 40 80 table SampleArray3_2_left;
+#X obj 220 100 table SampleArray3_3_right;
+#X obj 40 100 table SampleArray3_3_left;
+#X obj 220 120 table SampleArray3_4_right;
+#X obj 40 120 table SampleArray3_4_left;
 #X restore 761 59 pd Sample-Array-Subpatch3;
 #N canvas 203 117 535 334 Sample-Array-Subpatch4 0;
+#X obj 220 60 table SampleArray4_1_right;
+#X obj 40 60 table SampleArray4_1_left;
+#X obj 220 80 table SampleArray4_2_right;
+#X obj 40 80 table SampleArray4_2_left;
+#X obj 220 100 table SampleArray4_3_right;
+#X obj 40 100 table SampleArray4_3_left;
+#X obj 220 120 table SampleArray4_4_right;
+#X obj 40 120 table SampleArray4_4_left;
 #X restore 761 81 pd Sample-Array-Subpatch4;
 #N canvas 202 116 535 334 Sample-Array-Subpatch5 0;
+#X obj 220 60 table SampleArray5_1_right;
+#X obj 40 60 table SampleArray5_1_left;
+#X obj 220 80 table SampleArray5_2_right;
+#X obj 40 80 table SampleArray5_2_left;
+#X obj 220 100 table SampleArray5_3_right;
+#X obj 40 100 table SampleArray5_3_left;
+#X obj 220 120 table SampleArray5_4_right;
+#X obj 40 120 table SampleArray5_4_left;
 #X restore 761 104 pd Sample-Array-Subpatch5;
 #N canvas 202 116 535 334 Sample-Array-Subpatch6 0;
+#X obj 220 60 table SampleArray6_1_right;
+#X obj 40 60 table SampleArray6_1_left;
+#X obj 220 80 table SampleArray6_2_right;
+#X obj 40 80 table SampleArray6_2_left;
+#X obj 220 100 table SampleArray6_3_right;
+#X obj 40 100 table SampleArray6_3_left;
+#X obj 220 120 table SampleArray6_4_right;
+#X obj 40 120 table SampleArray6_4_left;
 #X restore 761 127 pd Sample-Array-Subpatch6;
 #N canvas 204 118 535 334 Sample-Array-Subpatch7 0;
+#X obj 220 60 table SampleArray7_1_right;
+#X obj 40 60 table SampleArray7_1_left;
+#X obj 220 80 table SampleArray7_2_right;
+#X obj 40 80 table SampleArray7_2_left;
+#X obj 220 100 table SampleArray7_3_right;
+#X obj 40 100 table SampleArray7_3_left;
+#X obj 220 120 table SampleArray7_4_right;
+#X obj 40 120 table SampleArray7_4_left;
 #X restore 761 150 pd Sample-Array-Subpatch7;
 #N canvas 202 116 535 334 Sample-Array-Subpatch8 0;
+#X obj 220 60 table SampleArray8_1_right;
+#X obj 40 60 table SampleArray8_1_left;
+#X obj 220 80 table SampleArray8_2_right;
+#X obj 40 80 table SampleArray8_2_left;
+#X obj 220 100 table SampleArray8_3_right;
+#X obj 40 100 table SampleArray8_3_left;
+#X obj 220 120 table SampleArray8_4_right;
+#X obj 40 120 table SampleArray8_4_left;
 #X restore 761 172 pd Sample-Array-Subpatch8;
 #X msg 361 144 \; \$1 clear;
 #X msg 334 77 symbol pd-Sample-Array-Subpatch\$1;
@@ -5188,7 +5252,8 @@ turned in order to select another sample.;
 #X connect 132 0 9 1;
 #X connect 132 1 62 0;
 #X connect 132 2 78 0;
-#X restore 450 70 pd My_RSP_EightPlayAndSelectEngines;
+#X restore 386 74 pd My_RSP_EightPlayAndSelectEngines;
+#X f 43;
 #X obj 817 465 s indexInit;
 #N canvas 182 89 960 583 My_RSP_LedLoadFinishAlert 0;
 #X obj 305 394 wiringPi_gpio 24 0 0;
@@ -5394,55 +5459,63 @@ patch. The default bpm is 122 bpm.;
 -1 -1;
 #X obj 601 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 22 638 cnv 15 81 20 empty SP1CurrentlySelected valliflaeche
-2 12 0 10 -233017 -66577 0;
-#X obj 23 686 cnv 15 81 20 empty SP1CurrentlyPlaying 2Klackern32 0
+#X obj 22 638 cnv 15 81 20 empty SP1CurrentlySelected INTLD_eule1 2
+12 0 10 -233017 -66577 0;
+#X obj 23 686 cnv 15 81 20 empty SP1CurrentlyPlaying INTLD_eule1 0
 12 0 10 -233017 -66577 0;
 #X text 20 668 playing;
 #X text 20 620 selected;
 #X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected vibrawusel 2
 12 0 10 -233017 -66577 0;
-#X obj 115 688 cnv 15 81 20 empty SP2CurrentlyPlaying jumpyrelaxcut2
-0 12 0 10 -233017 -66577 0;
+#X obj 115 688 cnv 15 81 20 empty SP2CurrentlyPlaying vibrawusel 0
+12 0 10 -233017 -66577 0;
 #X text 112 670 playing;
 #X text 110 620 selected;
-#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected vibrawusel 0
-12 0 10 -233017 -66577 0;
+#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected INTLD_eule1
+0 12 0 10 -233017 -66577 0;
 #X obj 205 688 cnv 15 81 20 empty SP3CurrentlyPlaying INTLD_eule1 0
 12 0 10 -233017 -66577 0;
 #X text 202 670 playing;
 #X text 200 620 selected;
-#X obj 294 636 cnv 15 81 20 empty SP4CurrentlySelected SEA_bass1 2
+#X obj 294 636 cnv 15 81 20 empty SP4CurrentlySelected JERTAW_bass
+2 12 0 10 -233017 -66577 0;
+#X obj 295 686 cnv 15 81 20 empty SP4CurrentlyPlaying JERTAW_bass 0
 12 0 10 -233017 -66577 0;
-#X obj 295 686 cnv 15 81 20 empty SP4CurrentlyPlaying SEA_bass1 0 12
-0 10 -233017 -66577 0;
 #X text 292 668 playing;
 #X text 290 618 selected;
 #X obj 390 636 cnv 20 81 20 empty SP5CurrentlySelected JERTAW_bass
 0 12 0 10 -233017 -66577 0;
-#X obj 391 686 cnv 15 81 20 empty SP5CurrentlyPlaying atmosubbass 0
+#X obj 391 686 cnv 15 81 20 empty SP5CurrentlyPlaying JERTAW_bass 0
 12 0 10 -233017 -66577 0;
 #X text 388 668 playing;
 #X text 386 618 selected;
-#X obj 480 636 cnv 20 81 20 empty SP6CurrentlySelected 1WalkyTalky16
+#X obj 480 636 cnv 20 81 20 empty SP6CurrentlySelected INTLD_eule1
 0 12 0 10 -233017 -66577 0;
 #X obj 481 686 cnv 15 81 20 empty SP6CurrentlyPlaying 2kassenzeug32
 0 12 0 10 -233017 -66577 0;
 #X text 478 668 playing;
 #X text 476 618 selected;
-#X obj 570 636 cnv 15 81 20 empty SP7CurrentlySelected 3DD_wanderhh_stutz-1
+#X obj 570 636 cnv 15 81 20 empty SP7CurrentlySelected JERTAW_bass
 2 12 0 10 -233017 -66577 0;
 #X obj 571 686 cnv 15 81 20 empty SP7CurrentlyPlaying 2Klackern32 0
 12 0 10 -233017 -66577 0;
 #X text 568 668 playing;
 #X text 566 618 selected;
-#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected 1uhg_jumpy_wander_to_atmo_cut16
+#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected JERTAW_bass
 20 12 0 14 -233017 -66577 0;
 #X obj 663 686 cnv 15 81 20 empty SP8CurrentlyPlaying 2Klackern32 0
 12 0 10 -233017 -66577 0;
 #X text 660 668 playing;
 #X text 658 618 selected;
 #X msg 859 104 symbol /home/pi/Documents/SamplePacks/;
+#X connect 0 0 107 0;
+#X connect 0 0 107 1;
+#X connect 0 0 107 2;
+#X connect 0 0 107 3;
+#X connect 0 0 107 4;
+#X connect 0 0 107 5;
+#X connect 0 0 107 6;
+#X connect 0 0 107 7;
 #X connect 1 0 0 0;
 #X connect 2 0 111 0;
 #X connect 2 1 112 0;
@@ -5531,14 +5604,6 @@ patch. The default bpm is 122 bpm.;
 #X connect 114 5 60 0;
 #X connect 114 6 154 0;
 #X connect 114 7 71 0;
-#X connect 116 0 107 0;
-#X connect 116 0 107 1;
-#X connect 116 0 107 2;
-#X connect 116 0 107 3;
-#X connect 116 0 107 4;
-#X connect 116 0 107 5;
-#X connect 116 0 107 6;
-#X connect 116 0 107 7;
 #X connect 116 0 117 0;
 #X connect 120 0 119 0;
 #X connect 121 0 119 1;
