@@ -4684,14 +4684,14 @@ order to loop the sample that is currently played;
 #X obj 2136 514 hip~ 1;
 #X obj 2181 514 hip~ 1;
 #X obj 456 255 t b f b;
-#N canvas 187 190 911 465 My_RSP_SampleNameDisplay2 0;
+#N canvas 187 190 911 465 My_RSP_SampleNameDisplay2 1;
 #X obj 240 -267 zl nth;
 #X obj 240 -481 r listFileNames2;
 #X obj 356 -329 r currentSelectedIndexSP2;
 #X obj 18 -328 r currentPlayingSampleNameBang2;
 #X obj 356 -308 t b b f;
 #X obj 18 -307 t b b;
-#X msg 265 -100 \; SP2CurrentlySelected label \$1;
+#X msg 406 -60 \; SP2CurrentlySelected label \$1;
 #X msg 240 -12 \; SP2CurrentlyPlaying label \$1;
 #X msg 45 -279 0;
 #X obj 240 -237 pack s f;
@@ -4699,10 +4699,10 @@ order to loop the sample that is currently played;
 #X msg 240 -212 \$2 \$1;
 #X obj 240 -60 symbol;
 #X msg 240 -35 label \$1;
-#X obj 240 -183 route 0 1;
-#X obj 265 -150 symbol;
-#X msg 265 -125 label \$1;
-#X text 307 -207 route the list (e.g. 0 vibrawusel or 1 vibrawusel)
+#X obj 240 -183 route 0 1, f 56;
+#X obj 406 -150 symbol;
+#X msg 406 -85 label \$1;
+#X text 317 -227 route the list (e.g. 0 vibrawusel or 1 vibrawusel)
 \, depending on whether the playbutton is pressed or the encoder is
 turned in order to select another sample.;
 #X text 353 -348 sample index comes in here;
@@ -4714,11 +4714,13 @@ sample names in ../SamplePackXY \; within the zl nth object. When the
 user selectes a new sample \; by turning a knob \, the currently selected
 \; sample name is displayed in the main parent patch as "currently
 selected". When the user presses a play button \, the sample name that
-is then played is also played in the main parent patch as "currently
+is then played is also shown in the main parent patch as "currently
 playing". \; The names of the currently playing and currently selected
 samples are important for the notification of non-harmonic samples.
-The sample names are output to the next subpatch where the latter is
-implemented.;
+The sample names of the newly selected samlpe is output to the next
+subpatch where the latter is implemented.;
+#X obj 406 -129 t s s, f 35;
+#X obj 613 8 outlet selectedSample2;
 #X connect 0 0 9 0;
 #X connect 1 0 0 0;
 #X connect 2 0 4 0;
@@ -4736,8 +4738,10 @@ implemented.;
 #X connect 13 0 7 0;
 #X connect 14 0 12 0;
 #X connect 14 1 15 0;
-#X connect 15 0 16 0;
+#X connect 15 0 22 0;
 #X connect 16 0 6 0;
+#X connect 22 0 16 0;
+#X connect 22 1 23 0;
 #X restore 306 629 pd My_RSP_SampleNameDisplay2;
 #N canvas 187 190 911 465 My_RSP_SampleNameDisplay1 0;
 #X obj 240 -267 zl nth;
