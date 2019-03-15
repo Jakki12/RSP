@@ -399,23 +399,23 @@ only the value 1 \; pass to the output.;
 #X obj 662 289 r pk8;
 #X obj 1127 463 r initBang;
 #X obj 24 452 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 19 1;
+-1 -33289 0 1;
 #X obj 24 594 s vol1;
 #X obj 24 428 r subVol1;
 #X obj 114 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 472 1;
+-1 -33289 0 1;
 #X obj 114 595 s vol2;
 #X obj 114 427 r subVol2;
 #X obj 207 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 8156 1;
+-1 -33289 0 1;
 #X obj 207 427 r subVol3;
 #X obj 207 595 s vol3;
 #X obj 297 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 7780 1;
+-1 -33289 0 1;
 #X obj 297 427 r subVol4;
 #X obj 297 595 s vol4;
 #X obj 390 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 8731 1;
+-1 -33289 0 1;
 #X obj 480 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
 -1 -33289 0 1;
 #X obj 573 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
@@ -1207,7 +1207,7 @@ the eight "SelectAndPlayEngines" to initialize the index generation
 -262144 -1;
 #X obj 24 313 bng 80 400 50 0 empty empty empty 17 7 0 10 -4160 -262144
 -1;
-#N canvas 83 94 1128 576 My_RSP_EightPlayAndSelectEngines 0;
+#N canvas 83 94 1128 576 My_RSP_EightPlayAndSelectEngines 1;
 #N canvas 162 69 1075 621 My_RSP_SelectAndPlayEngine1 0;
 #X obj 8 21 inlet playButton1;
 #X obj 267 9 inlet selectUp1;
@@ -4702,16 +4702,6 @@ order to loop the sample that is currently played;
 #X obj 240 -183 route 0 1;
 #X obj 265 -150 symbol;
 #X msg 265 -125 label \$1;
-#X text 519 -505 14th February 2019 \; This subpatch collects all \;
-sample names in ../SamplePackXY \; within the zl nth object. When the
-user selectes a new sample \; by turning a knob \, the currently selected
-\; sample name is displayed in the main parent patch as "currently
-selected". When the user presses a play button \, the sample name that
-is then played is also played in the main parent patch as "currently
-playing". \; The names of the currently playing and currently selected
-samples are important for the postgresql queries. The sample names
-are output to the next subpatch where these sql queries take place.
-;
 #X text 307 -207 route the list (e.g. 0 vibrawusel or 1 vibrawusel)
 \, depending on whether the playbutton is pressed or the encoder is
 turned in order to select another sample.;
@@ -4719,6 +4709,16 @@ turned in order to select another sample.;
 #X text 15 -355 this is hit when the play button \; is pressed;
 #X text 256 -453 receiving a list of filenames \; for SamplePackXY
 ;
+#X text 519 -505 14th February 2019 \; This subpatch collects all \;
+sample names in ../SamplePackXY \; within the zl nth object. When the
+user selectes a new sample \; by turning a knob \, the currently selected
+\; sample name is displayed in the main parent patch as "currently
+selected". When the user presses a play button \, the sample name that
+is then played is also played in the main parent patch as "currently
+playing". \; The names of the currently playing and currently selected
+samples are important for the notification of non-harmonic samples.
+The sample names are output to the next subpatch where the latter is
+implemented.;
 #X connect 0 0 9 0;
 #X connect 1 0 0 0;
 #X connect 2 0 4 0;
@@ -4752,16 +4752,6 @@ turned in order to select another sample.;
 #X obj 240 -183 route 0 1;
 #X obj 265 -150 symbol;
 #X msg 265 -125 label \$1;
-#X text 519 -505 14th February 2019 \; This subpatch collects all \;
-sample names in ../SamplePackXY \; within the zl nth object. When the
-user selectes a new sample \; by turning a knob \, the currently selected
-\; sample name is displayed in the main parent patch as "currently
-selected". When the user presses a play button \, the sample name that
-is then played is also played in the main parent patch as "currently
-playing". \; The names of the currently playing and currently selected
-samples are important for the postgresql queries. The sample names
-are output to the next subpatch where these sql queries take place.
-;
 #X text 307 -207 route the list (e.g. 0 vibrawusel or 1 vibrawusel)
 \, depending on whether the playbutton is pressed or the encoder is
 turned in order to select another sample.;
@@ -4774,6 +4764,16 @@ turned in order to select another sample.;
 #X obj 356 -329 r currentSelectedIndexSP1;
 #X msg 265 -100 \; SP1CurrentlySelected label \$1;
 #X msg 240 -12 \; SP1CurrentlyPlaying label \$1;
+#X text 519 -505 14th February 2019 \; This subpatch collects all \;
+sample names in ../SamplePackXY \; within the zl nth object. When the
+user selectes a new sample \; by turning a knob \, the currently selected
+\; sample name is displayed in the main parent patch as "currently
+selected". When the user presses a play button \, the sample name that
+is then played is also played in the main parent patch as "currently
+playing". \; The names of the currently playing and currently selected
+samples are important for the notification of non-harmonic samples.
+The sample names are output to the next subpatch where the latter is
+implemented.;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 1 1 5 0;
@@ -4785,14 +4785,14 @@ turned in order to select another sample.;
 #X connect 5 0 4 1;
 #X connect 6 0 9 0;
 #X connect 7 0 8 0;
-#X connect 8 0 21 0;
+#X connect 8 0 20 0;
 #X connect 9 0 7 0;
 #X connect 9 1 10 0;
 #X connect 10 0 11 0;
-#X connect 11 0 20 0;
-#X connect 17 0 0 0;
-#X connect 18 0 2 0;
-#X connect 19 0 1 0;
+#X connect 11 0 19 0;
+#X connect 16 0 0 0;
+#X connect 17 0 2 0;
+#X connect 18 0 1 0;
 #X restore 29 561 pd My_RSP_SampleNameDisplay1;
 #N canvas 187 190 911 465 My_RSP_SampleNameDisplay3 0;
 #X obj 240 -267 zl nth;
@@ -4807,16 +4807,6 @@ turned in order to select another sample.;
 #X obj 240 -183 route 0 1;
 #X obj 265 -150 symbol;
 #X msg 265 -125 label \$1;
-#X text 519 -505 14th February 2019 \; This subpatch collects all \;
-sample names in ../SamplePackXY \; within the zl nth object. When the
-user selectes a new sample \; by turning a knob \, the currently selected
-\; sample name is displayed in the main parent patch as "currently
-selected". When the user presses a play button \, the sample name that
-is then played is also played in the main parent patch as "currently
-playing". \; The names of the currently playing and currently selected
-samples are important for the postgresql queries. The sample names
-are output to the next subpatch where these sql queries take place.
-;
 #X text 307 -207 route the list (e.g. 0 vibrawusel or 1 vibrawusel)
 \, depending on whether the playbutton is pressed or the encoder is
 turned in order to select another sample.;
@@ -4829,6 +4819,16 @@ turned in order to select another sample.;
 #X obj 356 -329 r currentSelectedIndexSP3;
 #X msg 265 -100 \; SP3CurrentlySelected label \$1;
 #X msg 240 -12 \; SP3CurrentlyPlaying label \$1;
+#X text 519 -505 14th February 2019 \; This subpatch collects all \;
+sample names in ../SamplePackXY \; within the zl nth object. When the
+user selectes a new sample \; by turning a knob \, the currently selected
+\; sample name is displayed in the main parent patch as "currently
+selected". When the user presses a play button \, the sample name that
+is then played is also played in the main parent patch as "currently
+playing". \; The names of the currently playing and currently selected
+samples are important for the notification of non-harmonic samples.
+The sample names are output to the next subpatch where the latter is
+implemented.;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 1 1 5 0;
@@ -4840,14 +4840,14 @@ turned in order to select another sample.;
 #X connect 5 0 4 1;
 #X connect 6 0 9 0;
 #X connect 7 0 8 0;
-#X connect 8 0 21 0;
+#X connect 8 0 20 0;
 #X connect 9 0 7 0;
 #X connect 9 1 10 0;
 #X connect 10 0 11 0;
-#X connect 11 0 20 0;
-#X connect 17 0 0 0;
-#X connect 18 0 2 0;
-#X connect 19 0 1 0;
+#X connect 11 0 19 0;
+#X connect 16 0 0 0;
+#X connect 17 0 2 0;
+#X connect 18 0 1 0;
 #X restore 29 600 pd My_RSP_SampleNameDisplay3;
 #N canvas 187 190 911 465 My_RSP_SampleNameDisplay4 0;
 #X obj 240 -267 zl nth;
@@ -4862,16 +4862,6 @@ turned in order to select another sample.;
 #X obj 240 -183 route 0 1;
 #X obj 265 -150 symbol;
 #X msg 265 -125 label \$1;
-#X text 519 -505 14th February 2019 \; This subpatch collects all \;
-sample names in ../SamplePackXY \; within the zl nth object. When the
-user selectes a new sample \; by turning a knob \, the currently selected
-\; sample name is displayed in the main parent patch as "currently
-selected". When the user presses a play button \, the sample name that
-is then played is also played in the main parent patch as "currently
-playing". \; The names of the currently playing and currently selected
-samples are important for the postgresql queries. The sample names
-are output to the next subpatch where these sql queries take place.
-;
 #X text 307 -207 route the list (e.g. 0 vibrawusel or 1 vibrawusel)
 \, depending on whether the playbutton is pressed or the encoder is
 turned in order to select another sample.;
@@ -4884,6 +4874,16 @@ turned in order to select another sample.;
 #X obj 356 -329 r currentSelectedIndexSP4;
 #X msg 265 -100 \; SP4CurrentlySelected label \$1;
 #X msg 240 -12 \; SP4CurrentlyPlaying label \$1;
+#X text 519 -505 14th February 2019 \; This subpatch collects all \;
+sample names in ../SamplePackXY \; within the zl nth object. When the
+user selectes a new sample \; by turning a knob \, the currently selected
+\; sample name is displayed in the main parent patch as "currently
+selected". When the user presses a play button \, the sample name that
+is then played is also played in the main parent patch as "currently
+playing". \; The names of the currently playing and currently selected
+samples are important for the notification of non-harmonic samples.
+The sample names are output to the next subpatch where the latter is
+implemented.;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 1 1 5 0;
@@ -4895,14 +4895,14 @@ turned in order to select another sample.;
 #X connect 5 0 4 1;
 #X connect 6 0 9 0;
 #X connect 7 0 8 0;
-#X connect 8 0 21 0;
+#X connect 8 0 20 0;
 #X connect 9 0 7 0;
 #X connect 9 1 10 0;
 #X connect 10 0 11 0;
-#X connect 11 0 20 0;
-#X connect 17 0 0 0;
-#X connect 18 0 2 0;
-#X connect 19 0 1 0;
+#X connect 11 0 19 0;
+#X connect 16 0 0 0;
+#X connect 17 0 2 0;
+#X connect 18 0 1 0;
 #X restore 29 620 pd My_RSP_SampleNameDisplay4;
 #N canvas 187 190 911 465 My_RSP_SampleNameDisplay5 0;
 #X obj 240 -267 zl nth;
@@ -4917,16 +4917,6 @@ turned in order to select another sample.;
 #X obj 240 -183 route 0 1;
 #X obj 265 -150 symbol;
 #X msg 265 -125 label \$1;
-#X text 519 -505 14th February 2019 \; This subpatch collects all \;
-sample names in ../SamplePackXY \; within the zl nth object. When the
-user selectes a new sample \; by turning a knob \, the currently selected
-\; sample name is displayed in the main parent patch as "currently
-selected". When the user presses a play button \, the sample name that
-is then played is also played in the main parent patch as "currently
-playing". \; The names of the currently playing and currently selected
-samples are important for the postgresql queries. The sample names
-are output to the next subpatch where these sql queries take place.
-;
 #X text 307 -207 route the list (e.g. 0 vibrawusel or 1 vibrawusel)
 \, depending on whether the playbutton is pressed or the encoder is
 turned in order to select another sample.;
@@ -4939,6 +4929,16 @@ turned in order to select another sample.;
 #X obj 356 -329 r currentSelectedIndexSP5;
 #X msg 265 -100 \; SP5CurrentlySelected label \$1;
 #X msg 240 -12 \; SP5CurrentlyPlaying label \$1;
+#X text 519 -505 14th February 2019 \; This subpatch collects all \;
+sample names in ../SamplePackXY \; within the zl nth object. When the
+user selectes a new sample \; by turning a knob \, the currently selected
+\; sample name is displayed in the main parent patch as "currently
+selected". When the user presses a play button \, the sample name that
+is then played is also played in the main parent patch as "currently
+playing". \; The names of the currently playing and currently selected
+samples are important for the notification of non-harmonic samples.
+The sample names are output to the next subpatch where the latter is
+implemented.;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 1 1 5 0;
@@ -4950,14 +4950,14 @@ turned in order to select another sample.;
 #X connect 5 0 4 1;
 #X connect 6 0 9 0;
 #X connect 7 0 8 0;
-#X connect 8 0 21 0;
+#X connect 8 0 20 0;
 #X connect 9 0 7 0;
 #X connect 9 1 10 0;
 #X connect 10 0 11 0;
-#X connect 11 0 20 0;
-#X connect 17 0 0 0;
-#X connect 18 0 2 0;
-#X connect 19 0 1 0;
+#X connect 11 0 19 0;
+#X connect 16 0 0 0;
+#X connect 17 0 2 0;
+#X connect 18 0 1 0;
 #X restore 29 639 pd My_RSP_SampleNameDisplay5;
 #N canvas 187 190 911 465 My_RSP_SampleNameDisplay6 0;
 #X obj 240 -267 zl nth;
@@ -4972,16 +4972,6 @@ turned in order to select another sample.;
 #X obj 240 -183 route 0 1;
 #X obj 265 -150 symbol;
 #X msg 265 -125 label \$1;
-#X text 519 -505 14th February 2019 \; This subpatch collects all \;
-sample names in ../SamplePackXY \; within the zl nth object. When the
-user selectes a new sample \; by turning a knob \, the currently selected
-\; sample name is displayed in the main parent patch as "currently
-selected". When the user presses a play button \, the sample name that
-is then played is also played in the main parent patch as "currently
-playing". \; The names of the currently playing and currently selected
-samples are important for the postgresql queries. The sample names
-are output to the next subpatch where these sql queries take place.
-;
 #X text 307 -207 route the list (e.g. 0 vibrawusel or 1 vibrawusel)
 \, depending on whether the playbutton is pressed or the encoder is
 turned in order to select another sample.;
@@ -4994,6 +4984,16 @@ turned in order to select another sample.;
 #X obj 356 -329 r currentSelectedIndexSP6;
 #X msg 265 -100 \; SP6CurrentlySelected label \$1;
 #X msg 240 -12 \; SP6CurrentlyPlaying label \$1;
+#X text 519 -505 14th February 2019 \; This subpatch collects all \;
+sample names in ../SamplePackXY \; within the zl nth object. When the
+user selectes a new sample \; by turning a knob \, the currently selected
+\; sample name is displayed in the main parent patch as "currently
+selected". When the user presses a play button \, the sample name that
+is then played is also played in the main parent patch as "currently
+playing". \; The names of the currently playing and currently selected
+samples are important for the notification of non-harmonic samples.
+The sample names are output to the next subpatch where the latter is
+implemented.;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 1 1 5 0;
@@ -5005,14 +5005,14 @@ turned in order to select another sample.;
 #X connect 5 0 4 1;
 #X connect 6 0 9 0;
 #X connect 7 0 8 0;
-#X connect 8 0 21 0;
+#X connect 8 0 20 0;
 #X connect 9 0 7 0;
 #X connect 9 1 10 0;
 #X connect 10 0 11 0;
-#X connect 11 0 20 0;
-#X connect 17 0 0 0;
-#X connect 18 0 2 0;
-#X connect 19 0 1 0;
+#X connect 11 0 19 0;
+#X connect 16 0 0 0;
+#X connect 17 0 2 0;
+#X connect 18 0 1 0;
 #X restore 29 659 pd My_RSP_SampleNameDisplay6;
 #N canvas 187 190 911 465 My_RSP_SampleNameDisplay7 0;
 #X obj 240 -267 zl nth;
@@ -5027,16 +5027,6 @@ turned in order to select another sample.;
 #X obj 240 -183 route 0 1;
 #X obj 265 -150 symbol;
 #X msg 265 -125 label \$1;
-#X text 519 -505 14th February 2019 \; This subpatch collects all \;
-sample names in ../SamplePackXY \; within the zl nth object. When the
-user selectes a new sample \; by turning a knob \, the currently selected
-\; sample name is displayed in the main parent patch as "currently
-selected". When the user presses a play button \, the sample name that
-is then played is also played in the main parent patch as "currently
-playing". \; The names of the currently playing and currently selected
-samples are important for the postgresql queries. The sample names
-are output to the next subpatch where these sql queries take place.
-;
 #X text 307 -207 route the list (e.g. 0 vibrawusel or 1 vibrawusel)
 \, depending on whether the playbutton is pressed or the encoder is
 turned in order to select another sample.;
@@ -5049,6 +5039,16 @@ turned in order to select another sample.;
 #X obj 356 -329 r currentSelectedIndexSP7;
 #X msg 265 -100 \; SP7CurrentlySelected label \$1;
 #X msg 240 -12 \; SP7CurrentlyPlaying label \$1;
+#X text 519 -505 14th February 2019 \; This subpatch collects all \;
+sample names in ../SamplePackXY \; within the zl nth object. When the
+user selectes a new sample \; by turning a knob \, the currently selected
+\; sample name is displayed in the main parent patch as "currently
+selected". When the user presses a play button \, the sample name that
+is then played is also played in the main parent patch as "currently
+playing". \; The names of the currently playing and currently selected
+samples are important for the notification of non-harmonic samples.
+The sample names are output to the next subpatch where the latter is
+implemented.;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 1 1 5 0;
@@ -5060,16 +5060,16 @@ turned in order to select another sample.;
 #X connect 5 0 4 1;
 #X connect 6 0 9 0;
 #X connect 7 0 8 0;
-#X connect 8 0 21 0;
+#X connect 8 0 20 0;
 #X connect 9 0 7 0;
 #X connect 9 1 10 0;
 #X connect 10 0 11 0;
-#X connect 11 0 20 0;
-#X connect 17 0 0 0;
-#X connect 18 0 2 0;
-#X connect 19 0 1 0;
+#X connect 11 0 19 0;
+#X connect 16 0 0 0;
+#X connect 17 0 2 0;
+#X connect 18 0 1 0;
 #X restore 29 679 pd My_RSP_SampleNameDisplay7;
-#N canvas 187 190 911 465 My_RSP_SampleNameDisplay8 0;
+#N canvas 187 190 911 465 My_RSP_SampleNameDisplay8 1;
 #X obj 240 -267 zl nth;
 #X obj 356 -308 t b b f;
 #X obj 18 -307 t b b;
@@ -5082,16 +5082,6 @@ turned in order to select another sample.;
 #X obj 240 -183 route 0 1;
 #X obj 265 -150 symbol;
 #X msg 265 -125 label \$1;
-#X text 519 -505 14th February 2019 \; This subpatch collects all \;
-sample names in ../SamplePackXY \; within the zl nth object. When the
-user selectes a new sample \; by turning a knob \, the currently selected
-\; sample name is displayed in the main parent patch as "currently
-selected". When the user presses a play button \, the sample name that
-is then played is also played in the main parent patch as "currently
-playing". \; The names of the currently playing and currently selected
-samples are important for the postgresql queries. The sample names
-are output to the next subpatch where these sql queries take place.
-;
 #X text 307 -207 route the list (e.g. 0 vibrawusel or 1 vibrawusel)
 \, depending on whether the playbutton is pressed or the encoder is
 turned in order to select another sample.;
@@ -5104,6 +5094,16 @@ turned in order to select another sample.;
 #X obj 356 -329 r currentSelectedIndexSP8;
 #X msg 265 -100 \; SP8CurrentlySelected label \$1;
 #X msg 240 -12 \; SP8CurrentlyPlaying label \$1;
+#X text 519 -505 14th February 2019 \; This subpatch collects all \;
+sample names in ../SamplePackXY \; within the zl nth object. When the
+user selectes a new sample \; by turning a knob \, the currently selected
+\; sample name is displayed in the main parent patch as "currently
+selected". When the user presses a play button \, the sample name that
+is then played is also played in the main parent patch as "currently
+playing". \; The names of the currently playing and currently selected
+samples are important for the notification of non-harmonic samples.
+The sample names are output to the next subpatch where the latter is
+implemented.;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 1 1 5 0;
@@ -5115,14 +5115,14 @@ turned in order to select another sample.;
 #X connect 5 0 4 1;
 #X connect 6 0 9 0;
 #X connect 7 0 8 0;
-#X connect 8 0 21 0;
+#X connect 8 0 20 0;
 #X connect 9 0 7 0;
 #X connect 9 1 10 0;
 #X connect 10 0 11 0;
-#X connect 11 0 20 0;
-#X connect 17 0 0 0;
-#X connect 18 0 2 0;
-#X connect 19 0 1 0;
+#X connect 11 0 19 0;
+#X connect 16 0 0 0;
+#X connect 17 0 2 0;
+#X connect 18 0 1 0;
 #X restore 29 698 pd My_RSP_SampleNameDisplay8;
 #X connect 0 0 116 0;
 #X connect 0 1 117 0;
@@ -5465,8 +5465,8 @@ patch. The default bpm is 122 bpm.;
 12 0 10 -233017 -66577 0;
 #X text 20 668 playing;
 #X text 20 620 selected;
-#X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected vibrawusel 2
-12 0 10 -233017 -66577 0;
+#X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected INTLD_eule1
+2 12 0 10 -233017 -66577 0;
 #X obj 115 688 cnv 15 81 20 empty SP2CurrentlyPlaying vibrawusel 0
 12 0 10 -233017 -66577 0;
 #X text 112 670 playing;
