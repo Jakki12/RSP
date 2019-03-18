@@ -1,5 +1,5 @@
 #N canvas 13 73 1265 627 10;
-#N canvas 213 127 864 628 My_RSP_Metronome 0;
+#N canvas 213 127 864 628 My_RSP_Metronome 1;
 #X obj 223 28 inlet startMetronome;
 #X obj 460 446 outlet FirstBeat;
 #X obj 223 265 metro;
@@ -23,7 +23,7 @@
 #X msg 238 319 1;
 #X obj 307 434 wiringPi_gpio 25 0 0;
 #X obj 307 379 == 1;
-#X floatatom 307 406 5 0 0 0 - - -;
+#X floatatom 307 405 5 0 0 0 - - -;
 #X obj 367 397 moses 1;
 #X obj 460 414 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -67,6 +67,7 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 #X connect 19 0 16 1;
 #X connect 21 0 22 0;
 #X connect 21 0 23 0;
+#X connect 22 0 20 0;
 #X connect 23 1 24 0;
 #X connect 24 0 1 0;
 #X connect 25 0 14 0;
@@ -399,29 +400,29 @@ only the value 1 \; pass to the output.;
 #X obj 662 289 r pk8;
 #X obj 1139 463 r initBang;
 #X obj 24 452 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 25 1;
+-1 -33289 0 1;
 #X obj 24 594 s vol1;
 #X obj 24 428 r subVol1;
 #X obj 114 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 19 1;
+-1 -33289 0 1;
 #X obj 114 595 s vol2;
 #X obj 114 427 r subVol2;
 #X obj 207 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 28 1;
+-1 -33289 0 1;
 #X obj 207 427 r subVol3;
 #X obj 207 595 s vol3;
 #X obj 297 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 25 1;
+-1 -33289 0 1;
 #X obj 297 427 r subVol4;
 #X obj 297 595 s vol4;
 #X obj 390 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 25 1;
+-1 -33289 0 1;
 #X obj 480 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 25 1;
+-1 -33289 0 1;
 #X obj 573 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 25 1;
+-1 -33289 0 1;
 #X obj 663 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 28 1;
+-1 -33289 0 1;
 #X obj 390 427 r subVol5;
 #X obj 390 593 s vol5;
 #X obj 480 426 r subVol6;
@@ -5545,13 +5546,13 @@ patch. The default bpm is 122 bpm.;
 12 0 10 -233017 -66577 0;
 #X text 20 668 playing;
 #X text 20 620 selected;
-#X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected vibrawusel 2
-12 0 10 -233017 -66577 0;
+#X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected INTLD_eule1
+2 12 0 10 -233017 -66577 0;
 #X obj 115 688 cnv 15 81 20 empty SP2CurrentlyPlaying vibrawusel 0
 12 0 10 -233017 -66577 0;
 #X text 112 670 playing;
 #X text 110 620 selected;
-#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected valliflaeche
+#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected INTLD_eule1
 0 12 0 10 -233017 -66577 0;
 #X obj 205 688 cnv 15 81 20 empty SP3CurrentlyPlaying valliflaeche
 0 12 0 10 -233017 -66577 0;
@@ -5569,7 +5570,7 @@ patch. The default bpm is 122 bpm.;
 12 0 10 -233017 -66577 0;
 #X text 388 668 playing;
 #X text 386 618 selected;
-#X obj 480 636 cnv 20 81 20 empty SP6CurrentlySelected valliflaeche
+#X obj 480 636 cnv 20 81 20 empty SP6CurrentlySelected INTLD_eule1
 0 12 0 10 -233017 -66577 0;
 #X obj 481 686 cnv 15 81 20 empty SP6CurrentlyPlaying valliflaeche
 0 12 0 10 -233017 -66577 0;
@@ -5581,8 +5582,8 @@ patch. The default bpm is 122 bpm.;
 12 0 10 -233017 -66577 0;
 #X text 568 668 playing;
 #X text 566 618 selected;
-#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected SEA_bass1 20
-12 0 14 -233017 -66577 0;
+#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected JERTAW_bass
+20 12 0 14 -233017 -66577 0;
 #X obj 663 686 cnv 15 81 20 empty SP8CurrentlyPlaying SEA_bass1 0 12
 0 10 -233017 -66577 0;
 #X text 660 668 playing;
