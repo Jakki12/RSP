@@ -404,25 +404,25 @@ only the value 1 \; pass to the output.;
 #X obj 24 594 s vol1;
 #X obj 24 428 r subVol1;
 #X obj 114 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 16 1;
+-1 -33289 0 1;
 #X obj 114 595 s vol2;
 #X obj 114 427 r subVol2;
 #X obj 207 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 3770 1;
+-1 -33289 0 1;
 #X obj 207 427 r subVol3;
 #X obj 207 595 s vol3;
 #X obj 297 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 22 1;
+-1 -33289 0 1;
 #X obj 297 427 r subVol4;
 #X obj 297 595 s vol4;
 #X obj 390 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 8293 1;
+-1 -33289 0 1;
 #X obj 480 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 1946 1;
+-1 -33289 0 1;
 #X obj 573 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 19 1;
+-1 -33289 0 1;
 #X obj 663 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 8317 1;
+-1 -33289 0 1;
 #X obj 390 427 r subVol5;
 #X obj 390 593 s vol5;
 #X obj 480 426 r subVol6;
@@ -1208,7 +1208,7 @@ the eight "SelectAndPlayEngines" to initialize the index generation
 -262144 -1;
 #X obj 24 313 bng 80 400 50 0 empty empty empty 17 7 0 10 -4160 -262144
 -1;
-#N canvas 83 94 1128 576 My_RSP_EightPlayAndSelectEngines 0;
+#N canvas 99 69 1128 576 My_RSP_EightPlayAndSelectEngines 0;
 #N canvas 162 69 1075 621 My_RSP_SelectAndPlayEngine1 0;
 #X obj 8 21 inlet playButton1;
 #X obj 267 9 inlet selectUp1;
@@ -5546,44 +5546,44 @@ patch. The default bpm is 122 bpm.;
 12 0 10 -233017 -66577 0;
 #X text 20 668 playing;
 #X text 20 620 selected;
-#X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected jumpyrelaxcut2
+#X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected INTLD_eule1
 2 12 0 10 -233017 -66577 0;
 #X obj 115 688 cnv 15 81 20 empty SP2CurrentlyPlaying vibrawusel 0
 12 0 10 -233017 -66577 0;
 #X text 112 670 playing;
 #X text 110 620 selected;
-#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected vibrawusel 0
-12 0 10 -233017 -66577 0;
+#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected INTLD_eule1
+0 12 0 10 -233017 -66577 0;
 #X obj 205 688 cnv 15 81 20 empty SP3CurrentlyPlaying vibrawusel 0
 12 0 10 -233017 -66577 0;
 #X text 202 670 playing;
 #X text 200 620 selected;
-#X obj 294 636 cnv 15 81 20 empty SP4CurrentlySelected S3PM_kickybass
+#X obj 294 636 cnv 15 81 20 empty SP4CurrentlySelected JERTAW_bass
 2 12 0 10 -233017 -66577 0;
 #X obj 295 686 cnv 15 81 20 empty SP4CurrentlyPlaying S3PM_kickybass
 0 12 0 10 -233017 -66577 0;
 #X text 292 668 playing;
 #X text 290 618 selected;
-#X obj 390 636 cnv 20 81 20 empty SP5CurrentlySelected atmosubbass
+#X obj 390 636 cnv 20 81 20 empty SP5CurrentlySelected JERTAW_bass
 0 12 0 10 -233017 -66577 0;
 #X obj 391 686 cnv 15 81 20 empty SP5CurrentlyPlaying atmosubbass 0
 12 0 10 -233017 -66577 0;
 #X text 388 668 playing;
 #X text 386 618 selected;
-#X obj 480 636 cnv 20 81 20 empty SP6CurrentlySelected vibrawusel 0
-12 0 10 -233017 -66577 0;
+#X obj 480 636 cnv 20 81 20 empty SP6CurrentlySelected INTLD_eule1
+0 12 0 10 -233017 -66577 0;
 #X obj 481 686 cnv 15 81 20 empty SP6CurrentlyPlaying vibrawusel 0
 12 0 10 -233017 -66577 0;
 #X text 478 668 playing;
 #X text 476 618 selected;
-#X obj 570 636 cnv 15 81 20 empty SP7CurrentlySelected atmosubbass
+#X obj 570 636 cnv 15 81 20 empty SP7CurrentlySelected JERTAW_bass
 2 12 0 10 -233017 -66577 0;
 #X obj 571 686 cnv 15 81 20 empty SP7CurrentlyPlaying atmosubbass 0
 12 0 10 -233017 -66577 0;
 #X text 568 668 playing;
 #X text 566 618 selected;
-#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected SEA_bass1 20
-12 0 14 -233017 -66577 0;
+#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected JERTAW_bass
+20 12 0 14 -233017 -66577 0;
 #X obj 663 686 cnv 15 81 20 empty SP8CurrentlyPlaying SEA_bass1 0 12
 0 10 -233017 -66577 0;
 #X text 660 668 playing;
