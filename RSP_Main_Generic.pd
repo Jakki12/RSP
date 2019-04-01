@@ -1,5 +1,5 @@
 #N canvas 13 73 1265 627 10;
-#N canvas 213 127 864 628 My_RSP_Metronome 1;
+#N canvas 213 127 864 628 My_RSP_Metronome 0;
 #X obj 223 28 inlet startMetronome;
 #X obj 592 510 outlet FirstBeat;
 #X obj 223 265 metro;
@@ -416,11 +416,11 @@ only the value 1 \; pass to the output.;
 #X obj 24 594 s vol1;
 #X obj 24 428 r subVol1;
 #X obj 114 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 1852 1;
+-1 -33289 0 1;
 #X obj 114 595 s vol2;
 #X obj 114 427 r subVol2;
 #X obj 207 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 25 1;
+-1 -33289 0 1;
 #X obj 207 427 r subVol3;
 #X obj 207 595 s vol3;
 #X obj 297 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
@@ -430,7 +430,7 @@ only the value 1 \; pass to the output.;
 #X obj 390 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
 -1 -33289 0 1;
 #X obj 480 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 3910 1;
+-1 -33289 0 1;
 #X obj 573 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
 -1 -33289 0 1;
 #X obj 663 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
@@ -5201,7 +5201,7 @@ implemented.;
 #X connect 21 0 16 0;
 #X connect 21 1 24 0;
 #X restore 2139 598 pd My_RSP_SampleNameDisplay8;
-#X obj -178 684 excelParsing, f 422;
+#X obj -178 684 harmonyDetection, f 422;
 #X connect 0 0 116 0;
 #X connect 0 1 117 0;
 #X connect 3 0 0 0;
@@ -5564,7 +5564,7 @@ patch. The default bpm is 122 bpm.;
 12 0 10 -233017 -66577 0;
 #X text 112 670 playing;
 #X text 110 620 selected;
-#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected jumpyrelaxcut2
+#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected INTLD_eule1
 0 12 0 10 -233017 -66577 0;
 #X obj 205 688 cnv 15 81 20 empty SP3CurrentlyPlaying valliflaeche
 0 12 0 10 -233017 -66577 0;
