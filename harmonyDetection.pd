@@ -89,6 +89,10 @@ via 1 & 0;
 just the headings of the \; excel table.;
 #X text 249 289 distinguish sample ids and sample names.;
 #X msg 999 133 read conflicts.csv;
+#X text 1249 9 5th April 2019 \; In this patch we parse the contents
+of the samples.csv and conflicts.csv files into zl objects located
+in the parent patch. This is the first step for the systems's dissonance
+detection feature.;
 #X connect 2 0 69 0;
 #X connect 3 0 9 0;
 #X connect 3 1 7 1;
@@ -647,6 +651,25 @@ Alarm.;
 #X text 2065 2414 Green Harmony LED 2;
 #X obj 1934 2414 wiringPi_gpio 3 0 0;
 #X obj 567 2408 wiringPi_gpio 0 0 0;
+#X text 1439 255 5th April 2019 \; This patch is activated by either
+one of the play buttons or one of the endless knobs that selects new
+samples. \; When a play button is pressed on track XY then we generate
+a conflict list for this track XY. The conflict list contains the sample
+indexes from samples.csv that have a dissonance conflict with the sample
+id that has just been pressed "play for on track XY. The conflict list
+is built upon the content of the conflicts.csv file \; When an endless
+knob is turned for selecting a new sample then the currently selected
+sample id is given into the conflict lists of the other tracks. When
+the selected sample id is present in one conlict lists \, then we have
+a dissonance conflict and we show this by blinking the led for that
+track that has a sample playing and has the selected sample id in its
+conflict list. \; One has to be aware that when there is a dissonance
+Alarm detected and you select a sample on another track \, then the
+just detected dissonance alarm is overwritten and will not be shown
+again until you re-select that sample id on the former track. Thus
+\, you should always concentrate on one track \, select a new sample
+\, play it when there is no dissonance detection and then go to another
+track and select a new sample there.;
 #X connect 3 0 0 0;
 #X connect 3 1 23 0;
 #X connect 3 2 170 0;
