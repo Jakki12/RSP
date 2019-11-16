@@ -1,4 +1,4 @@
-#N canvas 13 73 1265 627 10;
+#N canvas 13 95 1265 580 10;
 #N canvas 213 127 864 628 My_RSP_Metronome 0;
 #X obj 223 28 inlet startMetronome;
 #X obj 592 510 outlet FirstBeat;
@@ -434,7 +434,7 @@ only the value 1 \; pass to the output.;
 #X obj 573 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
 -1 -33289 0 1;
 #X obj 663 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 7500 1;
 #X obj 390 427 r subVol5;
 #X obj 390 593 s vol5;
 #X obj 480 426 r subVol6;
@@ -485,7 +485,7 @@ only the value 1 \; pass to the output.;
 #X restore 761 127 pd Sample-Array-Subpatch6;
 #N canvas 204 118 535 334 Sample-Array-Subpatch7 0;
 #X restore 761 150 pd Sample-Array-Subpatch7;
-#N canvas 202 116 535 334 Sample-Array-Subpatch8 0;
+#N canvas 202 116 622 419 Sample-Array-Subpatch8 0;
 #X obj 220 60 table SampleArray8_1_right;
 #X obj 40 60 table SampleArray8_1_left;
 #X obj 220 80 table SampleArray8_2_right;
@@ -699,7 +699,7 @@ and attach \; the "/SamplePackX" folders \, so that the folder list
 #X connect 75 0 76 0;
 #X connect 76 0 73 0;
 #X restore 883 310 pd My_RSP_TableCreator;
-#N canvas 121 61 1063 613 My_RSP_TableReader 0;
+#N canvas 127 95 1063 613 My_RSP_TableReader 0;
 #X obj -455 78 t b b;
 #X obj -428 105 1;
 #X obj -428 133 s sampleCount;
@@ -707,7 +707,6 @@ and attach \; the "/SamplePackX" folders \, so that the folder list
 #X msg -455 680 \$1;
 #X obj -455 858 pack s s;
 #X obj -455 937 soundfiler;
-#X msg -455 886 read -resize \$1 \$2_left \$2_right;
 #X obj -455 23 inlet;
 #X obj -455 51 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -784,40 +783,42 @@ receives a list with the sample names \; in home/pi/..../SamplePack2
 and so on...;
 #X text -220 372 the bang resets the list-prepend-object. \; By this
 we get a new list when the currentSampleIndex \; changes.;
-#X connect 0 0 19 0;
+#X msg -455 886 read -resize -maxsize 32768 \$1 \$2_left \$2_right
+;
+#X connect 0 0 18 0;
 #X connect 0 1 1 0;
 #X connect 1 0 2 0;
 #X connect 4 0 5 0;
-#X connect 5 0 7 0;
-#X connect 6 0 12 0;
-#X connect 7 0 6 0;
-#X connect 8 0 9 0;
-#X connect 9 0 0 0;
-#X connect 14 0 15 0;
-#X connect 15 0 31 0;
-#X connect 19 0 32 0;
-#X connect 20 0 19 1;
-#X connect 21 0 22 1;
-#X connect 22 0 23 0;
-#X connect 22 0 26 0;
-#X connect 23 0 22 1;
-#X connect 26 0 29 0;
-#X connect 27 0 28 0;
-#X connect 28 0 26 1;
-#X connect 29 0 5 1;
-#X connect 31 0 18 0;
-#X connect 32 0 4 0;
-#X connect 32 1 22 0;
-#X connect 32 2 14 0;
-#X connect 32 3 33 0;
-#X connect 33 0 34 0;
-#X connect 34 0 38 0;
-#X connect 36 0 39 0;
-#X connect 37 0 35 1;
-#X connect 38 0 34 1;
-#X connect 38 0 35 0;
-#X connect 39 0 34 1;
-#X connect 39 1 37 0;
+#X connect 5 0 42 0;
+#X connect 6 0 11 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X connect 13 0 14 0;
+#X connect 14 0 30 0;
+#X connect 18 0 31 0;
+#X connect 19 0 18 1;
+#X connect 20 0 21 1;
+#X connect 21 0 22 0;
+#X connect 21 0 25 0;
+#X connect 22 0 21 1;
+#X connect 25 0 28 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 1;
+#X connect 28 0 5 1;
+#X connect 30 0 17 0;
+#X connect 31 0 4 0;
+#X connect 31 1 21 0;
+#X connect 31 2 13 0;
+#X connect 31 3 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 37 0;
+#X connect 35 0 38 0;
+#X connect 36 0 34 1;
+#X connect 37 0 33 1;
+#X connect 37 0 34 0;
+#X connect 38 0 33 1;
+#X connect 38 1 36 0;
+#X connect 42 0 6 0;
 #X restore 863 346 pd My_RSP_TableReader;
 #X text 885 330 read samples from disk into tables;
 #N canvas 135 97 962 563 My_RSP_ValueCalculationForPlayingAudio 0;
@@ -1216,7 +1217,7 @@ the eight "SelectAndPlayEngines" to initialize the index generation
 -262144 -1;
 #X obj 24 313 bng 80 400 50 0 empty empty empty 17 7 0 10 -4160 -262144
 -1;
-#N canvas -125 68 1280 627 My_RSP_EightPlayAndSelectEngines 0;
+#N canvas -125 68 1280 627 My_RSP_EightPlayAndSelectEngines 1;
 #N canvas 94 95 1075 551 My_RSP_SelectAndPlayEngine1 0;
 #X obj 8 21 inlet playButton1;
 #X obj 267 9 inlet selectUp1;
@@ -4113,7 +4114,7 @@ another sample in the meantime \;;
 #X connect 80 1 60 0;
 #X restore 1845 476 pd My_RSP_SelectAndPlayEngine7;
 #X obj 1845 23 inlet metronomeInlet7;
-#N canvas 0 51 1280 643 My_RSP_TimeHandler8 0;
+#N canvas -134 120 1280 643 My_RSP_TimeHandler8 0;
 #X msg 65 115 1;
 #X obj 50 168 f;
 #X msg 84 168 0;
@@ -4130,7 +4131,7 @@ has reached \; the first beat \; (just like in ableton live);
 played.;
 #X text 96 247 here we distinguish between the user pressing the playbutton
 and the internal looping mechanism.;
-#N canvas 0 50 601 288 My_RSP_PlaywishDistinguisher8 0;
+#N canvas 0 50 601 288 My_RSP_PlaywishDistinguisher8 1;
 #X obj 54 96 bang;
 #X obj 54 123 f;
 #X msg 188 90 0;
@@ -4148,8 +4149,8 @@ and the internal looping mechanism.;
 #X connect 3 0 1 1;
 #X connect 4 0 5 0;
 #X connect 4 1 10 0;
-#X connect 5 0 9 0;
-#X connect 5 1 10 0;
+#X connect 5 0 10 0;
+#X connect 5 1 9 0;
 #X connect 6 0 0 0;
 #X connect 7 0 2 0;
 #X connect 8 0 3 0;
@@ -4173,46 +4174,19 @@ and the internal looping mechanism.;
 #X restore 2137 383 pd My_RSP_TimeHandler8;
 #X obj 2225 455 r sU8;
 #X obj 2314 454 r sD8;
-#N canvas 0 52 1169 612 My_RSP_SelectAndPlayEngine8 0;
-#X obj 265 501 zl nth;
-#X obj 385 588 zl nth;
-#X obj 265 574 phasor~;
-#X obj 266 614 *~;
-#X obj 399 414 t f f f;
-#X obj 511 752 *~;
-#X obj 511 698 tabread4~ \$1;
-#X msg 662 609 set \$1_right;
-#X obj 399 389 f;
-#X obj 64 107 t b b b b;
-#X msg 64 207 0;
-#X obj 363 699 tabread4~ \$1;
-#X msg 571 608 set \$1_left;
-#X obj 362 751 *~;
-#X floatatom 385 614 10 0 0 0 - - -;
-#X text 464 142 generate an index between 1 and max number of audio
+#N canvas -1 95 1309 612 My_RSP_SelectAndPlayEngine8 1;
+#X obj 696 722 *~;
+#X msg 639 469 set \$1_right;
+#X obj 548 407 f;
+#X msg 548 468 set \$1_left;
+#X obj 547 721 *~;
+#X text 574 142 generate an index between 1 and max number of audio
 files \; in folder "samplepack1" to select one audio file to play.
 ;
-#X text 476 414 pass the index to the zl nth objects \; to determine
-which values should be \; grabbed out of the value lists the next \;
-time the zl nth objects are banged by the \; "playbang (pb1_n).;
-#X text 175 132 pb = playbang;
-#X text 91 200 start playing \; the audio file;
-#X text 451 577 grab number of \; samples of the \; selected audio
-file;
-#X text 167 505 grab frequency \; for phasor \; according to the \;
-selected audio \; file;
-#X text 757 614 build array name \; containing the \; selected index
-\; so the tabread object \; knows which array \; to read from.;
-#X floatatom 451 160 5 0 0 0 - - -;
-#X msg 71 557 0;
-#X text 30 507 stop playing;
-#X obj 71 532 r stopAll;
+#X floatatom 561 160 5 0 0 0 - - -;
 #X obj 64 7 inlet playButton8;
-#X obj 267 9 inlet selectUp8;
-#X obj 381 10 inlet selectDown8;
-#X obj 115 130 s pb1_1_8;
-#X obj 98 153 s pb1_2_8;
-#X obj 81 177 s pb1_3_8;
+#X obj 377 9 inlet selectUp8;
+#X obj 491 10 inlet selectDown8;
 #N canvas 71 94 1027 615 My_RSP_IndexGenerator8 0;
 #X obj 129 133 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -4314,49 +4288,44 @@ current index;
 #X connect 38 0 7 2;
 #X connect 41 0 18 1;
 #X connect 42 0 21 1;
-#X restore 267 143 pd My_RSP_IndexGenerator8;
-#X obj 414 111 r initIndexBang8;
-#X obj 340 193 print SP8>>First Sample Reached;
-#X obj 267 217 print SP8>>Last Sample Reached;
-#X obj 399 367 r pb1_1_8;
-#X obj 265 465 r listValuesForPhasor8;
-#X obj 211 484 r pb1_3_8;
-#X obj 385 536 r listNumberOfSamplesOfEachAudioFile8;
-#X obj 395 556 r pb1_2_8;
-#X obj 571 583 makefilename SampleArray8_%d;
-#X obj 377 725 r vol8;
-#X text 426 721 adjust volume \; (from fader 8);
-#X obj 362 771 outlet~ toDacLeft8;
-#X obj 511 774 outlet~ toDacRight8;
-#X text 460 803 AUDIO OUTPUT;
-#X obj 204 676 r metroHits;
-#X obj 204 703 snapshot~;
-#X obj 204 749 /;
-#X text 9 726 divide by the number of \; samples of the currently \;
-playing audio file to make the \; position a value between 0 and 1
-;
-#X text 11 787 output on the right outlet \; if the end is almost reached.
-;
-#X text 8 671 get the metronome's 16th notes;
-#X text 10 693 get position of the \; currently playing sample;
-#X text 31 648 ***SYNCING PLAYBACK TO METRONOME***;
-#X floatatom 280 903 5 0 0 0 - - -;
-#X obj 280 930 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 377 143 pd My_RSP_IndexGenerator8;
+#X obj 524 111 r initIndexBang8;
+#X obj 450 193 print SP8>>First Sample Reached;
+#X obj 377 217 print SP8>>Last Sample Reached;
+#X obj 548 443 makefilename SampleArray8_%d;
+#X obj 562 685 r vol8;
+#X text 611 681 adjust volume \; (from fader 8);
+#X obj 547 741 outlet~ toDacLeft8;
+#X obj 696 744 outlet~ toDacRight8;
+#X text 1450 823 AUDIO OUTPUT;
+#X obj 1194 676 r metroHits;
+#X obj 1194 703 snapshot~;
+#X obj 1194 749 /;
+#X text 973 714 divide by the number of \; samples of the currently
+\; playing audio file to make the \; position a value between 0 and
+1;
+#X text 1001 787 output on the right outlet \; if the end is almost
+reached.;
+#X text 972 659 get the metronome's 16th notes;
+#X text 1214 721 get position of the \; currently playing sample;
+#X text 995 636 ***SYNCING PLAYBACK TO METRONOME***;
+#X floatatom 1270 903 5 0 0 0 - - -;
+#X obj 1270 930 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 323 843 0;
-#X obj 261 843 spigot 1;
-#X obj 261 873 t b f b;
-#X msg 261 999 1;
-#X text 333 877 here we only let the first value \; of the moses' right
-output come trough;
-#X obj 306 816 r openSpigot8;
-#X obj 261 1023 s openSpigot8;
-#X text 48 836 send a wish for playback \; which will ONLY BE ACKNOWLEGDED
+#X msg 1313 843 0;
+#X obj 1251 843 spigot 1;
+#X obj 1251 873 t b f b;
+#X msg 1051 999 1;
+#X text 1323 877 here we only let the first value \; of the moses'
+right output come trough;
+#X obj 1296 816 r openSpigot8;
+#X obj 1051 1023 s openSpigot8;
+#X text 1038 836 send a wish for playback \; which will ONLY BE ACKNOWLEGDED
 \; by the metronome:);
-#X obj 261 974 delay 2000;
-#X floatatom 212 817 5 0 0 0 - - -;
-#X obj 275 115 r indexInit;
-#X text 273 66 select first \; sample after \; loading the patch;
+#X obj 1051 974 delay 2000;
+#X floatatom 1202 817 5 0 0 0 - - -;
+#X obj 385 115 r indexInit;
+#X text 383 66 select first \; sample after \; loading the patch;
 #N canvas 329 283 450 300 My_RSP_LedAlert 0;
 #X text 199 46 this patch toggles the blue led \; on gpio24 to show
 that the first or last \; sample is reached.;
@@ -4372,16 +4341,16 @@ that the first or last \; sample is reached.;
 #X connect 4 0 1 0;
 #X connect 5 0 4 0;
 #X connect 6 0 3 0;
-#X restore 218 239 pd My_RSP_LedAlert;
-#X obj 469 297 f;
-#X text 503 298 store current selected index;
-#X text 574 313 send currentSelectedIndex to subpatch "Looping_Index_Handler"
+#X restore 350 239 pd My_RSP_LedAlert;
+#X obj 579 297 f;
+#X text 613 298 store current selected index;
+#X text 684 313 send currentSelectedIndex to subpatch "Looping_Index_Handler"
 and to parent patch;
-#X obj 414 259 t f f;
-#X obj 469 259 r updateZlnthObjectsBang8;
-#X obj 414 321 s currentSelectedIndexSP8;
-#X floatatom 616 394 5 0 0 0 - - -;
-#X obj 616 372 r indexCorrectionForLoopingSP8;
+#X obj 524 259 t f f;
+#X obj 579 261 r updateZlnthObjectsBang8;
+#X obj 524 321 s currentSelectedIndexSP8;
+#X floatatom 578 406 5 0 0 0 - - -;
+#X obj 578 384 r indexCorrectionForLoopingSP8;
 #N canvas 0 101 1015 566 My_RSP_Looping_Index_Handler8 0;
 #X text 603 28 29th August 2018 This subpatch receives a bang on its
 inlet \, when the currently played sample has reached its end. This
@@ -4447,80 +4416,96 @@ another sample in the meantime \;;
 #X connect 19 0 6 0;
 #X connect 20 0 12 1;
 #X connect 20 0 13 0;
-#X restore 280 950 pd My_RSP_Looping_Index_Handler8;
-#X obj 204 795 moses 0.98;
-#X text 590 8 13th April 2018 \; This patch plays the audio files in
+#X restore 1270 950 pd My_RSP_Looping_Index_Handler8;
+#X obj 1194 795 moses 0.98;
+#X text 700 8 13th April 2018 \; This patch plays the audio files in
 the \; SamplePack8 folder. The desired audio file \; is selected by
 an index. The index can be \; changed by the 2nd and 3rd inlet (e.g.
 by \; the computer's keys or hid input). A bang on the first inlet
 plays the selected \; audio file. \; \; OUTLETS: Audio output for dac
 object (left and right);
-#X connect 0 0 2 0;
-#X connect 1 0 3 1;
-#X connect 1 0 14 0;
-#X connect 2 0 3 0;
-#X connect 3 0 6 0;
-#X connect 3 0 11 0;
-#X connect 3 0 48 0;
-#X connect 4 0 0 1;
-#X connect 4 1 1 1;
-#X connect 4 2 41 0;
-#X connect 5 0 45 0;
-#X connect 6 0 5 0;
-#X connect 7 0 6 0;
-#X connect 8 0 4 0;
-#X connect 9 0 10 0;
-#X connect 9 1 31 0;
-#X connect 9 2 30 0;
-#X connect 9 3 29 0;
-#X connect 10 0 2 1;
-#X connect 11 0 13 0;
-#X connect 12 0 11 0;
-#X connect 13 0 44 0;
-#X connect 14 0 49 1;
-#X connect 23 0 2 0;
-#X connect 25 0 23 0;
-#X connect 26 0 9 0;
-#X connect 27 0 32 0;
-#X connect 28 0 32 1;
-#X connect 32 0 35 0;
-#X connect 32 0 69 0;
-#X connect 32 1 34 0;
-#X connect 32 1 69 0;
-#X connect 32 2 22 0;
-#X connect 32 2 73 0;
-#X connect 33 0 32 2;
-#X connect 36 0 8 0;
-#X connect 37 0 0 0;
-#X connect 38 0 0 0;
-#X connect 39 0 1 0;
-#X connect 40 0 1 0;
-#X connect 41 0 7 0;
-#X connect 41 0 12 0;
-#X connect 42 0 13 1;
-#X connect 42 0 5 1;
-#X connect 47 0 48 0;
-#X connect 48 0 49 0;
-#X connect 49 0 79 0;
-#X connect 55 0 56 0;
-#X connect 56 0 78 0;
-#X connect 57 0 58 1;
-#X connect 58 0 59 0;
-#X connect 59 0 65 0;
-#X connect 59 1 55 0;
-#X connect 59 2 57 0;
-#X connect 60 0 63 0;
-#X connect 62 0 58 1;
-#X connect 65 0 60 0;
-#X connect 67 0 32 0;
-#X connect 70 0 8 1;
-#X connect 73 0 75 0;
-#X connect 73 1 70 1;
-#X connect 74 0 70 0;
-#X connect 77 0 76 0;
-#X connect 77 0 8 1;
-#X connect 79 0 66 0;
-#X connect 79 1 58 0;
+#X obj 639 499 tabplay~ \$1;
+#X obj 548 499 tabplay~ \$1;
+#X text 119 446 "open sine1.wav 32768";
+#X obj 64 433 symbol;
+#X obj 97 267 r currentlyPlayingSampleNameSP8;
+#X msg 64 471 open \$1.wav 32768;
+#X obj 142 310 r FolderWithAudioFiles;
+#X obj 97 344 pack s s;
+#X msg 97 365 \$2SamplePack8/\$1;
+#X obj 97 388 pack s;
+#X msg 84 554 1;
+#X obj 172 332 print fwafloadbang;
+#X obj 117 288 print sampleName;
+#X floatatom 605 355 5 0 0 0 - - -;
+#X obj 64 586 readsf~ 2;
+#X obj 84 526 bang;
+#X obj 64 163 t b b b;
+#X text 734 474 build array name \; containing the \; selected index
+\; so the tabplay object \; knows which array \; to read from.;
+#X connect 0 0 18 0;
+#X connect 1 0 54 0;
+#X connect 2 0 14 0;
+#X connect 3 0 55 0;
+#X connect 4 0 17 0;
+#X connect 7 0 70 0;
+#X connect 8 0 10 0;
+#X connect 9 0 10 1;
+#X connect 10 0 13 0;
+#X connect 10 0 42 0;
+#X connect 10 1 12 0;
+#X connect 10 1 42 0;
+#X connect 10 2 6 0;
+#X connect 10 2 46 0;
+#X connect 11 0 10 2;
+#X connect 14 0 1 0;
+#X connect 14 0 3 0;
+#X connect 15 0 4 1;
+#X connect 15 0 0 1;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 52 0;
+#X connect 28 0 29 0;
+#X connect 29 0 51 0;
+#X connect 30 0 31 1;
+#X connect 31 0 32 0;
+#X connect 32 0 38 0;
+#X connect 32 1 28 0;
+#X connect 32 2 30 0;
+#X connect 33 0 36 0;
+#X connect 35 0 31 1;
+#X connect 38 0 33 0;
+#X connect 40 0 10 0;
+#X connect 43 0 2 1;
+#X connect 43 0 67 0;
+#X connect 46 0 48 0;
+#X connect 46 1 43 1;
+#X connect 47 0 43 0;
+#X connect 50 0 49 0;
+#X connect 50 0 2 1;
+#X connect 52 0 39 0;
+#X connect 52 1 31 0;
+#X connect 54 0 0 0;
+#X connect 54 1 69 0;
+#X connect 55 0 4 0;
+#X connect 57 0 59 0;
+#X connect 58 0 61 0;
+#X connect 58 0 66 0;
+#X connect 59 0 68 0;
+#X connect 60 0 61 1;
+#X connect 60 0 65 0;
+#X connect 61 0 62 0;
+#X connect 62 0 63 0;
+#X connect 63 0 57 1;
+#X connect 64 0 68 0;
+#X connect 68 0 4 0;
+#X connect 68 1 0 0;
+#X connect 68 2 70 0;
+#X connect 69 0 64 0;
+#X connect 70 0 57 0;
+#X connect 70 1 54 0;
+#X connect 70 1 55 0;
+#X connect 70 2 2 0;
 #X restore 2137 478 pd My_RSP_SelectAndPlayEngine8;
 #X obj 2137 24 inlet metronomeInlet8;
 #X obj -102 154 r currentSelectedIndexSP1;
@@ -5052,7 +5037,7 @@ implemented.;
 #X connect 21 0 16 0;
 #X connect 21 1 24 0;
 #X restore 1845 597 pd My_RSP_SampleNameDisplay7;
-#N canvas 187 190 911 465 My_RSP_SampleNameDisplay8 0;
+#N canvas 334 72 911 465 My_RSP_SampleNameDisplay8 0;
 #X obj 240 -267 zl nth;
 #X obj 356 -308 t b b f;
 #X obj 18 -307 t b b;
@@ -5063,34 +5048,36 @@ implemented.;
 #X text 307 -227 route the list (e.g. 0 vibrawusel or 1 vibrawusel)
 \, depending on whether the playbutton is pressed or the encoder is
 turned in order to select another sample.;
-#X text 353 -348 sample index comes in here;
+#X text 353 -368 sample index comes in here;
 #X text 15 -355 this is hit when the play button \; is pressed;
 #X text 256 -453 receiving a list of filenames \; for SamplePackXY
 ;
 #X obj 240 -481 r listFileNames8;
 #X obj 18 -328 r currentPlayingSampleNameBang8;
-#X obj 356 -329 r currentSelectedIndexSP8;
-#X text 519 -505 14th February 2019 \; This subpatch collects all \;
-sample names in ../SamplePackXY \; within the zl nth object. When the
-user selectes a new sample \; by turning a knob \, the currently selected
-\; sample name is displayed in the main parent patch as "currently
-selected". When the user presses a play button \, the sample name that
-is then played is also played in the main parent patch as "currently
-playing". \; The names of the currently playing and currently selected
-samples are important for the notification of non-harmonic samples.
-The sample names are output to the next subpatch where the latter is
-implemented.;
+#X obj 356 -349 r currentSelectedIndexSP8;
 #X obj 240 -160 symbol;
 #X msg 240 -80 label \$1;
 #X obj 240 -183 route 0 1, f 99;
 #X obj 535 -150 symbol;
 #X msg 535 -85 label \$1;
 #X obj 535 -129 t s s, f 35;
-#X obj 240 -139 t s s, f 34;
 #X msg 240 -57 \; SP8CurrentlyPlaying label \$1;
 #X msg 535 -60 \; SP8CurrentlySelected label \$1;
-#X obj 441 5 outlet startingSample8;
+#X obj 340 5 outlet startingSample8;
 #X obj 742 8 outlet selectedSample8;
+#X obj 240 -139 t s s s, f 34;
+#X obj 441 -95 s currentlyPlayingSampleNameSP8;
+#X text 519 -505 14th February 2019 \; This subpatch collects all \;
+sample names in ../SamplePackXY \; within the zl nth object. When the
+user selectes a new sample \; by turning a knob \, the currently selected
+\; sample name is displayed in the main parent patch as "currently
+selected". When the user presses a play button \, the sample name that
+is then played is also shown in the main parent patch as "currently
+playing". \; The names of the currently playing and currently selected
+samples are important for the notification of non-harmonic samples.
+The sample names are output to the next subpatch where the latter is
+implemented.;
+#X obj 450 -306 print in SampleNameDisplayLoadBang;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 1 1 5 0;
@@ -5100,20 +5087,22 @@ implemented.;
 #X connect 3 0 4 1;
 #X connect 4 0 6 0;
 #X connect 5 0 4 1;
-#X connect 6 0 17 0;
+#X connect 6 0 16 0;
 #X connect 11 0 0 0;
 #X connect 12 0 2 0;
 #X connect 13 0 1 0;
-#X connect 15 0 21 0;
-#X connect 16 0 22 0;
-#X connect 17 0 15 0;
-#X connect 17 1 18 0;
-#X connect 18 0 20 0;
-#X connect 19 0 23 0;
-#X connect 20 0 19 0;
-#X connect 20 1 25 0;
-#X connect 21 0 16 0;
-#X connect 21 1 24 0;
+#X connect 13 0 27 0;
+#X connect 14 0 24 0;
+#X connect 15 0 20 0;
+#X connect 16 0 14 0;
+#X connect 16 1 17 0;
+#X connect 17 0 19 0;
+#X connect 18 0 21 0;
+#X connect 19 0 18 0;
+#X connect 19 1 23 0;
+#X connect 24 0 15 0;
+#X connect 24 1 22 0;
+#X connect 24 2 25 0;
 #X restore 2139 598 pd My_RSP_SampleNameDisplay8;
 #X obj -178 684 harmonyDetection, f 422;
 #N canvas 162 69 1075 621 My_RSP_SelectAndPlayEngine1_bpmSyncTest 0
@@ -6144,10 +6133,10 @@ patch. The default bpm is 122 bpm.;
 12 0 10 -233017 -66577 0;
 #X text 568 668 playing;
 #X text 566 618 selected;
-#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected DYNA_hhs&snares2
+#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected JERTAW_hh2
 20 12 0 14 -233017 -66577 0;
-#X obj 663 686 cnv 15 81 20 empty SP8CurrentlyPlaying S3PM_kickybass
-0 12 0 10 -233017 -66577 0;
+#X obj 663 686 cnv 15 81 20 empty SP8CurrentlyPlaying atmen2 0 12 0
+10 -233017 -66577 0;
 #X text 660 668 playing;
 #X text 658 618 selected;
 #X msg 872 104 symbol /home/pi/Documents/SamplePacks/;
