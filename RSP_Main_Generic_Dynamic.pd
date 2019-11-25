@@ -1,17 +1,17 @@
-#N canvas 36 107 1265 588 10;
+#N canvas 0 32 1280 668 10;
 #N canvas 213 127 864 628 My_RSP_Metronome 0;
 #X obj 223 28 inlet startMetronome;
 #X obj 592 510 outlet FirstBeat;
 #X obj 223 265 metro;
 #X msg 242 125 60000;
-#X floatatom 305 137 5 0 0 0 - - -;
+#X floatatom 305 137 5 0 0 0 - - -, f 5;
 #X obj 242 160 /;
 #X obj 223 94 t b b b;
 #X obj 223 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X floatatom 272 189 15 0 0 0 - - -;
+#X floatatom 272 189 15 0 0 0 - - -, f 15;
 #X obj 386 250 i;
-#X floatatom 463 267 5 0 0 0 - - -;
+#X floatatom 463 267 5 0 0 0 - - -, f 5;
 #X text 416 248 cut the nachkommastellen;
 #X msg 182 93 0;
 #X text 141 90 stop;
@@ -23,7 +23,7 @@
 #X msg 238 319 1;
 #X obj 448 511 wiringPi_gpio 25 0 0;
 #X obj 448 409 == 1;
-#X floatatom 448 492 5 0 0 0 - - -;
+#X floatatom 448 492 5 0 0 0 - - -, f 5;
 #X obj 553 467 moses 1;
 #X obj 592 491 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -36,11 +36,11 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 #X obj 244 217 / 4;
 #X text 277 218 16tel genauigkeit;
 #X obj 223 513 moses 16;
-#X floatatom 281 246 10 0 0 0 - - -;
+#X floatatom 281 246 10 0 0 0 - - -, f 10;
 #X text 178 539 16tel genauigkeit;
-#X floatatom 146 386 5 0 0 0 - - -;
+#X floatatom 146 386 5 0 0 0 - - -, f 5;
 #X obj 212 939 wiringPi_gpio 25 0 0;
-#X floatatom 212 915 5 0 0 0 - - -;
+#X floatatom 212 915 5 0 0 0 - - -, f 5;
 #X obj 365 923 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 124 917 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -92,9 +92,9 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 #N canvas 27 92 1199 623 My_HID_CONTROLLER 0;
 #X obj 316 182 tgl 20 0 empty empty empty 0 -6 0 8 -24198 -1 -1 100
 100;
-#X floatatom 883 317 5 0 0 1 value - -;
-#X symbolatom 749 342 15 0 0 1 event_code - -;
-#X symbolatom 662 359 15 0 0 1 event_type - -;
+#X floatatom 883 317 5 0 0 1 value - -, f 5;
+#X symbolatom 749 342 15 0 0 1 event_code - -, f 15;
+#X symbolatom 662 359 15 0 0 1 event_type - -, f 15;
 #X msg 603 119 close;
 #X msg 574 179 refresh;
 #X text 636 178 refresh device list;
@@ -110,7 +110,7 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 ;
 #X obj 316 254 hidio;
 #X obj 662 297 unpack symbol symbol float float;
-#X floatatom 801 318 2 0 0 1 instance - -;
+#X floatatom 801 318 2 0 0 1 instance - -, f 2;
 #N canvas 62 79 454 304 remove 0;
 #X obj 134 12 inlet;
 #X obj 109 60 unpack symbol symbol float float;
@@ -136,7 +136,7 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 -1 -1;
 #X obj 354 135 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 316 205 5 0 0 0 - - -;
+#X floatatom 316 205 5 0 0 0 - - -, f 5;
 #X obj 40 1021 outlet dk1;
 #X obj 69 1059 outlet dk2;
 #X obj 84 1077 outlet dk2;
@@ -159,10 +159,10 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 #X obj 536 836 s pk5;
 #X obj 822 837 s pk7;
 #X obj 833 785 s pk8;
-#X floatatom 724 487 5 0 0 0 - - -;
-#X floatatom 908 484 5 0 0 0 - - -;
-#X floatatom 985 485 5 0 0 0 - - -;
-#X floatatom 1074 485 5 0 0 0 - - -;
+#X floatatom 724 487 5 0 0 0 - - -, f 5;
+#X floatatom 908 484 5 0 0 0 - - -, f 5;
+#X floatatom 985 485 5 0 0 0 - - -, f 5;
+#X floatatom 1074 485 5 0 0 0 - - -, f 5;
 #X obj 474 504 clip 0 4086;
 #X obj 474 528 / 4086;
 #X obj 474 550 s subVol1;
@@ -171,14 +171,14 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 #X obj 564 550 s subVol2;
 #X obj 644 507 clip 0 4086;
 #X obj 644 528 / 4086;
-#X floatatom 474 479 5 0 0 0 - - -;
-#X floatatom 564 483 5 0 0 0 - - -;
-#X floatatom 644 483 5 0 0 0 - - -;
+#X floatatom 474 479 5 0 0 0 - - -, f 5;
+#X floatatom 564 483 5 0 0 0 - - -, f 5;
+#X floatatom 644 483 5 0 0 0 - - -, f 5;
 #X obj 644 550 s subVol3;
 #X obj 724 507 clip 0 4086;
 #X obj 724 528 / 4086;
 #X obj 824 528 / 4086;
-#X floatatom 824 483 5 0 0 0 - - -;
+#X floatatom 824 483 5 0 0 0 - - -, f 5;
 #X obj 724 550 s subVol4;
 #X obj 824 550 s subVol5;
 #X obj 908 507 clip 0 4086;
@@ -191,7 +191,7 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 #X obj 1074 526 / 4086;
 #X obj 1074 548 s subVol8;
 #X obj 862 731 s extraPush;
-#X floatatom 197 207 5 0 0 0 - - -;
+#X floatatom 197 207 5 0 0 0 - - -, f 5;
 #X msg 96 226 debug 6;
 #X obj 41 887 route button_0 button_1 button_2 button_3 button_4 button_5
 button_6 button_7 button_8 button_9 button_10 button_11 button_12 button_13
@@ -412,7 +412,7 @@ only the value 1 \; pass to the output.;
 #X obj 662 289 r pk8;
 #X obj 1139 463 r initBang;
 #X obj 24 452 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 5728 1;
+-1 -33289 0 1;
 #X obj 24 594 s vol1;
 #X obj 24 428 r subVol1;
 #X obj 114 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
@@ -420,21 +420,21 @@ only the value 1 \; pass to the output.;
 #X obj 114 595 s vol2;
 #X obj 114 427 r subVol2;
 #X obj 207 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 2623 1;
+-1 -33289 0 1;
 #X obj 207 427 r subVol3;
 #X obj 207 595 s vol3;
 #X obj 297 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 5216 1;
+-1 -33289 0 1;
 #X obj 297 427 r subVol4;
 #X obj 297 595 s vol4;
 #X obj 390 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 4557 1;
+-1 -33289 0 1;
 #X obj 480 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 3900 1;
+-1 -33289 0 1;
 #X obj 573 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 693 1;
+-1 -33289 0 1;
 #X obj 663 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 31 1;
+-1 -33289 0 1;
 #X obj 390 427 r subVol5;
 #X obj 390 593 s vol5;
 #X obj 480 426 r subVol6;
@@ -460,7 +460,7 @@ only the value 1 \; pass to the output.;
 #X obj 40 434 list;
 #X obj 40 506 list length;
 #X text 116 530 Number of Samples in the SamplePack folder;
-#X floatatom 78 530 5 0 0 0 - - -;
+#X floatatom 78 530 5 0 0 0 - - -, f 5;
 #X obj 100 115 40;
 #X obj 163 117 60;
 #X text 197 119 y starting coordinate;
@@ -1827,55 +1827,55 @@ and attach \; the "/SamplePackX" folders \, so that the folder list
 #X connect 75 0 76 0;
 #X connect 76 0 73 0;
 #X restore 883 310 pd My_RSP_TableCreator;
-#N canvas 127 95 1063 613 My_RSP_TableReader 0;
+#N canvas 165 121 1063 627 My_RSP_TableReader 0;
 #X obj -455 78 t b b;
 #X obj -428 105 1;
 #X obj -428 133 s sampleCount;
 #X text -393 104 counting the samples starting at 1;
-#X msg -455 680 \$1;
-#X obj -455 858 pack s s;
-#X obj -455 937 soundfiler;
+#X msg -455 1030 \$1;
+#X obj -455 1208 pack s s;
+#X obj -455 1287 soundfiler;
 #X obj -455 23 inlet;
 #X obj -455 51 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text -455 209 this spits out the sample names one after another
 as a symbol;
-#X text -350 847 pack the sample name and the corresponding table name
-into a list \, so that the message "read" can handle them as $ variables
-;
-#X obj -455 965 outlet numberOfSamples;
-#X text -576 679 \$1 = the different \; sample names \; one after another
-;
-#X msg -401 500 read \$1;
-#X obj -401 528 soundfile_info;
-#X text -305 526 get header data of each audio file as a list;
-#X text -306 544 grab only the sample rate of each audio file;
-#X obj -401 593 s sampleRateOfCurrentSample;
+#X text -350 1197 pack the sample name and the corresponding table
+name into a list \, so that the message "read" can handle them as $
+variables;
+#X obj -455 1315 outlet numberOfSamples;
+#X text -576 1029 \$1 = the different \; sample names \; one after
+another;
+#X msg -401 480 read \$1;
+#X obj -401 508 soundfile_info;
+#X text -295 496 get header data of each audio file as a list;
+#X text -303 946 grab only the sample rate of each audio file;
+#X obj -401 973 s sampleRateOfCurrentSample;
 #X obj -455 182 folder_list;
 #X obj -392 158 r currentFolderName;
-#X obj -404 650 r sampleCount;
-#X obj -419 680 f;
-#X obj -390 680 + 1;
-#X text -365 679 count the amount of samples;
-#X text -363 694 init the counter with 1;
-#X obj -419 780 pack f s;
-#X obj -374 725 r currentSamplePackIndex;
-#X msg -374 753 symbol SampleArray\$1;
-#X msg -419 808 symbol \$2_\$1;
+#X obj -404 1000 r sampleCount;
+#X obj -419 1030 f;
+#X obj -390 1030 + 1;
+#X text -365 1029 count the amount of samples;
+#X text -363 1044 init the counter with 1;
+#X obj -419 1130 pack f s;
+#X obj -374 1075 r currentSamplePackIndex;
+#X msg -374 1103 symbol SampleArray\$1;
+#X msg -419 1158 symbol \$2_\$1;
 #X text -110 22 this patch looks into the \; specified folder and outputs:
 \; 1 outlet: number of samples of \; each audio file one after another
 \; It also sends the sample rate \; of each audio file one after \;
 another so that the next sub patch \; "ValueCalculationForPlayingAudio"
 \; receives the correct sample rate for \; the calculations according
 to each \; audio file.;
-#X obj -401 564 list split 1;
+#X obj -401 944 list split 1;
 #X obj -455 246 t a b a a;
 #N canvas 0 50 718 628 My_RSP_filenameExtraction 0;
 #X obj 21 70 s2l /;
 #X obj 88 127 list length;
 #X obj 21 94 t a a;
 #X text 132 184 list index of samplename.wav;
-#X floatatom 88 184 5 0 0 0 - - -;
+#X floatatom 88 184 5 0 0 0 - - -, f 5;
 #X obj 21 208 list split;
 #X obj 88 156 - 1;
 #X obj 21 235 s2l .;
@@ -1911,8 +1911,26 @@ receives a list with the sample names \; in home/pi/..../SamplePack2
 and so on...;
 #X text -220 372 the bang resets the list-prepend-object. \; By this
 we get a new list when the currentSampleIndex \; changes.;
-#X msg -455 886 read -resize -maxsize 32768 \$1 \$2_left \$2_right
+#X msg -455 1236 read -resize -maxsize 32768 \$1 \$2_left \$2_right
 ;
+#X obj -401 530 t l l;
+#X msg -369 567 \$3 \$1;
+#X text -316 560 \$3 = length of wav-file in samples \; \$1 = sample
+rate of wav-file;
+#X obj -369 592 t l l;
+#X msg -326 616 \$2;
+#X msg -369 616 \$1;
+#X obj -369 648 /;
+#X obj -369 736 list prepend;
+#X obj -369 838 s;
+#X obj -264 753 r currentSamplePackIndex;
+#X obj -369 757 t a;
+#X obj -264 774 t b f;
+#X msg -237 814 symbol listFileLengthsInSeconds\$1;
+#X text -289 618 length of file in seconds = length in samples/sample
+rate;
+#X text -217 774 create a list with the sample lengths in seconds for
+each of the eight tracks and send it there.;
 #X connect 0 0 18 0;
 #X connect 0 1 1 0;
 #X connect 1 0 2 0;
@@ -1922,7 +1940,7 @@ we get a new list when the currentSampleIndex \; changes.;
 #X connect 7 0 8 0;
 #X connect 8 0 0 0;
 #X connect 13 0 14 0;
-#X connect 14 0 30 0;
+#X connect 14 0 43 0;
 #X connect 18 0 31 0;
 #X connect 19 0 18 1;
 #X connect 20 0 21 1;
@@ -1947,6 +1965,21 @@ we get a new list when the currentSampleIndex \; changes.;
 #X connect 38 0 33 1;
 #X connect 38 1 36 0;
 #X connect 42 0 6 0;
+#X connect 43 0 30 0;
+#X connect 43 1 44 0;
+#X connect 44 0 46 0;
+#X connect 46 0 48 0;
+#X connect 46 1 47 0;
+#X connect 47 0 49 1;
+#X connect 48 0 49 0;
+#X connect 49 0 50 0;
+#X connect 50 0 53 0;
+#X connect 52 0 54 0;
+#X connect 53 0 50 1;
+#X connect 53 0 51 0;
+#X connect 54 0 50 1;
+#X connect 54 1 55 0;
+#X connect 55 0 51 1;
 #X restore 863 346 pd My_RSP_TableReader;
 #X text 885 330 read samples from disk into tables;
 #N canvas 135 97 962 563 My_RSP_ValueCalculationForPlayingAudio 0;
@@ -2275,7 +2308,7 @@ lists \; are sent away so we can use them \; seperately in the different
 the eight "SelectAndPlayEngines" to initialize the index generation
 \; within them.;
 #X obj 45 54 inlet SPIndex;
-#X floatatom 45 93 5 0 0 0 - - -;
+#X floatatom 45 93 5 0 0 0 - - -, f 5;
 #X obj 45 204 s;
 #X text 215 169 create send-variable initIndexBang1 \; initIndexBang2
 \; initIndexBang3.......;
@@ -2345,7 +2378,7 @@ the eight "SelectAndPlayEngines" to initialize the index generation
 -262144 -1;
 #X obj 24 313 bng 80 400 50 0 empty empty empty 17 7 0 10 -4160 -262144
 -1;
-#N canvas -74 93 1280 627 My_RSP_EightPlayAndSelectEngines 0;
+#N canvas 0 101 1280 627 My_RSP_EightPlayAndSelectEngines 1;
 #N canvas 94 95 1075 551 My_RSP_SelectAndPlayEngine1 0;
 #X obj 8 21 inlet playButton1;
 #X obj 267 9 inlet selectUp1;
@@ -2364,7 +2397,7 @@ the eight "SelectAndPlayEngines" to initialize the index generation
 #X obj 156 253 -;
 #X obj 163 173 f;
 #X obj 193 173 - 1;
-#X floatatom 230 393 5 0 0 0 - - -;
+#X floatatom 230 393 5 0 0 0 - - -, f 5;
 #X obj 223 371 <= 0;
 #X obj 129 349 >;
 #X obj 269 406 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -2379,7 +2412,7 @@ the eight "SelectAndPlayEngines" to initialize the index generation
 #X obj 284 437 r sP1Index;
 #X obj 320 166 r AmountOfAudioFilesInSP1;
 #X obj 305 188 f;
-#X floatatom 342 189 5 0 0 0 - - -;
+#X floatatom 342 189 5 0 0 0 - - -, f 5;
 #X obj 163 62 inlet decreaseIndexSP1;
 #X obj 129 36 inlet increaseIndexSP1;
 #X obj 305 89 inlet bangToInitWithNumberOfIndexes;
@@ -2453,7 +2486,7 @@ current index;
 -1 -1;
 #X obj 346 172 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 414 167 5 0 0 0 - - -;
+#X floatatom 414 167 5 0 0 0 - - -, f 5;
 #X text 448 149 generate an index between 1 and max number of audio
 files \; in folder "samplepack1" to select one audio file to play.
 ;
@@ -2478,8 +2511,8 @@ reached.;
 \; by the metronome:);
 #X text -62 841 get the metronome's 16th notes;
 #X text -60 863 get position of the \; currently playing sample;
-#X floatatom 141 995 5 0 0 0 - - -;
-#X floatatom 210 1067 5 0 0 0 - - -;
+#X floatatom 141 995 5 0 0 0 - - -, f 5;
+#X floatatom 210 1067 5 0 0 0 - - -, f 5;
 #X obj 210 1091 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 253 1007 0;
@@ -2518,11 +2551,11 @@ to the zl nth objects of the parent patch ("RSP_SelectAndPlayEngine")
 in order to loop the currently playing sample;
 #X obj 131 301 ==;
 #X obj 146 132 r currentSelectedIndexSP1;
-#X floatatom 146 278 5 0 0 0 - - -;
-#X floatatom 146 158 5 0 0 0 - - -;
+#X floatatom 146 278 5 0 0 0 - - -, f 5;
+#X floatatom 146 158 5 0 0 0 - - -, f 5;
 #X obj 146 209 r lastIndexPlayedSP1;
 #X obj 131 186 f;
-#X floatatom 131 328 5 0 0 0 - - -;
+#X floatatom 131 328 5 0 0 0 - - -, f 5;
 #X obj 146 240 t f f;
 #X obj 131 410 f;
 #X obj 170 499 s indexCorrectionForLoopingSP1;
@@ -2535,7 +2568,7 @@ playing is looped when it has reached its end. Otherwise the system
 would always play the currently selected sample \, which might be different
 from the currently played sample because the user might have chosen
 another sample in the meantime \;;
-#X floatatom 176 478 5 0 0 0 - - -;
+#X floatatom 176 478 5 0 0 0 - - -, f 5;
 #X obj 131 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 150 519 s loopingFire1;
@@ -2543,7 +2576,7 @@ another sample in the meantime \;;
 ;
 #X obj 285 419 r currentSelectedIndexSP1;
 #X obj 270 443 f;
-#X floatatom 297 443 5 0 0 0 - - -;
+#X floatatom 297 443 5 0 0 0 - - -, f 5;
 #X obj 131 541 print SP1: loopingFire1 with index correction to;
 #X obj 131 31 inlet currentSampleHasReachedItsEnd1;
 #X text 436 242 comment;
@@ -2585,9 +2618,9 @@ right output come through;
 #X text 574 303 send currentSelectedIndex to subpatch "Looping_Index_Handler"
 and to parent patch;
 #X obj 414 249 t f f;
-#X floatatom 180 943 5 0 0 0 - - -;
+#X floatatom 180 943 5 0 0 0 - - -, f 5;
 #X obj 134 965 moses 0.98;
-#X floatatom 214 909 20 0 0 0 - - -;
+#X floatatom 214 909 20 0 0 0 - - -, f 20;
 #X obj 8 130 t b b b;
 #X obj 28 92 r loopBang1;
 #X obj 47 160 s pb1_1;
@@ -2599,7 +2632,7 @@ and to parent patch;
 #X obj 454 417 f;
 #X msg 454 478 set \$1_left;
 #X obj 453 731 *~;
-#X floatatom 484 416 5 0 0 0 - - -;
+#X floatatom 484 416 5 0 0 0 - - -, f 5;
 #X obj 545 549 tabplay~ \$1;
 #X obj 454 549 tabplay~ \$1;
 #X text 219 565 "open sine1.wav 32768";
@@ -2852,7 +2885,7 @@ object (left and right);
 #X obj 156 253 -;
 #X obj 163 173 f;
 #X obj 193 173 - 1;
-#X floatatom 223 393 5 0 0 0 - - -;
+#X floatatom 223 393 5 0 0 0 - - -, f 5;
 #X obj 223 371 <= 0;
 #X obj 129 349 >;
 #X obj 129 471 spigot;
@@ -2862,7 +2895,7 @@ object (left and right);
 #X obj 223 454 f;
 #X obj 223 480 spigot;
 #X obj 305 188 f;
-#X floatatom 332 189 5 0 0 0 - - -;
+#X floatatom 332 189 5 0 0 0 - - -, f 5;
 #X text 590 36 This patch puts out the desired index number which controls
 the desired audiosample to be played. \; inlets: \; left: increase
 index \; middle: decrease index \; right: init the patch with the max
@@ -2936,7 +2969,7 @@ current index;
 #X connect 42 0 21 1;
 #X connect 43 0 18 1;
 #X restore 267 143 pd My_RSP_IndexGenerator2;
-#X floatatom 451 160 5 0 0 0 - - -;
+#X floatatom 451 160 5 0 0 0 - - -, f 5;
 #X obj 144 833 snapshot~;
 #X obj 144 879 /;
 #X text -51 856 divide by the number of \; samples of the currently
@@ -2949,7 +2982,7 @@ reached.;
 #X text -52 801 get the metronome's 16th notes;
 #X text -50 823 get position of the \; currently playing sample;
 #X text -29 778 ***SYNCING PLAYBACK TO METRONOME***;
-#X floatatom 220 1027 5 0 0 0 - - -;
+#X floatatom 220 1027 5 0 0 0 - - -, f 5;
 #X obj 220 1054 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 263 967 0;
@@ -2986,10 +3019,10 @@ by the user or not. If not \, there has to be sent an index correction
 to the zl nth objects of the parent patch ("RSP_SelectAndPlayEngine")
 in order to loop the currently playing sample;
 #X obj 131 301 ==;
-#X floatatom 146 278 5 0 0 0 - - -;
-#X floatatom 146 158 5 0 0 0 - - -;
+#X floatatom 146 278 5 0 0 0 - - -, f 5;
+#X floatatom 146 158 5 0 0 0 - - -, f 5;
 #X obj 131 186 f;
-#X floatatom 131 328 5 0 0 0 - - -;
+#X floatatom 131 328 5 0 0 0 - - -, f 5;
 #X obj 146 240 t f f;
 #X obj 131 410 f;
 #X obj 131 356 moses 1;
@@ -3001,13 +3034,13 @@ playing is looped when it has reached its end. Otherwise the system
 would always play the currently selected sample \, which might be different
 from the currently played sample because the user might have chosen
 another sample in the meantime \;;
-#X floatatom 202 466 5 0 0 0 - - -;
+#X floatatom 202 466 5 0 0 0 - - -, f 5;
 #X obj 170 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 131 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 223 406 f;
-#X floatatom 251 406 5 0 0 0 - - -;
+#X floatatom 251 406 5 0 0 0 - - -, f 5;
 #X obj 131 31 inlet currentSampleHasReachedItsEnd2;
 #X obj 146 132 r currentSelectedIndexSP2;
 #X obj 146 209 r lastIndexPlayedSP2;
@@ -3069,7 +3102,7 @@ and to parent patch;
 #X obj 454 417 f;
 #X msg 454 478 set \$1_left;
 #X obj 453 731 *~;
-#X floatatom 484 416 5 0 0 0 - - -;
+#X floatatom 484 416 5 0 0 0 - - -, f 5;
 #X obj 545 549 tabplay~ \$1;
 #X obj 454 549 tabplay~ \$1;
 #X text 219 565 "open sine1.wav 32768";
@@ -3164,7 +3197,7 @@ and to parent patch;
 #X obj 684 21 inlet metronomeInlet3;
 #X obj 772 419 r sU3;
 #X obj 861 417 r sD3;
-#N canvas -74 77 1280 643 My_RSP_TimeHandler3 0;
+#N canvas 0 77 1280 643 My_RSP_TimeHandler3 0;
 #X msg 65 115 1;
 #X obj 50 178 f;
 #X msg 81 178 0;
@@ -3233,7 +3266,7 @@ an index. The index can be \; changed by the 2nd and 3rd inlet (e.g.
 by \; the computer's keys or hid input). A bang on the first inlet
 plays the selected \; audio file. \; \; OUTLETS: Audio output for dac
 object (left and right);
-#X floatatom 451 160 5 0 0 0 - - -;
+#X floatatom 451 160 5 0 0 0 - - -, f 5;
 #X obj 64 17 inlet playButton3;
 #X obj 267 19 inlet selectUp3;
 #X obj 381 20 inlet selectDown3;
@@ -3258,7 +3291,7 @@ object (left and right);
 #X obj 156 253 -;
 #X obj 163 173 f;
 #X obj 193 173 - 1;
-#X floatatom 223 393 5 0 0 0 - - -;
+#X floatatom 223 393 5 0 0 0 - - -, f 5;
 #X obj 223 371 <= 0;
 #X obj 129 349 >;
 #X obj 129 471 spigot;
@@ -3268,7 +3301,7 @@ object (left and right);
 #X obj 223 454 f;
 #X obj 223 480 spigot;
 #X obj 305 188 f;
-#X floatatom 332 189 5 0 0 0 - - -;
+#X floatatom 332 189 5 0 0 0 - - -, f 5;
 #X text 590 36 This patch puts out the desired index number which controls
 the desired audiosample to be played. \; inlets: \; left: increase
 index \; middle: decrease index \; right: init the patch with the max
@@ -3355,7 +3388,7 @@ reached.;
 #X text -42 851 get the metronome's 16th notes;
 #X text -40 873 get position of the \; currently playing sample;
 #X text -19 828 ***SYNCING PLAYBACK TO METRONOME***;
-#X floatatom 230 1077 5 0 0 0 - - -;
+#X floatatom 230 1077 5 0 0 0 - - -, f 5;
 #X obj 230 1104 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 273 1017 0;
@@ -3393,10 +3426,10 @@ by the user or not. If not \, there has to be sent an index correction
 to the zl nth objects of the parent patch ("RSP_SelectAndPlayEngine")
 in order to loop the currently playing sample;
 #X obj 131 301 ==;
-#X floatatom 146 278 5 0 0 0 - - -;
-#X floatatom 146 158 5 0 0 0 - - -;
+#X floatatom 146 278 5 0 0 0 - - -, f 5;
+#X floatatom 146 158 5 0 0 0 - - -, f 5;
 #X obj 131 186 f;
-#X floatatom 131 328 5 0 0 0 - - -;
+#X floatatom 131 328 5 0 0 0 - - -, f 5;
 #X obj 146 250 t f f;
 #X obj 131 410 f;
 #X obj 131 356 moses 1;
@@ -3408,13 +3441,13 @@ playing is looped when it has reached its end. Otherwise the system
 would always play the currently selected sample \, which might be different
 from the currently played sample because the user might have chosen
 another sample in the meantime \;;
-#X floatatom 212 466 5 0 0 0 - - -;
+#X floatatom 212 466 5 0 0 0 - - -, f 5;
 #X obj 170 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 131 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 263 437 f;
-#X floatatom 290 437 5 0 0 0 - - -;
+#X floatatom 290 437 5 0 0 0 - - -, f 5;
 #X obj 131 31 inlet currentSampleHasReachedItsEnd3;
 #X obj 146 132 r currentSelectedIndexSP3;
 #X obj 146 209 r lastIndexPlayedSP3;
@@ -3424,7 +3457,7 @@ another sample in the meantime \;;
 #X obj 213 489 s indexCorrectionForLoopingSP3;
 #X obj 150 511 s loopingFire3;
 #X obj 131 541 print SP3: loopingFire3 with index correction to;
-#X floatatom 146 230 5 0 0 0 - - -;
+#X floatatom 146 230 5 0 0 0 - - -, f 5;
 #X text 436 242 comment;
 #X obj 170 406 t b b;
 #X obj 131 442 t f b f;
@@ -3477,7 +3510,7 @@ and to parent patch;
 #X obj 454 417 f;
 #X msg 454 478 set \$1_left;
 #X obj 453 731 *~;
-#X floatatom 484 416 5 0 0 0 - - -;
+#X floatatom 484 416 5 0 0 0 - - -, f 5;
 #X obj 545 549 tabplay~ \$1;
 #X obj 454 549 tabplay~ \$1;
 #X text 219 565 "open sine1.wav 32768";
@@ -3585,7 +3618,7 @@ an index. The index can be \; changed by the 2nd and 3rd inlet (e.g.
 by \; the computer's keys or hid input). A bang on the first inlet
 plays the selected \; audio file. \; \; OUTLETS: Audio output for dac
 object (left and right);
-#X floatatom 451 160 5 0 0 0 - - -;
+#X floatatom 451 160 5 0 0 0 - - -, f 5;
 #X obj 64 7 inlet playButton4;
 #X obj 267 9 inlet selectUp4;
 #X obj 381 10 inlet selectDown4;
@@ -3608,7 +3641,7 @@ object (left and right);
 #X obj 156 253 -;
 #X obj 163 173 f;
 #X obj 193 173 - 1;
-#X floatatom 223 393 5 0 0 0 - - -;
+#X floatatom 223 393 5 0 0 0 - - -, f 5;
 #X obj 223 371 <= 0;
 #X obj 129 349 >;
 #X obj 129 471 spigot;
@@ -3618,7 +3651,7 @@ object (left and right);
 #X obj 223 454 f;
 #X obj 223 480 spigot;
 #X obj 305 188 f;
-#X floatatom 332 189 5 0 0 0 - - -;
+#X floatatom 332 189 5 0 0 0 - - -, f 5;
 #X text 590 36 This patch puts out the desired index number which controls
 the desired audiosample to be played. \; inlets: \; left: increase
 index \; middle: decrease index \; right: init the patch with the max
@@ -3708,7 +3741,7 @@ reached.;
 #X text -32 781 get the metronome's 16th notes;
 #X text -30 803 get position of the \; currently playing sample;
 #X text -29 750 ***SYNCING PLAYBACK TO METRONOME***;
-#X floatatom 240 1007 5 0 0 0 - - -;
+#X floatatom 240 1007 5 0 0 0 - - -, f 5;
 #X obj 240 1034 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 283 947 0;
@@ -3746,10 +3779,10 @@ by the user or not. If not \, there has to be sent an index correction
 to the zl nth objects of the parent patch ("RSP_SelectAndPlayEngine")
 in order to loop the currently playing sample;
 #X obj 131 301 ==;
-#X floatatom 146 278 5 0 0 0 - - -;
-#X floatatom 146 158 5 0 0 0 - - -;
+#X floatatom 146 278 5 0 0 0 - - -, f 5;
+#X floatatom 146 158 5 0 0 0 - - -, f 5;
 #X obj 131 186 f;
-#X floatatom 131 328 5 0 0 0 - - -;
+#X floatatom 131 328 5 0 0 0 - - -, f 5;
 #X obj 146 240 t f f;
 #X obj 131 410 f;
 #X obj 131 356 moses 1;
@@ -3761,13 +3794,13 @@ playing is looped when it has reached its end. Otherwise the system
 would always play the currently selected sample \, which might be different
 from the currently played sample because the user might have chosen
 another sample in the meantime \;;
-#X floatatom 192 466 5 0 0 0 - - -;
+#X floatatom 192 466 5 0 0 0 - - -, f 5;
 #X obj 170 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 131 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 250 437 f;
-#X floatatom 277 437 5 0 0 0 - - -;
+#X floatatom 277 437 5 0 0 0 - - -, f 5;
 #X obj 131 31 inlet currentSampleHasReachedItsEnd4;
 #X obj 146 132 r currentSelectedIndexSP4;
 #X obj 146 209 r lastIndexPlayedSP4;
@@ -3823,7 +3856,7 @@ and to parent patch;
 #X obj 454 417 f;
 #X msg 454 478 set \$1_left;
 #X obj 453 731 *~;
-#X floatatom 484 416 5 0 0 0 - - -;
+#X floatatom 484 416 5 0 0 0 - - -, f 5;
 #X obj 545 549 tabplay~ \$1;
 #X obj 454 549 tabplay~ \$1;
 #X text 219 565 "open sine1.wav 32768";
@@ -3913,7 +3946,7 @@ and to parent patch;
 #X connect 73 0 51 1;
 #X connect 73 0 47 1;
 #X restore 987 462 pd My_RSP_SelectAndPlayEngine4;
-#N canvas -228 220 1280 643 My_RSP_TimeHandler4 0;
+#N canvas 0 220 1280 643 My_RSP_TimeHandler4 0;
 #X msg 65 105 1;
 #X obj 50 148 f;
 #X msg 83 148 0;
@@ -3974,7 +4007,7 @@ and the internal looping mechanism.;
 #X obj 987 20 inlet metronomeInlet4;
 #X obj 1245 520 dac~ 1 2;
 #X obj 1309 167 r fire5;
-#N canvas -136 142 1280 643 My_RSP_TimeHandler5 0;
+#N canvas 0 142 1280 643 My_RSP_TimeHandler5 0;
 #X msg 65 135 1;
 #X obj 50 198 f;
 #X msg 86 198 0;
@@ -4045,7 +4078,7 @@ an index. The index can be \; changed by the 2nd and 3rd inlet (e.g.
 by \; the computer's keys or hid input). A bang on the first inlet
 plays the selected \; audio file. \; \; OUTLETS: Audio output for dac
 object (left and right);
-#X floatatom 451 160 5 0 0 0 - - -;
+#X floatatom 451 160 5 0 0 0 - - -, f 5;
 #X obj 64 7 inlet playButton5;
 #X obj 267 9 inlet selectUp5;
 #X obj 381 10 inlet selectDown5;
@@ -4068,7 +4101,7 @@ object (left and right);
 #X obj 156 253 -;
 #X obj 163 173 f;
 #X obj 193 173 - 1;
-#X floatatom 223 393 5 0 0 0 - - -;
+#X floatatom 223 393 5 0 0 0 - - -, f 5;
 #X obj 223 371 <= 0;
 #X obj 129 349 >;
 #X obj 129 471 spigot;
@@ -4078,7 +4111,7 @@ object (left and right);
 #X obj 223 454 f;
 #X obj 223 480 spigot;
 #X obj 305 188 f;
-#X floatatom 332 189 5 0 0 0 - - -;
+#X floatatom 332 189 5 0 0 0 - - -, f 5;
 #X text 590 36 This patch puts out the desired index number which controls
 the desired audiosample to be played. \; inlets: \; left: increase
 index \; middle: decrease index \; right: init the patch with the max
@@ -4157,7 +4190,7 @@ current index;
 #X obj 174 876 r metroHits;
 #X obj 174 903 snapshot~;
 #X obj 174 949 /;
-#X floatatom 250 1120 5 0 0 0 - - -;
+#X floatatom 250 1120 5 0 0 0 - - -, f 5;
 #X obj 250 1147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text -21 926 divide by the number of \; samples of the currently
@@ -4170,7 +4203,7 @@ reached.;
 #X text -22 871 get the metronome's 16th notes;
 #X text -20 893 get position of the \; currently playing sample;
 #X text 1 848 ***SYNCING PLAYBACK TO METRONOME***;
-#X floatatom 174 1023 5 0 0 0 - - -;
+#X floatatom 174 1023 5 0 0 0 - - -, f 5;
 #X msg 293 1060 0;
 #X obj 231 1060 spigot 1;
 #X obj 231 1090 t b f b;
@@ -4213,10 +4246,10 @@ by the user or not. If not \, there has to be sent an index correction
 to the zl nth objects of the parent patch ("RSP_SelectAndPlayEngine")
 in order to loop the currently playing sample;
 #X obj 131 301 ==;
-#X floatatom 146 278 5 0 0 0 - - -;
-#X floatatom 146 158 5 0 0 0 - - -;
+#X floatatom 146 278 5 0 0 0 - - -, f 5;
+#X floatatom 146 158 5 0 0 0 - - -, f 5;
 #X obj 131 186 f;
-#X floatatom 131 328 5 0 0 0 - - -;
+#X floatatom 131 328 5 0 0 0 - - -, f 5;
 #X obj 146 240 t f f;
 #X obj 131 410 f;
 #X obj 131 356 moses 1;
@@ -4228,11 +4261,11 @@ playing is looped when it has reached its end. Otherwise the system
 would always play the currently selected sample \, which might be different
 from the currently played sample because the user might have chosen
 another sample in the meantime \;;
-#X floatatom 176 478 5 0 0 0 - - -;
+#X floatatom 176 478 5 0 0 0 - - -, f 5;
 #X obj 131 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 270 443 f;
-#X floatatom 297 443 5 0 0 0 - - -;
+#X floatatom 297 443 5 0 0 0 - - -, f 5;
 #X obj 170 407 t b b;
 #X obj 170 383 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -4283,7 +4316,7 @@ another sample in the meantime \;;
 #X obj 454 417 f;
 #X msg 454 478 set \$1_left;
 #X obj 453 731 *~;
-#X floatatom 484 416 5 0 0 0 - - -;
+#X floatatom 484 416 5 0 0 0 - - -, f 5;
 #X obj 545 549 tabplay~ \$1;
 #X obj 454 549 tabplay~ \$1;
 #X text 219 565 "open sine1.wav 32768";
@@ -4377,7 +4410,7 @@ another sample in the meantime \;;
 #X obj 1245 19 inlet metronomeInlet5;
 #X obj 1506 520 dac~ 1 2;
 #X obj 1683 421 r sD6;
-#N canvas -178 168 1280 643 My_RSP_TimeHandler6 0;
+#N canvas 0 168 1280 643 My_RSP_TimeHandler6 0;
 #X msg 65 105 1;
 #X obj 50 168 f;
 #X msg 82 167 0;
@@ -4446,7 +4479,7 @@ an index. The index can be \; changed by the 2nd and 3rd inlet (e.g.
 by \; the computer's keys or hid input). A bang on the first inlet
 plays the selected \; audio file. \; \; OUTLETS: Audio output for dac
 object (left and right);
-#X floatatom 451 160 5 0 0 0 - - -;
+#X floatatom 451 160 5 0 0 0 - - -, f 5;
 #X obj 64 17 inlet playButton6;
 #X obj 267 19 inlet selectUp6;
 #X obj 381 20 inlet selectDown6;
@@ -4469,7 +4502,7 @@ object (left and right);
 #X obj 156 253 -;
 #X obj 163 173 f;
 #X obj 193 173 - 1;
-#X floatatom 223 393 5 0 0 0 - - -;
+#X floatatom 223 393 5 0 0 0 - - -, f 5;
 #X obj 223 371 <= 0;
 #X obj 129 349 >;
 #X obj 129 471 spigot;
@@ -4479,7 +4512,7 @@ object (left and right);
 #X obj 223 454 f;
 #X obj 223 480 spigot;
 #X obj 305 188 f;
-#X floatatom 332 189 5 0 0 0 - - -;
+#X floatatom 332 189 5 0 0 0 - - -, f 5;
 #X text 590 36 This patch puts out the desired index number which controls
 the desired audiosample to be played. \; inlets: \; left: increase
 index \; middle: decrease index \; right: init the patch with the max
@@ -4568,7 +4601,7 @@ current index;
 #X text -12 811 get the metronome's 16th notes;
 #X text -10 833 get position of the \; currently playing sample;
 #X text 11 788 ***SYNCING PLAYBACK TO METRONOME***;
-#X floatatom 260 1047 5 0 0 0 - - -;
+#X floatatom 260 1047 5 0 0 0 - - -, f 5;
 #X obj 260 1074 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 303 987 0;
@@ -4613,10 +4646,10 @@ by the user or not. If not \, there has to be sent an index correction
 to the zl nth objects of the parent patch ("RSP_SelectAndPlayEngine")
 in order to loop the currently playing sample;
 #X obj 131 301 ==;
-#X floatatom 146 278 5 0 0 0 - - -;
-#X floatatom 146 158 5 0 0 0 - - -;
+#X floatatom 146 278 5 0 0 0 - - -, f 5;
+#X floatatom 146 158 5 0 0 0 - - -, f 5;
 #X obj 131 186 f;
-#X floatatom 131 328 5 0 0 0 - - -;
+#X floatatom 131 328 5 0 0 0 - - -, f 5;
 #X obj 146 240 t f f;
 #X obj 131 410 f;
 #X obj 131 356 moses 1;
@@ -4628,11 +4661,11 @@ playing is looped when it has reached its end. Otherwise the system
 would always play the currently selected sample \, which might be different
 from the currently played sample because the user might have chosen
 another sample in the meantime \;;
-#X floatatom 176 478 5 0 0 0 - - -;
+#X floatatom 176 478 5 0 0 0 - - -, f 5;
 #X obj 131 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 270 443 f;
-#X floatatom 297 443 5 0 0 0 - - -;
+#X floatatom 297 443 5 0 0 0 - - -, f 5;
 #X obj 170 407 t b b;
 #X obj 170 383 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -4671,7 +4704,7 @@ another sample in the meantime \;;
 #X connect 20 0 12 1;
 #X connect 20 0 13 0;
 #X restore 260 1096 pd My_RSP_Looping_Index_Handler6;
-#X floatatom 184 962 5 0 0 0 - - -;
+#X floatatom 184 962 5 0 0 0 - - -, f 5;
 #X obj 184 935 moses 0.98;
 #X obj 64 130 t b b b;
 #X obj 84 92 r loopBang6;
@@ -4683,7 +4716,7 @@ another sample in the meantime \;;
 #X obj 438 417 f;
 #X msg 438 478 set \$1_left;
 #X obj 437 731 *~;
-#X floatatom 468 416 5 0 0 0 - - -;
+#X floatatom 468 416 5 0 0 0 - - -, f 5;
 #X obj 529 549 tabplay~ \$1;
 #X obj 438 549 tabplay~ \$1;
 #X text 199 566 "open sine1.wav 32768";
@@ -4845,7 +4878,7 @@ an index. The index can be \; changed by the 2nd and 3rd inlet (e.g.
 by \; the computer's keys or hid input). A bang on the first inlet
 plays the selected \; audio file. \; \; OUTLETS: Audio output for dac
 object (left and right);
-#X floatatom 451 160 5 0 0 0 - - -;
+#X floatatom 451 160 5 0 0 0 - - -, f 5;
 #X obj 64 7 inlet playButton7;
 #X obj 267 9 inlet selectUp7;
 #X obj 381 10 inlet selectDown7;
@@ -4868,7 +4901,7 @@ object (left and right);
 #X obj 156 253 -;
 #X obj 163 173 f;
 #X obj 193 173 - 1;
-#X floatatom 223 393 5 0 0 0 - - -;
+#X floatatom 223 393 5 0 0 0 - - -, f 5;
 #X obj 223 371 <= 0;
 #X obj 129 349 >;
 #X obj 129 471 spigot;
@@ -4878,7 +4911,7 @@ object (left and right);
 #X obj 223 454 f;
 #X obj 223 480 spigot;
 #X obj 305 188 f;
-#X floatatom 332 189 5 0 0 0 - - -;
+#X floatatom 332 189 5 0 0 0 - - -, f 5;
 #X text 590 36 This patch puts out the desired index number which controls
 the desired audiosample to be played. \; inlets: \; left: increase
 index \; middle: decrease index \; right: init the patch with the max
@@ -4967,7 +5000,7 @@ current index;
 #X text -2 871 get the metronome's 16th notes;
 #X text 0 893 get position of the \; currently playing sample;
 #X text 21 848 ***SYNCING PLAYBACK TO METRONOME***;
-#X floatatom 270 1097 5 0 0 0 - - -;
+#X floatatom 270 1097 5 0 0 0 - - -, f 5;
 #X obj 270 1124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 313 1037 0;
@@ -5012,10 +5045,10 @@ by the user or not. If not \, there has to be sent an index correction
 to the zl nth objects of the parent patch ("RSP_SelectAndPlayEngine")
 in order to loop the currently playing sample;
 #X obj 131 301 ==;
-#X floatatom 146 278 5 0 0 0 - - -;
-#X floatatom 146 158 5 0 0 0 - - -;
+#X floatatom 146 278 5 0 0 0 - - -, f 5;
+#X floatatom 146 158 5 0 0 0 - - -, f 5;
 #X obj 131 186 f;
-#X floatatom 131 328 5 0 0 0 - - -;
+#X floatatom 131 328 5 0 0 0 - - -, f 5;
 #X obj 146 240 t f f;
 #X obj 131 410 f;
 #X obj 131 356 moses 1;
@@ -5027,11 +5060,11 @@ playing is looped when it has reached its end. Otherwise the system
 would always play the currently selected sample \, which might be different
 from the currently played sample because the user might have chosen
 another sample in the meantime \;;
-#X floatatom 176 478 5 0 0 0 - - -;
+#X floatatom 176 478 5 0 0 0 - - -, f 5;
 #X obj 131 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 270 443 f;
-#X floatatom 297 443 5 0 0 0 - - -;
+#X floatatom 297 443 5 0 0 0 - - -, f 5;
 #X obj 170 407 t b b;
 #X obj 170 383 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -5070,7 +5103,7 @@ another sample in the meantime \;;
 #X connect 20 0 12 1;
 #X connect 20 0 13 0;
 #X restore 270 1146 pd My_RSP_Looping_Index_Handler7;
-#X floatatom 194 1020 5 0 0 0 - - -;
+#X floatatom 194 1020 5 0 0 0 - - -, f 5;
 #X obj 194 995 moses 0.98;
 #X obj 64 130 t b b b;
 #X obj 84 92 r loopBang7;
@@ -5083,7 +5116,7 @@ another sample in the meantime \;;
 #X msg 478 448 set \$1_left;
 #X obj 477 701 *~;
 #X text 541 661 adjust volume \; (from fader 8);
-#X floatatom 508 386 5 0 0 0 - - -;
+#X floatatom 508 386 5 0 0 0 - - -, f 5;
 #X obj 569 519 tabplay~ \$1;
 #X obj 478 519 tabplay~ \$1;
 #X text 239 536 "open sine1.wav 32768";
@@ -5174,7 +5207,7 @@ another sample in the meantime \;;
 #X connect 73 0 46 1;
 #X restore 1845 476 pd My_RSP_SelectAndPlayEngine7;
 #X obj 1845 23 inlet metronomeInlet7;
-#N canvas -88 107 1280 643 My_RSP_TimeHandler8 0;
+#N canvas 0 107 1280 643 My_RSP_TimeHandler8 0;
 #X msg 65 115 1;
 #X obj 50 168 f;
 #X msg 84 168 0;
@@ -5234,16 +5267,16 @@ and the internal looping mechanism.;
 #X restore 2137 383 pd My_RSP_TimeHandler8;
 #X obj 2225 455 r sU8;
 #X obj 2314 454 r sD8;
-#N canvas -27 95 1309 612 My_RSP_SelectAndPlayEngine8 0;
-#X obj 696 722 *~;
-#X msg 639 469 set \$1_right;
-#X obj 548 407 f;
-#X msg 548 468 set \$1_left;
-#X obj 547 721 *~;
+#N canvas 0 28 1280 633 My_RSP_SelectAndPlayEngine8 1;
+#X obj 696 792 *~;
+#X msg 639 539 set \$1_right;
+#X obj 548 477 f;
+#X msg 548 538 set \$1_left;
+#X obj 547 791 *~;
 #X text 574 142 generate an index between 1 and max number of audio
 files \; in folder "samplepack1" to select one audio file to play.
 ;
-#X floatatom 561 160 5 0 0 0 - - -;
+#X floatatom 561 160 5 0 0 0 - - -, f 5;
 #X obj 64 7 inlet playButton8;
 #X obj 377 9 inlet selectUp8;
 #X obj 491 10 inlet selectDown8;
@@ -5265,7 +5298,7 @@ files \; in folder "samplepack1" to select one audio file to play.
 #X obj 156 253 -;
 #X obj 163 173 f;
 #X obj 193 173 - 1;
-#X floatatom 223 393 5 0 0 0 - - -;
+#X floatatom 223 393 5 0 0 0 - - -, f 5;
 #X obj 223 371 <= 0;
 #X obj 129 349 >;
 #X obj 129 471 spigot;
@@ -5275,7 +5308,7 @@ files \; in folder "samplepack1" to select one audio file to play.
 #X obj 223 454 f;
 #X obj 223 480 spigot;
 #X obj 305 188 f;
-#X floatatom 332 189 5 0 0 0 - - -;
+#X floatatom 332 189 5 0 0 0 - - -, f 5;
 #X text 426 384 output the index;
 #X text 403 527 output warning bang (first index reached);
 #X text 302 550 output warning bang (last index reached);
@@ -5352,11 +5385,11 @@ current index;
 #X obj 524 111 r initIndexBang8;
 #X obj 450 193 print SP8>>First Sample Reached;
 #X obj 377 217 print SP8>>Last Sample Reached;
-#X obj 548 443 makefilename SampleArray8_%d;
-#X obj 562 685 r vol8;
-#X text 611 681 adjust volume \; (from fader 8);
-#X obj 547 741 outlet~ toDacLeft8;
-#X obj 696 744 outlet~ toDacRight8;
+#X obj 548 513 makefilename SampleArray8_%d;
+#X obj 562 755 r vol8;
+#X text 611 751 adjust volume \; (from fader 8);
+#X obj 547 811 outlet~ toDacLeft8;
+#X obj 696 814 outlet~ toDacRight8;
 #X text 1450 823 AUDIO OUTPUT;
 #X obj 1194 676 r metroHits;
 #X obj 1194 703 snapshot~;
@@ -5369,7 +5402,7 @@ reached.;
 #X text 972 659 get the metronome's 16th notes;
 #X text 1214 721 get position of the \; currently playing sample;
 #X text 995 636 ***SYNCING PLAYBACK TO METRONOME***;
-#X floatatom 1270 903 5 0 0 0 - - -;
+#X floatatom 1270 903 5 0 0 0 - - -, f 5;
 #X obj 1270 930 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 1313 843 0;
@@ -5383,7 +5416,7 @@ right output come trough;
 #X text 1038 836 send a wish for playback \; which will ONLY BE ACKNOWLEGDED
 \; by the metronome:);
 #X obj 1051 974 delay 2000;
-#X floatatom 1202 817 5 0 0 0 - - -;
+#X floatatom 1202 817 5 0 0 0 - - -, f 5;
 #X obj 385 115 r indexInit;
 #X text 383 66 select first \; sample after \; loading the patch;
 #N canvas 329 283 450 300 My_RSP_LedAlert 0;
@@ -5402,16 +5435,15 @@ that the first or last \; sample is reached.;
 #X connect 5 0 4 0;
 #X connect 6 0 3 0;
 #X restore 350 239 pd My_RSP_LedAlert;
-#X obj 579 297 f;
-#X text 613 298 store current selected index;
-#X text 684 313 send currentSelectedIndex to subpatch "Looping_Index_Handler"
+#X obj 579 367 f;
+#X text 613 368 store current selected index;
+#X text 684 383 send currentSelectedIndex to subpatch "Looping_Index_Handler"
 and to parent patch;
-#X obj 524 259 t f f;
-#X obj 579 261 r updateZlnthObjectsBang8;
-#X obj 524 321 s currentSelectedIndexSP8;
-#X floatatom 578 406 5 0 0 0 - - -;
-#X obj 578 384 r indexCorrectionForLoopingSP8;
-#N canvas 0 101 1015 566 My_RSP_Looping_Index_Handler8 0;
+#X obj 579 341 r updateZlnthObjectsBang8;
+#X obj 524 391 s currentSelectedIndexSP8;
+#X floatatom 578 476 5 0 0 0 - - -, f 5;
+#X obj 578 454 r indexCorrectionForLoopingSP8;
+#N canvas 76 92 1163 566 My_RSP_Looping_Index_Handler8 0;
 #X text 603 28 29th August 2018 This subpatch receives a bang on its
 inlet \, when the currently played sample has reached its end. This
 subpatch then checks if the currently playing sample is still selected
@@ -5419,10 +5451,10 @@ by the user or not. If not \, there has to be sent an index correction
 to the zl nth objects of the parent patch ("RSP_SelectAndPlayEngine")
 in order to loop the currently playing sample;
 #X obj 131 301 ==;
-#X floatatom 146 278 5 0 0 0 - - -;
-#X floatatom 146 158 5 0 0 0 - - -;
+#X floatatom 146 278 5 0 0 0 - - -, f 5;
+#X floatatom 146 158 5 0 0 0 - - -, f 5;
 #X obj 131 186 f;
-#X floatatom 131 328 5 0 0 0 - - -;
+#X floatatom 131 328 5 0 0 0 - - -, f 5;
 #X obj 146 240 t f f;
 #X obj 131 410 f;
 #X obj 131 356 moses 1;
@@ -5434,11 +5466,140 @@ playing is looped when it has reached its end. Otherwise the system
 would always play the currently selected sample \, which might be different
 from the currently played sample because the user might have chosen
 another sample in the meantime \;;
-#X floatatom 176 478 5 0 0 0 - - -;
+#X floatatom 176 478 5 0 0 0 - - -, f 5;
 #X obj 131 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 270 443 f;
-#X floatatom 297 443 5 0 0 0 - - -;
+#X floatatom 297 443 5 0 0 0 - - -, f 5;
+#X obj 170 407 t b b;
+#X obj 170 383 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 131 442 t f b f;
+#X obj 131 31 inlet currentSampleHasReachedItsEnd8;
+#X obj 146 132 r currentSelectedIndexSP8;
+#X obj 146 209 r lastIndexPlayedSP8;
+#X obj 285 419 r currentSelectedIndexSP8;
+#X obj 270 475 print SP8: loopingFire8 playing currently selected sample
+;
+#X obj 170 499 s indexCorrectionForLoopingSP8;
+#X obj 150 519 s loopingFire8;
+#X obj 131 541 print SP8: loopingFire8 with index correction to;
+#X connect 1 0 5 0;
+#X connect 2 0 1 1;
+#X connect 3 0 4 1;
+#X connect 4 0 1 0;
+#X connect 5 0 8 0;
+#X connect 6 0 2 0;
+#X connect 6 1 7 1;
+#X connect 7 0 16 0;
+#X connect 8 0 11 0;
+#X connect 8 1 15 0;
+#X connect 11 0 7 0;
+#X connect 14 0 12 0;
+#X connect 14 1 23 0;
+#X connect 15 0 14 0;
+#X connect 16 0 24 0;
+#X connect 16 1 23 0;
+#X connect 16 2 10 0;
+#X connect 16 2 22 0;
+#X connect 17 0 4 0;
+#X connect 18 0 3 0;
+#X connect 19 0 6 0;
+#X connect 20 0 12 1;
+#X connect 20 0 13 0;
+#X restore 1270 980 pd My_RSP_Looping_Index_Handler8;
+#X obj 1194 795 moses 0.98;
+#X text 700 8 13th April 2018 \; This patch plays the audio files in
+the \; SamplePack8 folder. The desired audio file \; is selected by
+an index. The index can be \; changed by the 2nd and 3rd inlet (e.g.
+by \; the computer's keys or hid input). A bang on the first inlet
+plays the selected \; audio file. \; \; OUTLETS: Audio output for dac
+object (left and right);
+#X obj 639 609 tabplay~ \$1;
+#X obj 548 609 tabplay~ \$1;
+#X text 309 626 "open sine1.wav 32768";
+#X obj 254 613 symbol;
+#X obj 287 458 r currentlyPlayingSampleNameSP8;
+#X msg 254 651 open \$1.wav 32768;
+#X obj 332 490 r FolderWithAudioFiles;
+#X obj 287 524 pack s s;
+#X msg 287 545 \$2SamplePack8/\$1;
+#X obj 287 568 pack s;
+#X msg 274 724 1;
+#X floatatom 605 425 5 0 0 0 - - -, f 5;
+#X obj 254 756 readsf~ 2;
+#X obj 274 696 bang;
+#X text 734 544 build array name \; containing the \; selected index
+\; so the tabplay object \; knows which array \; to read from.;
+#X obj 103 180 s pb8_1;
+#X obj 548 430 r pb8_1;
+#X obj 83 201 s pb8_2;
+#X obj 651 574 r pb8_2;
+#X obj 64 222 s pb8_3;
+#X obj 254 431 r pb8_3;
+#X obj 305 797 s loopBang8;
+#X obj 84 92 r loopBang8;
+#X obj 1346 381 r listFileLengthsInSeconds8;
+#X obj 1346 480 zl nth;
+#X obj 524 239 t f f f, f 22;
+#X obj 1214 279 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 64 130 t b b b b;
+#X obj 124 158 s pb8_0;
+#X obj 1307 266 r pb8_0;
+#X obj 1400 508 print 1;
+#X obj 1346 543 expr ($f1 * 1000 * 0.98);
+#X text 1528 539 convert length of wav-file from seconds to milliseconds
+and then get only 98 % of that time.;
+#X obj 1328 582 >=;
+#X obj 1328 606 sel 1;
+#X obj 1104 264 r metroHits;
+#X obj 1104 286 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1072 400 timer;
+#X obj 1104 333 spigot 0;
+#X obj 1104 355 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1160 307 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X msg 1339 330 1;
+#X text 1377 330 let metroHits pass;
+#X obj 1307 298 t b b b;
+#X text 1373 300 set timer to zero;
+#X obj 1112 428 print;
+#X obj 1333 636 t b b;
+#X msg 1380 656 0;
+#X obj 1276 441 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1363 576 print converted;
+#N canvas 50 101 1163 566 My_RSP_Looping_Index_Handler8 0;
+#X text 603 28 29th August 2018 This subpatch receives a bang on its
+inlet \, when the currently played sample has reached its end. This
+subpatch then checks if the currently playing sample is still selected
+by the user or not. If not \, there has to be sent an index correction
+to the zl nth objects of the parent patch ("RSP_SelectAndPlayEngine")
+in order to loop the currently playing sample;
+#X obj 131 301 ==;
+#X floatatom 146 278 5 0 0 0 - - -, f 5;
+#X floatatom 146 158 5 0 0 0 - - -, f 5;
+#X obj 131 186 f;
+#X floatatom 131 328 5 0 0 0 - - -, f 5;
+#X obj 146 240 t f f;
+#X obj 131 410 f;
+#X obj 131 356 moses 1;
+#X text 203 243 if the currentSelectedIndex is not equal to the lastPlayedIndex
+\, then moses receives a 0 and bangs at its left outlet. In this case
+we have to send indexCorrectionforLooping (==the lastPlayedIndex) in
+front of the zl nth objects above. By this \, the sample that is currently
+playing is looped when it has reached its end. Otherwise the system
+would always play the currently selected sample \, which might be different
+from the currently played sample because the user might have chosen
+another sample in the meantime \;;
+#X floatatom 176 478 5 0 0 0 - - -, f 5;
+#X obj 131 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 270 443 f;
+#X floatatom 297 443 5 0 0 0 - - -, f 5;
 #X obj 170 407 t b b;
 #X obj 170 383 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -5476,45 +5637,15 @@ another sample in the meantime \;;
 #X connect 19 0 6 0;
 #X connect 20 0 12 1;
 #X connect 20 0 13 0;
-#X restore 1270 950 pd My_RSP_Looping_Index_Handler8;
-#X obj 1194 795 moses 0.98;
-#X text 700 8 13th April 2018 \; This patch plays the audio files in
-the \; SamplePack8 folder. The desired audio file \; is selected by
-an index. The index can be \; changed by the 2nd and 3rd inlet (e.g.
-by \; the computer's keys or hid input). A bang on the first inlet
-plays the selected \; audio file. \; \; OUTLETS: Audio output for dac
-object (left and right);
-#X obj 639 539 tabplay~ \$1;
-#X obj 548 539 tabplay~ \$1;
-#X text 309 556 "open sine1.wav 32768";
-#X obj 254 543 symbol;
-#X obj 287 388 r currentlyPlayingSampleNameSP8;
-#X msg 254 581 open \$1.wav 32768;
-#X obj 332 420 r FolderWithAudioFiles;
-#X obj 287 454 pack s s;
-#X msg 287 475 \$2SamplePack8/\$1;
-#X obj 287 498 pack s;
-#X msg 274 654 1;
-#X floatatom 605 355 5 0 0 0 - - -;
-#X obj 254 686 readsf~ 2;
-#X obj 274 626 bang;
-#X obj 64 130 t b b b;
-#X text 734 474 build array name \; containing the \; selected index
-\; so the tabplay object \; knows which array \; to read from.;
-#X obj 103 160 s pb8_1;
-#X obj 548 360 r pb8_1;
-#X obj 83 181 s pb8_2;
-#X obj 651 504 r pb8_2;
-#X obj 64 202 s pb8_3;
-#X obj 254 361 r pb8_3;
-#X obj 305 727 s loopBang8;
-#X obj 84 92 r loopBang8;
+#X restore 1333 690 pd My_RSP_Looping_Index_Handler8;
+#X obj 1477 408 r currentSelectedIndexSP8;
+#X floatatom 1477 430 5 0 0 0 - - -, f 5;
 #X connect 0 0 18 0;
-#X connect 1 0 54 0;
+#X connect 1 0 53 0;
 #X connect 2 0 14 0;
-#X connect 3 0 55 0;
+#X connect 3 0 54 0;
 #X connect 4 0 17 0;
-#X connect 7 0 68 0;
+#X connect 7 0 80 0;
 #X connect 8 0 10 0;
 #X connect 9 0 10 1;
 #X connect 10 0 13 0;
@@ -5522,7 +5653,7 @@ object (left and right);
 #X connect 10 1 12 0;
 #X connect 10 1 42 0;
 #X connect 10 2 6 0;
-#X connect 10 2 46 0;
+#X connect 10 2 78 0;
 #X connect 11 0 10 2;
 #X connect 14 0 1 0;
 #X connect 14 0 3 0;
@@ -5530,9 +5661,8 @@ object (left and right);
 #X connect 15 0 0 1;
 #X connect 20 0 21 0;
 #X connect 21 0 22 0;
-#X connect 22 0 52 0;
+#X connect 22 0 51 0;
 #X connect 28 0 29 0;
-#X connect 29 0 51 0;
 #X connect 30 0 31 1;
 #X connect 31 0 32 0;
 #X connect 32 0 38 0;
@@ -5543,42 +5673,69 @@ object (left and right);
 #X connect 38 0 33 0;
 #X connect 40 0 10 0;
 #X connect 43 0 2 1;
-#X connect 43 0 65 0;
-#X connect 46 0 48 0;
-#X connect 46 1 43 1;
-#X connect 47 0 43 0;
-#X connect 50 0 49 0;
-#X connect 50 0 2 1;
-#X connect 52 0 39 0;
-#X connect 52 1 31 0;
-#X connect 54 0 0 0;
-#X connect 54 1 67 0;
-#X connect 55 0 4 0;
-#X connect 57 0 59 0;
-#X connect 58 0 61 0;
-#X connect 59 0 66 0;
-#X connect 60 0 61 1;
+#X connect 43 0 64 0;
+#X connect 46 0 43 0;
+#X connect 49 0 48 0;
+#X connect 49 0 2 1;
+#X connect 51 0 39 0;
+#X connect 51 1 31 0;
+#X connect 53 0 0 0;
+#X connect 53 1 66 0;
+#X connect 54 0 4 0;
+#X connect 56 0 58 0;
+#X connect 57 0 60 0;
+#X connect 58 0 65 0;
+#X connect 59 0 60 1;
+#X connect 60 0 61 0;
 #X connect 61 0 62 0;
-#X connect 62 0 63 0;
-#X connect 63 0 57 1;
-#X connect 64 0 66 0;
-#X connect 66 0 4 0;
-#X connect 66 1 0 0;
-#X connect 66 2 76 0;
-#X connect 67 0 64 0;
-#X connect 68 0 74 0;
-#X connect 68 1 72 0;
-#X connect 68 2 70 0;
-#X connect 71 0 2 0;
-#X connect 73 0 54 0;
-#X connect 73 0 55 0;
-#X connect 75 0 57 0;
-#X connect 77 0 68 0;
+#X connect 62 0 56 1;
+#X connect 63 0 65 0;
+#X connect 65 0 4 0;
+#X connect 65 1 0 0;
+#X connect 65 2 74 0;
+#X connect 66 0 63 0;
+#X connect 69 0 2 0;
+#X connect 71 0 53 0;
+#X connect 71 0 54 0;
+#X connect 73 0 56 0;
+#X connect 75 0 80 0;
+#X connect 76 0 77 0;
+#X connect 77 0 83 0;
+#X connect 77 0 84 0;
+#X connect 78 0 47 0;
+#X connect 78 1 43 1;
+#X connect 79 0 96 0;
+#X connect 80 0 72 0;
+#X connect 80 1 70 0;
+#X connect 80 2 68 0;
+#X connect 80 3 81 0;
+#X connect 82 0 96 0;
+#X connect 84 0 86 1;
+#X connect 84 0 102 0;
+#X connect 86 0 87 0;
+#X connect 87 0 99 0;
+#X connect 88 0 89 0;
+#X connect 89 0 91 0;
+#X connect 90 0 98 0;
+#X connect 90 0 86 0;
+#X connect 91 0 92 0;
+#X connect 92 0 90 1;
+#X connect 93 0 91 1;
+#X connect 94 0 91 1;
+#X connect 96 0 77 0;
+#X connect 96 1 94 0;
+#X connect 96 2 90 0;
+#X connect 99 0 103 0;
+#X connect 99 1 100 0;
+#X connect 100 0 91 1;
+#X connect 101 0 77 0;
+#X connect 104 0 77 1;
+#X connect 104 0 105 0;
 #X restore 2137 478 pd My_RSP_SelectAndPlayEngine8;
 #X obj 2137 24 inlet metronomeInlet8;
 #X obj -102 154 r currentSelectedIndexSP1;
 #X obj -117 178 f;
-#X floatatom -70 178 5 0 0 0 - - -;
+#X floatatom -70 178 5 0 0 0 - - -, f 5;
 #X obj -98 330 s lastIndexPlayedSP1;
 #X obj -52 352 r loopingFire1;
 #X text -17 209 fireN is the human pressing the \; play-button and
@@ -5590,19 +5747,19 @@ below \, in order to keep looping the sample that is currently played.
 #X text -21 374 loopingFireN bangs the RSP_Timehandler_Subpatches in
 order to loop the sample that is currently played;
 #X obj 456 190 f;
-#X floatatom 503 190 5 0 0 0 - - -;
+#X floatatom 503 190 5 0 0 0 - - -, f 5;
 #X obj 456 141 r fire2;
 #X obj 471 166 r currentSelectedIndexSP2;
 #X obj 475 314 s lastIndexPlayedSP2;
 #X obj 521 363 r loopingFire2;
 #X obj 748 204 f;
-#X floatatom 795 204 5 0 0 0 - - -;
+#X floatatom 795 204 5 0 0 0 - - -, f 5;
 #X obj 763 180 r currentSelectedIndexSP3;
 #X obj 767 306 s lastIndexPlayedSP3;
 #X obj 748 155 r fire3;
 #X obj 813 359 r loopingFire3;
 #X obj 1051 199 f;
-#X floatatom 1098 199 5 0 0 0 - - -;
+#X floatatom 1098 199 5 0 0 0 - - -, f 5;
 #X obj 1116 356 r loopingFire4;
 #X obj 1051 150 r fire4;
 #X obj 1066 175 r currentSelectedIndexSP4;
@@ -5615,14 +5772,14 @@ order to loop the sample that is currently played;
 #X obj 1051 252 t b f b;
 #X obj 1090 283 s updateZlnthObjectsBang4;
 #X obj 1309 219 f;
-#X floatatom 1349 220 5 0 0 0 - - -;
+#X floatatom 1349 220 5 0 0 0 - - -, f 5;
 #X obj 1309 252 t b f b;
 #X obj 1324 194 r currentSelectedIndexSP5;
 #X obj 1348 283 s updateZlnthObjectsBang5;
 #X obj 1328 307 s lastIndexPlayedSP5;
 #X obj 1374 352 r loopingFire5;
 #X obj 1570 219 f;
-#X floatatom 1610 220 5 0 0 0 - - -;
+#X floatatom 1610 220 5 0 0 0 - - -, f 5;
 #X obj 1570 252 t b f b;
 #X obj 1570 167 r fire6;
 #X obj 1585 194 r currentSelectedIndexSP6;
@@ -5630,7 +5787,7 @@ order to loop the sample that is currently played;
 #X obj 1589 307 s lastIndexPlayedSP6;
 #X obj 1635 352 r loopingFire6;
 #X obj 1909 229 f;
-#X floatatom 1946 229 5 0 0 0 - - -;
+#X floatatom 1946 229 5 0 0 0 - - -, f 5;
 #X obj 1909 262 t b f b;
 #X obj 1924 204 r currentSelectedIndexSP7;
 #X obj 1909 177 r fire7;
@@ -5638,7 +5795,7 @@ order to loop the sample that is currently played;
 #X obj 1928 317 s lastIndexPlayedSP7;
 #X obj 1974 353 r loopingFire7;
 #X obj 2201 239 f;
-#X floatatom 2238 239 5 0 0 0 - - -;
+#X floatatom 2238 239 5 0 0 0 - - -, f 5;
 #X obj 2201 272 t b f b;
 #X obj 2201 187 r fire8;
 #X obj 2216 214 r currentSelectedIndexSP8;
@@ -6159,7 +6316,6 @@ playing". \; The names of the currently playing and currently selected
 samples are important for the notification of non-harmonic samples.
 The sample names are output to the next subpatch where the latter is
 implemented.;
-#X obj 450 -306 print in SampleNameDisplayLoadBang;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 1 1 5 0;
@@ -6173,7 +6329,6 @@ implemented.;
 #X connect 11 0 0 0;
 #X connect 12 0 2 0;
 #X connect 13 0 1 0;
-#X connect 13 0 27 0;
 #X connect 14 0 24 0;
 #X connect 15 0 20 0;
 #X connect 16 0 14 0;
@@ -6206,7 +6361,7 @@ implemented.;
 #X obj 156 253 -;
 #X obj 163 173 f;
 #X obj 193 173 - 1;
-#X floatatom 230 393 5 0 0 0 - - -;
+#X floatatom 230 393 5 0 0 0 - - -, f 5;
 #X obj 223 371 <= 0;
 #X obj 129 349 >;
 #X obj 269 406 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -6221,7 +6376,7 @@ implemented.;
 #X obj 284 437 r sP1Index;
 #X obj 320 166 r AmountOfAudioFilesInSP1;
 #X obj 305 188 f;
-#X floatatom 342 189 5 0 0 0 - - -;
+#X floatatom 342 189 5 0 0 0 - - -, f 5;
 #X obj 163 62 inlet decreaseIndexSP1;
 #X obj 129 36 inlet increaseIndexSP1;
 #X obj 305 89 inlet bangToInitWithNumberOfIndexes;
@@ -6297,7 +6452,7 @@ current index;
 -1 -1;
 #X obj 265 531 zl nth;
 #X obj 384 598 zl nth;
-#X floatatom 414 167 5 0 0 0 - - -;
+#X floatatom 414 167 5 0 0 0 - - -, f 5;
 #X obj 265 664 phasor~;
 #X obj 266 703 *~;
 #X obj 399 414 t f f f;
@@ -6311,7 +6466,7 @@ current index;
 #X obj 381 739 tabread4~ \$1;
 #X msg 571 618 set \$1_left;
 #X obj 380 791 *~;
-#X floatatom 384 624 20 0 0 0 - - -;
+#X floatatom 384 624 20 0 0 0 - - -, f 20;
 #X obj 395 765 r vol1;
 #X obj 71 176 s pb1_1;
 #X obj 399 367 r pb1_1;
@@ -6361,8 +6516,8 @@ reached.;
 \; by the metronome:);
 #X text -62 741 get the metronome's 16th notes;
 #X text -60 763 get position of the \; currently playing sample;
-#X floatatom 141 895 5 0 0 0 - - -;
-#X floatatom 210 967 5 0 0 0 - - -;
+#X floatatom 141 895 5 0 0 0 - - -, f 5;
+#X floatatom 210 967 5 0 0 0 - - -, f 5;
 #X obj 210 991 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 253 907 0;
@@ -6392,7 +6547,7 @@ that the first or last \; sample is reached.;
 #X restore 225 239 pd My_RSP_LedAlert;
 #X obj 267 217 print SP1>>Last Sample Reached;
 #X obj 340 192 print SP1>>First Sample Reached;
-#X floatatom 616 394 5 0 0 0 - - -;
+#X floatatom 616 394 5 0 0 0 - - -, f 5;
 #X obj 616 372 r indexCorrectionForLoopingSP1;
 #N canvas 1 102 1015 566 My_RSP_Looping_Index_Handler1 0;
 #X text 603 28 29th August 2018 This subpatch receives a bang on its
@@ -6403,11 +6558,11 @@ to the zl nth objects of the parent patch ("RSP_SelectAndPlayEngine")
 in order to loop the currently playing sample;
 #X obj 131 301 ==;
 #X obj 146 132 r currentSelectedIndexSP1;
-#X floatatom 146 278 5 0 0 0 - - -;
-#X floatatom 146 158 5 0 0 0 - - -;
+#X floatatom 146 278 5 0 0 0 - - -, f 5;
+#X floatatom 146 158 5 0 0 0 - - -, f 5;
 #X obj 146 209 r lastIndexPlayedSP1;
 #X obj 131 186 f;
-#X floatatom 131 328 5 0 0 0 - - -;
+#X floatatom 131 328 5 0 0 0 - - -, f 5;
 #X obj 146 240 t f f;
 #X obj 131 410 f;
 #X obj 170 499 s indexCorrectionForLoopingSP1;
@@ -6420,7 +6575,7 @@ playing is looped when it has reached its end. Otherwise the system
 would always play the currently selected sample \, which might be different
 from the currently played sample because the user might have chosen
 another sample in the meantime \;;
-#X floatatom 176 478 5 0 0 0 - - -;
+#X floatatom 176 478 5 0 0 0 - - -, f 5;
 #X obj 131 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 150 519 s loopingFire1;
@@ -6428,7 +6583,7 @@ another sample in the meantime \;;
 ;
 #X obj 285 419 r currentSelectedIndexSP1;
 #X obj 270 443 f;
-#X floatatom 297 443 5 0 0 0 - - -;
+#X floatatom 297 443 5 0 0 0 - - -, f 5;
 #X obj 131 541 print SP1: loopingFire1 with index correction to;
 #X obj 131 31 inlet currentSampleHasReachedItsEnd1;
 #X text 436 242 comment;
@@ -6470,32 +6625,32 @@ output come through;
 #X text 574 303 send currentSelectedIndex to subpatch "Looping_Index_Handler"
 and to parent patch;
 #X obj 414 249 t f f;
-#X floatatom 180 843 5 0 0 0 - - -;
+#X floatatom 180 843 5 0 0 0 - - -, f 5;
 #X obj 134 865 moses 0.98;
-#X floatatom 265 584 40 0 0 0 - - -;
+#X floatatom 265 584 40 0 0 0 - - -, f 40;
 #X obj 355 1174 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -257985
 -1 -1 0 1;
-#X floatatom 214 809 20 0 0 0 - - -;
+#X floatatom 214 809 20 0 0 0 - - -, f 20;
 #X text 595 1012 ein bang im parentpatch ist ressourcenfreundlicher
 ;
-#X floatatom 774 826 20 0 0 0 - - -;
+#X floatatom 774 826 20 0 0 0 - - -, f 20;
 #X obj 553 1069 f 0;
-#X floatatom 552 1102 5 0 0 0 - - -;
+#X floatatom 552 1102 5 0 0 0 - - -, f 5;
 #X obj 584 1042 +;
 #X obj 554 1163 moses 1;
 #X obj 553 1023 bng 15 50 10 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 553 869 r metro4_4;
-#X floatatom 674 1078 5 0 0 0 - - -;
+#X floatatom 674 1078 5 0 0 0 - - -, f 5;
 #X obj 631 1045 f;
 #X obj 631 1025 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 755 1093 f 1;
 #X obj 755 1124 -;
-#X floatatom 618 1145 10 0 0 0 - - -;
+#X floatatom 618 1145 10 0 0 0 - - -, f 10;
 #X obj 774 899 * 60;
-#X floatatom 774 928 5 0 0 0 - - -;
-#X floatatom 790 1068 10 0 0 0 - - -;
+#X floatatom 774 928 5 0 0 0 - - -, f 5;
+#X floatatom 790 1068 10 0 0 0 - - -, f 10;
 #X obj 983 919 / 488;
 #X obj 928 942 / 122;
 #X obj 947 921 / 244;
@@ -6508,17 +6663,17 @@ and to parent patch;
 #X msg 624 951 0;
 #X obj 774 876 * 1;
 #X obj 789 851 r PhasorFrequencyTimingFactor;
-#X floatatom 841 891 5 0 0 0 - - -;
+#X floatatom 841 891 5 0 0 0 - - -, f 5;
 #X obj 789 970 r currentBPM;
 #X obj 774 996 /;
-#X floatatom 826 995 5 0 0 0 - - -;
+#X floatatom 826 995 5 0 0 0 - - -, f 5;
 #X obj 8 149 t b b b b b;
 #X obj 8 289 s pb1_4;
 #X text -24 310 start time sync mechanism;
 #X obj 750 1046 r pb1_4;
 #X obj -17 604 r PhasorFrequencyTimingFactor;
-#X floatatom 7 641 5 0 0 0 - - -;
-#X obj 173 406 r pb1_4;
+#X floatatom 7 641 5 0 0 0 - - -, f 5;
+#X obj 173 406 r pb1_4, f 43;
 #X connect 0 0 119 0;
 #X connect 1 0 3 0;
 #X connect 2 0 3 1;
@@ -6776,7 +6931,6 @@ and to parent patch;
 #X connect 140 0 141 14;
 #X connect 140 1 141 15;
 #X restore 386 74 pd My_RSP_EightPlayAndSelectEngines;
-#X f 43;
 #X obj 830 465 s indexInit;
 #N canvas 182 89 960 583 My_RSP_LedLoadFinishAlert 0;
 #X obj 399 21 inlet;
@@ -7034,8 +7188,8 @@ show that every led is working.;
 #X obj 793 6 loadbang;
 #X obj 816 497 s hidInitBang;
 #N canvas 300 76 900 616 My_RSP_NetworkSyncMetro 0;
-#X floatatom 31 525 7 0 0 0 tick - -;
-#X floatatom 75 416 7 0 0 0 node-id - -;
+#X floatatom 31 525 7 0 0 0 tick - -, f 7;
+#X floatatom 75 416 7 0 0 0 node-id - -, f 7;
 #X obj 164 372 print node joined;
 #X obj 208 351 print node left;
 #X obj 119 394 print node list;
@@ -7044,12 +7198,12 @@ show that every led is working.;
 #X obj 75 489 print node-id;
 #X obj 341 288 print init event;
 #X obj 75 443 syncjams-id-symbol;
-#X symbolatom 75 465 10 0 0 0 id-symbol-> - -;
+#X symbolatom 75 465 10 0 0 0 id-symbol-> - -, f 10;
 #X obj 31 105 syncjams \$0/jakki \, bpm 122 \, namespace syncjams \,
 port 23232;
 #X obj 31 143 route tick node-id node-list joined left message state
 init-event sub-tick;
-#X floatatom 385 204 10 0 0 0 - - -;
+#X floatatom 385 204 10 0 0 0 - - -, f 10;
 #X obj 385 224 int;
 #X obj 469 257 change;
 #X text 545 261 neue metrohits hier;
@@ -7060,9 +7214,9 @@ uses syncjams \; 'sub-ticks' to send 'metroHits' in 16th notes \; accuracy
 to our 'SelectAndPlay-Engines' \; where they are uses for loop-timing.
 \; ...just as in the 'My_RSP_Metronome'-Subatch.;
 #X obj 31 550 % 4;
-#X floatatom 31 577 5 0 0 0 - - -;
+#X floatatom 31 577 5 0 0 0 - - -, f 5;
 #X obj 125 654 wiringPi_gpio 25 0 0;
-#X floatatom 75 622 5 0 0 0 - - -;
+#X floatatom 75 622 5 0 0 0 - - -, f 5;
 #X obj 31 664 moses 1;
 #X obj 31 601 == 0;
 #X obj 70 690 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -7119,7 +7273,7 @@ to 16th accuracy (/6) for our \; loop-timing in the RSP_Select_And_Play_Engine-S
 #X obj 17 102 t b b;
 #X obj 17 142 f;
 #X obj 17 164 + 1;
-#X floatatom 90 325 5 0 0 0 - - -;
+#X floatatom 90 325 5 0 0 0 - - -, f 5;
 #X obj 179 154 f;
 #X obj 179 102 t b b;
 #X obj 179 174 - 1;
@@ -7140,7 +7294,7 @@ patch. The default bpm is 122 bpm.;
 #X obj 90 250 t f f f f;
 #X obj 536 350 / 122;
 #X obj 536 414 s PhasorFrequencyTimingFactor;
-#X floatatom 610 393 5 0 0 0 - - -;
+#X floatatom 610 393 5 0 0 0 - - -, f 5;
 #X connect 0 0 1 0;
 #X connect 0 1 14 0;
 #X connect 1 0 2 0;
@@ -7173,57 +7327,59 @@ patch. The default bpm is 122 bpm.;
 -1 -1;
 #X obj 601 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 22 638 cnv 15 81 20 empty SP1CurrentlySelected pad1 2 12 0 10
--233017 -66577 0;
+#X obj 22 638 cnv 15 81 20 empty SP1CurrentlySelected BB_dreamkeys
+2 12 0 10 -233017 -66577 0;
 #X obj 23 686 cnv 15 81 20 empty SP1CurrentlyPlaying pad1 0 12 0 10
 -233017 -66577 0;
 #X text 20 668 playing;
 #X text 20 620 selected;
-#X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected valliflaeche
+#X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected BB_dreamkeys
 2 12 0 10 -233017 -66577 0;
 #X obj 115 688 cnv 15 81 20 empty SP2CurrentlyPlaying valliflaeche
 0 12 0 10 -233017 -66577 0;
 #X text 112 670 playing;
 #X text 110 620 selected;
-#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected S3PM_verylightbass
-0 12 0 10 -233017 -66577 0;
+#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected DD_subdel1 0
+12 0 10 -233017 -66577 0;
 #X obj 205 688 cnv 15 81 20 empty SP3CurrentlyPlaying S3PM_verylightbass
 0 12 0 10 -233017 -66577 0;
 #X text 202 670 playing;
 #X text 200 620 selected;
-#X obj 294 636 cnv 15 81 20 empty SP4CurrentlySelected pointybass 2
+#X obj 294 636 cnv 15 81 20 empty SP4CurrentlySelected DD_subdel1 2
 12 0 10 -233017 -66577 0;
 #X obj 295 686 cnv 15 81 20 empty SP4CurrentlyPlaying pointybass 0
 12 0 10 -233017 -66577 0;
 #X text 292 668 playing;
 #X text 290 618 selected;
-#X obj 390 636 cnv 20 81 20 empty SP5CurrentlySelected SKUNK_bossakick
-0 12 0 10 -233017 -66577 0;
+#X obj 390 636 cnv 20 81 20 empty SP5CurrentlySelected DD_kiks0 0 12
+0 10 -233017 -66577 0;
 #X obj 391 686 cnv 15 81 20 empty SP5CurrentlyPlaying S3PM_kickakzent
 0 12 0 10 -233017 -66577 0;
 #X text 388 668 playing;
 #X text 386 618 selected;
-#X obj 480 636 cnv 20 81 20 empty SP6CurrentlySelected SEA_subkick
-0 12 0 10 -233017 -66577 0;
+#X obj 480 636 cnv 20 81 20 empty SP6CurrentlySelected DD_kiks0 0 12
+0 10 -233017 -66577 0;
 #X obj 481 686 cnv 15 81 20 empty SP6CurrentlyPlaying SEA_subkick 0
 12 0 10 -233017 -66577 0;
 #X text 478 668 playing;
 #X text 476 618 selected;
-#X obj 570 636 cnv 15 81 20 empty SP7CurrentlySelected SKUNK_brush
-2 12 0 10 -233017 -66577 0;
+#X obj 570 636 cnv 15 81 20 empty SP7CurrentlySelected CCFR_hh1 2 12
+0 10 -233017 -66577 0;
 #X obj 571 686 cnv 15 81 20 empty SP7CurrentlyPlaying SKUNK_brush 0
 12 0 10 -233017 -66577 0;
 #X text 568 668 playing;
 #X text 566 618 selected;
-#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected STAND_marlon&jaggi
-20 12 0 14 -233017 -66577 0;
-#X obj 663 686 cnv 15 81 20 empty SP8CurrentlyPlaying SEA_spitzhhs1
-0 12 0 10 -233017 -66577 0;
+#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected CCFR_hh1 20
+12 0 14 -233017 -66577 0;
+#X obj 663 686 cnv 15 81 20 empty SP8CurrentlyPlaying CCFR_hh1 0 12
+0 10 -233017 -66577 0;
 #X text 660 668 playing;
 #X text 658 618 selected;
-#X msg 872 104 symbol /home/pi/Documents/SamplePacks/;
 #X obj 775 36 t b b b b b b b b b;
 #X obj 802 529 s excelParseInitBang;
+#X text 1054 124 /Users/wbjc/Desktop/Samples/SamplePacks/ /home/pi/Documents/SamplePacks/
+;
+#X msg 872 104 symbol /Users/wbjc/Desktop/Samples/SamplePacks/;
 #X connect 0 0 107 0;
 #X connect 0 0 107 1;
 #X connect 0 0 107 2;
@@ -7288,7 +7444,7 @@ patch. The default bpm is 122 bpm.;
 #X connect 44 0 39 0;
 #X connect 46 0 40 0;
 #X connect 48 0 41 0;
-#X connect 56 0 154 0;
+#X connect 56 0 153 0;
 #X connect 57 0 58 0;
 #X connect 58 0 59 0;
 #X connect 59 0 61 0;
@@ -7311,17 +7467,17 @@ patch. The default bpm is 122 bpm.;
 #X connect 110 2 62 0;
 #X connect 111 0 51 0;
 #X connect 112 0 52 0;
-#X connect 113 0 154 0;
+#X connect 113 0 153 0;
 #X connect 115 0 116 0;
 #X connect 119 0 118 0;
 #X connect 120 0 118 1;
-#X connect 153 0 67 0;
-#X connect 154 0 66 0;
-#X connect 154 1 109 0;
-#X connect 154 2 155 0;
-#X connect 154 3 114 0;
-#X connect 154 4 108 0;
-#X connect 154 5 57 0;
-#X connect 154 6 60 0;
-#X connect 154 7 153 0;
-#X connect 154 8 71 0;
+#X connect 153 0 66 0;
+#X connect 153 1 109 0;
+#X connect 153 2 154 0;
+#X connect 153 3 114 0;
+#X connect 153 4 108 0;
+#X connect 153 5 57 0;
+#X connect 153 6 60 0;
+#X connect 153 7 156 0;
+#X connect 153 8 71 0;
+#X connect 156 0 67 0;
