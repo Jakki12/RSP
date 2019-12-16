@@ -1,5 +1,5 @@
-#N canvas 56 52 1280 668 10;
-#N canvas 213 127 864 628 My_RSP_Metronome 0;
+#N canvas 3 88 1280 668 10;
+#N canvas 128 160 864 628 My_RSP_Metronome 0;
 #X obj 223 28 inlet startMetronome;
 #X obj 592 510 outlet FirstBeat;
 #X obj 223 265 metro;
@@ -47,10 +47,10 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 -1 -1;
 #X obj 223 386 t f f f, f 38;
 #X obj 335 462 % 4;
-#X obj 335 437 t f f;
-#X obj 335 482 == 1;
+#X obj 335 486 == 1;
 #X obj 335 511 s metroWholeBeats;
 #X obj 448 441 t f f, f 18;
+#X obj 338 553 print;
 #X connect 0 0 7 0;
 #X connect 2 0 16 0;
 #X connect 2 0 27 0;
@@ -70,7 +70,7 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 #X connect 16 0 38 0;
 #X connect 17 0 16 1;
 #X connect 19 0 16 1;
-#X connect 21 0 43 0;
+#X connect 21 0 42 0;
 #X connect 22 0 20 0;
 #X connect 23 1 24 0;
 #X connect 24 0 1 0;
@@ -80,13 +80,12 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 #X connect 30 1 19 0;
 #X connect 35 0 34 0;
 #X connect 38 0 30 0;
-#X connect 38 1 40 0;
+#X connect 38 1 39 0;
 #X connect 38 2 21 0;
-#X connect 39 0 41 0;
-#X connect 40 0 39 0;
-#X connect 41 0 42 0;
-#X connect 43 0 22 0;
-#X connect 43 1 23 0;
+#X connect 39 0 40 0;
+#X connect 40 0 41 0;
+#X connect 42 0 22 0;
+#X connect 42 1 23 0;
 #X restore 450 28 pd My_RSP_Metronome;
 #X obj 450 2 r startMetroBang;
 #N canvas 27 92 1199 623 My_HID_CONTROLLER 0;
@@ -412,29 +411,29 @@ only the value 1 \; pass to the output.;
 #X obj 662 289 r pk8;
 #X obj 1139 463 r initBang;
 #X obj 24 452 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 3985 1;
+-1 -33289 9856 1;
 #X obj 24 594 s vol1;
 #X obj 24 428 r subVol1;
 #X obj 114 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 12700 1;
+-1 -33289 0 1;
 #X obj 114 595 s vol2;
 #X obj 114 427 r subVol2;
 #X obj 207 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 7251 1;
+-1 -33289 25 1;
 #X obj 207 427 r subVol3;
 #X obj 207 595 s vol3;
 #X obj 297 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 1908 1;
+-1 -33289 19 1;
 #X obj 297 427 r subVol4;
 #X obj 297 595 s vol4;
 #X obj 390 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 7136 1;
+-1 -33289 9166 1;
 #X obj 480 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 2232 1;
+-1 -33289 28 1;
 #X obj 573 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 5741 1;
+-1 -33289 25 1;
 #X obj 663 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 2620 1;
+-1 -33289 19 1;
 #X obj 390 427 r subVol5;
 #X obj 390 593 s vol5;
 #X obj 480 426 r subVol6;
@@ -2378,7 +2377,7 @@ the eight "SelectAndPlayEngines" to initialize the index generation
 -262144 -1;
 #X obj 24 313 bng 80 400 50 0 empty empty empty 17 7 0 10 -4160 -262144
 -1;
-#N canvas 10 83 1280 627 My_RSP_EightPlayAndSelectEngines 0;
+#N canvas -126 93 1280 627 My_RSP_EightPlayAndSelectEngines 0;
 #N canvas 94 95 1075 551 My_RSP_SelectAndPlayEngine1 0;
 #X obj 8 21 inlet playButton1;
 #X obj 267 9 inlet selectUp1;
@@ -6815,7 +6814,7 @@ and to parent patch;
 #X connect 139 1 141 13;
 #X connect 140 0 141 14;
 #X connect 140 1 141 15;
-#X restore 386 74 pd My_RSP_EightPlayAndSelectEngines;
+#X restore 366 87 pd My_RSP_EightPlayAndSelectEngines;
 #X obj 830 465 s indexInit;
 #N canvas 182 89 960 583 My_RSP_LedLoadFinishAlert 0;
 #X obj 399 21 inlet;
@@ -7212,52 +7211,52 @@ patch. The default bpm is 122 bpm.;
 -1 -1;
 #X obj 601 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 22 638 cnv 15 81 20 empty SP1CurrentlySelected pad1 2 12 0 10
--233017 -66577 0;
-#X obj 23 686 cnv 15 81 20 empty SP1CurrentlyPlaying pad1 0 12 0 10
--233017 -66577 0;
+#X obj 22 638 cnv 15 81 20 empty SP1CurrentlySelected ORCA_gitte3 2
+12 0 10 -233017 -66577 0;
+#X obj 23 686 cnv 15 81 20 empty SP1CurrentlyPlaying ORCA_gitte3 0
+12 0 10 -233017 -66577 0;
 #X text 20 668 playing;
 #X text 20 620 selected;
-#X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected pointybass 2
-12 0 10 -233017 -66577 0;
-#X obj 115 688 cnv 15 81 20 empty SP2CurrentlyPlaying pointybass 0
-12 0 10 -233017 -66577 0;
+#X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected S3PM_verylightbass
+2 12 0 10 -233017 -66577 0;
+#X obj 115 688 cnv 15 81 20 empty SP2CurrentlyPlaying S3PM_verylightbass
+0 12 0 10 -233017 -66577 0;
 #X text 112 670 playing;
 #X text 110 620 selected;
-#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected DD_kiks2 0 12
-0 10 -233017 -66577 0;
-#X obj 205 688 cnv 15 81 20 empty SP3CurrentlyPlaying DD_kiks2 0 12
-0 10 -233017 -66577 0;
+#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected DYNA_kicks4
+0 12 0 10 -233017 -66577 0;
+#X obj 205 688 cnv 15 81 20 empty SP3CurrentlyPlaying DYNA_kicks4 0
+12 0 10 -233017 -66577 0;
 #X text 202 670 playing;
 #X text 200 620 selected;
-#X obj 294 636 cnv 15 81 20 empty SP4CurrentlySelected CCFR_hh1 2 12
-0 10 -233017 -66577 0;
-#X obj 295 686 cnv 15 81 20 empty SP4CurrentlyPlaying CCFR_hh1 0 12
-0 10 -233017 -66577 0;
+#X obj 294 636 cnv 15 81 20 empty SP4CurrentlySelected DYNA_glidinhh2
+2 12 0 10 -233017 -66577 0;
+#X obj 295 686 cnv 15 81 20 empty SP4CurrentlyPlaying DYNA_glidinhh2
+0 12 0 10 -233017 -66577 0;
 #X text 292 668 playing;
 #X text 290 618 selected;
-#X obj 390 636 cnv 20 81 20 empty SP5CurrentlySelected ORCA_fm8 0 12
-0 10 -233017 -66577 0;
-#X obj 391 686 cnv 15 81 20 empty SP5CurrentlyPlaying ORCA_fm8 0 12
-0 10 -233017 -66577 0;
+#X obj 390 636 cnv 20 81 20 empty SP5CurrentlySelected UHG_singlewalky
+0 12 0 10 -233017 -66577 0;
+#X obj 391 686 cnv 15 81 20 empty SP5CurrentlyPlaying UHG_singlewalky
+0 12 0 10 -233017 -66577 0;
 #X text 388 668 playing;
 #X text 386 618 selected;
-#X obj 480 636 cnv 20 81 20 empty SP6CurrentlySelected JERTAW_bass
-0 12 0 10 -233017 -66577 0;
-#X obj 481 686 cnv 15 81 20 empty SP6CurrentlyPlaying JERTAW_bass 0
+#X obj 480 636 cnv 20 81 20 empty SP6CurrentlySelected DD_subdel1 0
+12 0 10 -233017 -66577 0;
+#X obj 481 686 cnv 15 81 20 empty SP6CurrentlyPlaying pointybass 0
 12 0 10 -233017 -66577 0;
 #X text 478 668 playing;
 #X text 476 618 selected;
-#X obj 570 636 cnv 15 81 20 empty SP7CurrentlySelected DYNA_kicks9
-2 12 0 10 -233017 -66577 0;
-#X obj 571 686 cnv 15 81 20 empty SP7CurrentlyPlaying DYNA_kicks9 0
-12 0 10 -233017 -66577 0;
+#X obj 570 636 cnv 15 81 20 empty SP7CurrentlySelected DD_kiks3 2 12
+0 10 -233017 -66577 0;
+#X obj 571 686 cnv 15 81 20 empty SP7CurrentlyPlaying DD_kiks3 0 12
+0 10 -233017 -66577 0;
 #X text 568 668 playing;
 #X text 566 618 selected;
-#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected SEA_hhoff1
-20 12 0 14 -233017 -66577 0;
-#X obj 663 686 cnv 15 81 20 empty SP8CurrentlyPlaying SEA_hhoff1 0
-12 0 10 -233017 -66577 0;
+#X obj 662 636 cnv 15 100 60 empty SP8CurrentlySelected CCFR_hh1 20
+12 0 14 -233017 -66577 0;
+#X obj 663 686 cnv 15 81 20 empty SP8CurrentlyPlaying CCFR_hh1 0 12
+0 10 -233017 -66577 0;
 #X text 660 668 playing;
 #X text 658 618 selected;
 #X obj 775 36 t b b b b b b b b b;
@@ -7265,6 +7264,7 @@ patch. The default bpm is 122 bpm.;
 #X text 1054 124 /Users/wbjc/Desktop/Samples/SamplePacks/ /home/pi/Documents/SamplePacks/
 ;
 #X msg 872 104 symbol /home/pi/Documents/SamplePacks/;
+#X obj 575 28 metronomeFor856;
 #X connect 0 0 107 0;
 #X connect 0 0 107 1;
 #X connect 0 0 107 2;
@@ -7273,7 +7273,7 @@ patch. The default bpm is 122 bpm.;
 #X connect 0 0 107 5;
 #X connect 0 0 107 6;
 #X connect 0 0 107 7;
-#X connect 1 0 0 0;
+#X connect 1 0 157 0;
 #X connect 2 0 111 0;
 #X connect 2 1 112 0;
 #X connect 2 2 3 0;
@@ -7366,3 +7366,11 @@ patch. The default bpm is 122 bpm.;
 #X connect 153 7 156 0;
 #X connect 153 8 71 0;
 #X connect 156 0 67 0;
+#X connect 157 0 107 0;
+#X connect 157 0 107 1;
+#X connect 157 0 107 2;
+#X connect 157 0 107 3;
+#X connect 157 0 107 4;
+#X connect 157 0 107 5;
+#X connect 157 0 107 6;
+#X connect 157 0 107 7;

@@ -1,0 +1,19 @@
+15. Dezember 2019
+
+Midi-Verkabelung.
+Hardware: CME USB-to-Midi, nanoPad
+
+
+nanoPad > PureData IN
+PureData OUT > CME USB-to-Midi
+
+
+1) Pd starten, ALSA-Midi wählen mit 1 Ausgang und 1 Eingang
+2)aconnect 'nanoPAD':0 'Pure Data':0
+  aconnect 'Pure Data':1 'CME U2MIDI':0
+
+
+..Befehl zum Listen aller Midi-Geräte:
+aconnect -lio
+
+
