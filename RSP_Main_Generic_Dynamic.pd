@@ -1,5 +1,5 @@
 #N canvas 3 88 1280 668 10;
-#N canvas 128 160 864 628 My_RSP_Metronome 0;
+#N canvas 128 160 864 628 My_RSP_Metronome 1;
 #X obj 223 28 inlet startMetronome;
 #X obj 592 510 outlet FirstBeat;
 #X obj 223 265 metro;
@@ -51,6 +51,7 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 #X obj 335 511 s metroWholeBeats;
 #X obj 448 441 t f f, f 18;
 #X obj 338 553 print;
+#X obj 585 566 print 1;
 #X connect 0 0 7 0;
 #X connect 2 0 16 0;
 #X connect 2 0 27 0;
@@ -411,7 +412,7 @@ only the value 1 \; pass to the output.;
 #X obj 662 289 r pk8;
 #X obj 1139 463 r initBang;
 #X obj 24 452 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 9856 1;
+-1 -33289 0 1;
 #X obj 24 594 s vol1;
 #X obj 24 428 r subVol1;
 #X obj 114 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
@@ -419,21 +420,21 @@ only the value 1 \; pass to the output.;
 #X obj 114 595 s vol2;
 #X obj 114 427 r subVol2;
 #X obj 207 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 25 1;
+-1 -33289 0 1;
 #X obj 207 427 r subVol3;
 #X obj 207 595 s vol3;
 #X obj 297 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 19 1;
+-1 -33289 0 1;
 #X obj 297 427 r subVol4;
 #X obj 297 595 s vol4;
 #X obj 390 451 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 9166 1;
+-1 -33289 0 1;
 #X obj 480 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 28 1;
+-1 -33289 0 1;
 #X obj 573 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 25 1;
+-1 -33289 0 1;
 #X obj 663 450 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 19 1;
+-1 -33289 0 1;
 #X obj 390 427 r subVol5;
 #X obj 390 593 s vol5;
 #X obj 480 426 r subVol6;
@@ -7211,31 +7212,31 @@ patch. The default bpm is 122 bpm.;
 -1 -1;
 #X obj 601 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 22 638 cnv 15 81 20 empty SP1CurrentlySelected ORCA_gitte3 2
-12 0 10 -233017 -66577 0;
+#X obj 22 638 cnv 15 81 20 empty SP1CurrentlySelected BB_dreamkeys
+2 12 0 10 -233017 -66577 0;
 #X obj 23 686 cnv 15 81 20 empty SP1CurrentlyPlaying ORCA_gitte3 0
 12 0 10 -233017 -66577 0;
 #X text 20 668 playing;
 #X text 20 620 selected;
-#X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected S3PM_verylightbass
-2 12 0 10 -233017 -66577 0;
+#X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected DD_subdel1 2
+12 0 10 -233017 -66577 0;
 #X obj 115 688 cnv 15 81 20 empty SP2CurrentlyPlaying S3PM_verylightbass
 0 12 0 10 -233017 -66577 0;
 #X text 112 670 playing;
 #X text 110 620 selected;
-#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected DYNA_kicks4
-0 12 0 10 -233017 -66577 0;
+#X obj 204 638 cnv 20 81 20 empty SP3CurrentlySelected DD_kiks0 0 12
+0 10 -233017 -66577 0;
 #X obj 205 688 cnv 15 81 20 empty SP3CurrentlyPlaying DYNA_kicks4 0
 12 0 10 -233017 -66577 0;
 #X text 202 670 playing;
 #X text 200 620 selected;
-#X obj 294 636 cnv 15 81 20 empty SP4CurrentlySelected DYNA_glidinhh2
-2 12 0 10 -233017 -66577 0;
+#X obj 294 636 cnv 15 81 20 empty SP4CurrentlySelected CCFR_hh1 2 12
+0 10 -233017 -66577 0;
 #X obj 295 686 cnv 15 81 20 empty SP4CurrentlyPlaying DYNA_glidinhh2
 0 12 0 10 -233017 -66577 0;
 #X text 292 668 playing;
 #X text 290 618 selected;
-#X obj 390 636 cnv 20 81 20 empty SP5CurrentlySelected UHG_singlewalky
+#X obj 390 636 cnv 20 81 20 empty SP5CurrentlySelected BB_dreamkeys
 0 12 0 10 -233017 -66577 0;
 #X obj 391 686 cnv 15 81 20 empty SP5CurrentlyPlaying UHG_singlewalky
 0 12 0 10 -233017 -66577 0;
@@ -7247,7 +7248,7 @@ patch. The default bpm is 122 bpm.;
 12 0 10 -233017 -66577 0;
 #X text 478 668 playing;
 #X text 476 618 selected;
-#X obj 570 636 cnv 15 81 20 empty SP7CurrentlySelected DD_kiks3 2 12
+#X obj 570 636 cnv 15 81 20 empty SP7CurrentlySelected DD_kiks0 2 12
 0 10 -233017 -66577 0;
 #X obj 571 686 cnv 15 81 20 empty SP7CurrentlyPlaying DD_kiks3 0 12
 0 10 -233017 -66577 0;
