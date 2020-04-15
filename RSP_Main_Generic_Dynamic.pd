@@ -1,5 +1,5 @@
 #N canvas 3 88 1280 668 10;
-#N canvas 128 160 864 628 My_RSP_Metronome 1;
+#N canvas 128 160 864 628 My_RSP_Metronome 0;
 #X obj 223 28 inlet startMetronome;
 #X obj 592 510 outlet FirstBeat;
 #X obj 223 265 metro;
@@ -87,7 +87,7 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 #X connect 40 0 41 0;
 #X connect 42 0 22 0;
 #X connect 42 1 23 0;
-#X restore 450 28 pd My_RSP_Metronome;
+#X restore 1164 -7 pd My_RSP_Metronome;
 #X obj 450 2 r startMetroBang;
 #N canvas 27 92 1199 623 My_HID_CONTROLLER 0;
 #X obj 316 182 tgl 20 0 empty empty empty 0 -6 0 8 -24198 -1 -1 100
@@ -2334,7 +2334,7 @@ the eight "SelectAndPlayEngines" to initialize the index generation
 #X connect 14 1 13 0;
 #X restore 844 435 pd EightInitBangs;
 #X obj 886 71 s initBang;
-#X text 877 88 specify the folder above the sample pack folders;
+#X text 979 86 specify the folder above the sample pack folders;
 #X text 891 161 start counting at 1...;
 #X text 888 188 ...and iterate through \; 8 sample packs;
 #X text 920 274 this is executed eight times...;
@@ -6815,7 +6815,7 @@ and to parent patch;
 #X connect 139 1 141 13;
 #X connect 140 0 141 14;
 #X connect 140 1 141 15;
-#X restore 366 87 pd My_RSP_EightPlayAndSelectEngines;
+#X restore 388 112 pd My_RSP_EightPlayAndSelectEngines;
 #X obj 830 465 s indexInit;
 #N canvas 182 89 960 583 My_RSP_LedLoadFinishAlert 0;
 #X obj 399 21 inlet;
@@ -7150,8 +7150,8 @@ to 16th accuracy (/6) for our \; loop-timing in the RSP_Select_And_Play_Engine-S
 #X connect 30 0 11 0;
 #X connect 31 0 32 0;
 #X connect 33 0 13 0;
-#X restore 268 17 pd My_RSP_NetworkSyncMetro;
-#X obj 268 46 s metroFirstHit;
+#X restore 1000 6 pd My_RSP_NetworkSyncMetro;
+#X obj 1000 35 s metroFirstHit;
 #X obj 645 130 cnv 15 100 60 empty cbpm BPM122 20 28 0 20 -4032 -66577
 0;
 #N canvas 162 289 793 385 My_RSP_BPM_SETTER 0;
@@ -7214,8 +7214,8 @@ patch. The default bpm is 122 bpm.;
 -1 -1;
 #X obj 22 638 cnv 15 81 20 empty SP1CurrentlySelected BB_dreamkeys
 2 12 0 10 -233017 -66577 0;
-#X obj 23 686 cnv 15 81 20 empty SP1CurrentlyPlaying ORCA_gitte3 0
-12 0 10 -233017 -66577 0;
+#X obj 23 686 cnv 15 81 20 empty SP1CurrentlyPlaying DNH2_pad4 0 12
+0 10 -233017 -66577 0;
 #X text 20 668 playing;
 #X text 20 620 selected;
 #X obj 114 638 cnv 15 81 20 empty SP2CurrentlySelected DD_subdel1 2
@@ -7232,13 +7232,13 @@ patch. The default bpm is 122 bpm.;
 #X text 200 620 selected;
 #X obj 294 636 cnv 15 81 20 empty SP4CurrentlySelected CCFR_hh1 2 12
 0 10 -233017 -66577 0;
-#X obj 295 686 cnv 15 81 20 empty SP4CurrentlyPlaying DYNA_glidinhh2
+#X obj 295 686 cnv 15 81 20 empty SP4CurrentlyPlaying JDP_streichhh
 0 12 0 10 -233017 -66577 0;
 #X text 292 668 playing;
 #X text 290 618 selected;
 #X obj 390 636 cnv 20 81 20 empty SP5CurrentlySelected BB_dreamkeys
 0 12 0 10 -233017 -66577 0;
-#X obj 391 686 cnv 15 81 20 empty SP5CurrentlyPlaying UHG_singlewalky
+#X obj 391 686 cnv 15 81 20 empty SP5CurrentlyPlaying UTPA_carrier3
 0 12 0 10 -233017 -66577 0;
 #X text 388 668 playing;
 #X text 386 618 selected;
@@ -7265,15 +7265,19 @@ patch. The default bpm is 122 bpm.;
 #X text 1054 124 /Users/wbjc/Desktop/Samples/SamplePacks/ /home/pi/Documents/SamplePacks/
 ;
 #X msg 872 104 symbol /home/pi/Documents/SamplePacks/;
-#X obj 575 28 metronomeFor856;
-#X connect 0 0 107 0;
-#X connect 0 0 107 1;
-#X connect 0 0 107 2;
-#X connect 0 0 107 3;
-#X connect 0 0 107 4;
-#X connect 0 0 107 5;
-#X connect 0 0 107 6;
-#X connect 0 0 107 7;
+#X obj 400 78 metronomeFor856;
+#X obj 450 50 ctlout 1 15;
+#X msg 450 28 1;
+#X obj 140 -11 ctlin 2 15;
+#X obj 236 -11 ctlin 3 15;
+#X obj 330 -11 ctlin 4 15;
+#X obj 185 36 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 236 36 s metroWholeBeats;
+#X obj 330 10 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 352 37 s metroHits;
+#X connect 1 0 159 0;
 #X connect 1 0 157 0;
 #X connect 2 0 111 0;
 #X connect 2 1 112 0;
@@ -7375,3 +7379,8 @@ patch. The default bpm is 122 bpm.;
 #X connect 157 0 107 5;
 #X connect 157 0 107 6;
 #X connect 157 0 107 7;
+#X connect 159 0 158 0;
+#X connect 160 0 163 0;
+#X connect 161 0 164 0;
+#X connect 162 0 165 0;
+#X connect 165 0 166 0;

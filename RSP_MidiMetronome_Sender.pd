@@ -1,0 +1,30 @@
+#N canvas 25 82 450 300 10;
+#X obj 116 52 ctlin 1 15;
+#X text 198 53 startMetroBang from RSP_Main;
+#X obj 116 90 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 116 128 metronomeFor856_midiOut, f 40;
+#X text 104 241 first Beat;
+#X text 224 244 whole Beats;
+#X text 346 247 metroHits;
+#X obj 116 216 ctlout 2 15;
+#X msg 116 186 1;
+#X obj 234 216 ctlout 3 15;
+#X obj 353 219 ctlout 4 15;
+#X msg 353 185 1;
+#X obj 80 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 265 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 403 162 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 8 0;
+#X connect 3 0 12 0;
+#X connect 3 1 13 0;
+#X connect 3 1 9 0;
+#X connect 3 2 11 0;
+#X connect 3 2 14 0;
+#X connect 8 0 7 0;
+#X connect 11 0 10 0;
