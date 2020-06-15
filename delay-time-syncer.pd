@@ -1,0 +1,27 @@
+#N canvas 120 102 967 672 12;
+#X obj 86 276 f 0;
+#X obj 72 95 t b f;
+#X text 121 277 new delay time;
+#X obj 125 166 spigot 0;
+#X msg 72 132 1;
+#X text 110 134 allow changing delay time;
+#X obj 125 196 t b b;
+#X msg 157 220 0;
+#X text 191 224 close spigot;
+#X obj 125 220 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 433 167 allow change in delay time only on metronomeBang;
+#X obj 72 35 inlet DTS_newDelayTime;
+#X obj 358 39 inlet DTS_metronomeBang;
+#X obj 86 383 outlet DTS_newDelayTimeInSync;
+#X connect 0 0 13 0;
+#X connect 1 0 4 0;
+#X connect 1 1 0 1;
+#X connect 3 0 6 0;
+#X connect 4 0 3 1;
+#X connect 6 0 9 0;
+#X connect 6 1 7 0;
+#X connect 7 0 3 1;
+#X connect 9 0 0 0;
+#X connect 11 0 1 0;
+#X connect 12 0 3 0;
