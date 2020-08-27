@@ -47,12 +47,25 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 #X obj 223 386 t f f f, f 38;
 #X obj 335 422 % 4;
 #X obj 335 456 == 1;
-#X obj 335 521 s metroWholeBeats;
+#X obj 335 771 s metroWholeBeats;
 #X obj 448 441 t f f, f 18;
 #X obj 592 540 outlet FirstBeat;
-#X obj 335 478 route 1;
-#X obj 335 499 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 335 588 route 1;
+#X obj 335 699 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
+#X obj 467 769 s harmonyLedToggle;
+#X obj 335 497 t f f;
+#X obj 335 620 t b b;
+#X msg 467 710 1;
+#X obj 501 630 + 1;
+#X msg 536 601 1;
+#X obj 509 687 t b b;
+#X msg 509 711 0;
+#X obj 470 630 f 1;
+#X obj 470 609 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 564 746 print;
+#X obj 470 662 moses 1;
 #X connect 0 0 6 0;
 #X connect 1 0 15 0;
 #X connect 1 0 26 0;
@@ -85,11 +98,25 @@ an initBang \; of the parent patch. \; The metronome counts til 4 and
 #X connect 37 1 38 0;
 #X connect 37 2 20 0;
 #X connect 38 0 39 0;
-#X connect 39 0 43 0;
+#X connect 39 0 46 0;
 #X connect 41 0 21 0;
 #X connect 41 1 22 0;
-#X connect 43 0 44 0;
+#X connect 43 0 47 0;
+#X connect 43 1 54 0;
 #X connect 44 0 40 0;
+#X connect 46 0 43 0;
+#X connect 47 0 44 0;
+#X connect 47 1 48 0;
+#X connect 48 0 45 0;
+#X connect 49 0 53 1;
+#X connect 50 0 53 1;
+#X connect 51 0 52 0;
+#X connect 51 1 50 0;
+#X connect 52 0 45 0;
+#X connect 53 0 49 0;
+#X connect 53 0 56 0;
+#X connect 54 0 53 0;
+#X connect 56 1 51 0;
 #X restore 450 39 pd My_RSP_Metronome;
 #X obj 450 2 r startMetroBang;
 #N canvas 27 92 1199 623 My_HID_CONTROLLER 0;
@@ -415,29 +442,29 @@ only the value 1 \; pass to the output.;
 #X obj 662 409 r pk8;
 #X obj 1139 463 r initBang;
 #X obj 24 572 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 28 1;
 #X obj 24 714 s vol1;
 #X obj 24 548 r subVol1;
 #X obj 114 571 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 19 1;
 #X obj 114 715 s vol2;
 #X obj 114 547 r subVol2;
 #X obj 207 571 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 19 1;
 #X obj 207 547 r subVol3;
 #X obj 207 715 s vol3;
 #X obj 297 571 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 25 1;
 #X obj 297 547 r subVol4;
 #X obj 297 715 s vol4;
 #X obj 390 571 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 25 1;
 #X obj 480 570 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 28 1;
 #X obj 573 570 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 6 1;
 #X obj 663 570 vsl 81 128 0 1 0 0 empty empty empty 0 -9 0 15 -191407
--1 -33289 0 1;
+-1 -33289 28 1;
 #X obj 390 547 r subVol5;
 #X obj 390 713 s vol5;
 #X obj 480 546 r subVol6;
@@ -2381,7 +2408,7 @@ the eight "SelectAndPlayEngines" to initialize the index generation
 -262144 -1;
 #X obj 24 433 bng 80 400 50 0 empty empty empty 17 7 0 10 -4160 -262144
 -1;
-#N canvas 0 93 1280 627 My_RSP_EightPlayAndSelectEngines 1;
+#N canvas 0 85 1280 627 My_RSP_EightPlayAndSelectEngines 0;
 #N canvas 94 95 1075 551 My_RSP_SelectAndPlayEngine1 0;
 #X obj 8 21 inlet playButton1;
 #X obj 267 9 inlet selectUp1;
@@ -3192,8 +3219,8 @@ another sample in the meantime \;;
 #X connect 54 2 19 0;
 #X connect 54 3 55 0;
 #X restore 392 484 pd My_RSP_SelectAndPlayEngine2;
-#X obj 381 794 dac~ 1 2;
-#X obj 381 794 dac~ 1 2;
+#X obj 393 794 dac~ 1 2;
+#X obj 393 794 dac~ 1 2;
 #X obj 684 21 inlet metronomeInlet3;
 #X obj 772 419 r sU3;
 #X obj 861 417 r sD3;
@@ -4811,7 +4838,7 @@ another sample in the meantime \;;
 #X connect 53 3 52 0;
 #X restore 1506 445 pd My_RSP_SelectAndPlayEngine6;
 #X obj 1506 22 inlet metronomeInlet6;
-#X obj 2022 452 r sD7;
+#X obj 2022 422 r sD7;
 #N canvas 0 51 1280 643 My_RSP_TimeHandler7 0;
 #X msg 65 115 1;
 #X obj 50 178 f;
@@ -4870,7 +4897,7 @@ and the internal looping mechanism.;
 #X connect 14 0 0 0;
 #X connect 14 1 12 2;
 #X restore 1845 381 pd My_RSP_TimeHandler7;
-#X obj 1933 453 r sU7;
+#X obj 1933 423 r sU7;
 #N canvas 31 56 911 612 My_RSP_SelectAndPlayEngine7 0;
 #X text 464 142 generate an index between 1 and max number of audio
 files \; in folder "samplepack1" to select one audio file to play.
@@ -5209,7 +5236,7 @@ another sample in the meantime \;;
 #X connect 52 1 20 0;
 #X connect 52 2 19 0;
 #X connect 52 3 53 0;
-#X restore 1845 476 pd My_RSP_SelectAndPlayEngine7;
+#X restore 1845 446 pd My_RSP_SelectAndPlayEngine7;
 #X obj 1845 23 inlet metronomeInlet7;
 #N canvas 0 107 1280 643 My_RSP_TimeHandler8 0;
 #X msg 65 115 1;
@@ -5269,8 +5296,8 @@ and the internal looping mechanism.;
 #X connect 14 0 0 0;
 #X connect 14 1 12 2;
 #X restore 2137 383 pd My_RSP_TimeHandler8;
-#X obj 2225 455 r sU8;
-#X obj 2314 454 r sD8;
+#X obj 2225 425 r sU8;
+#X obj 2314 424 r sD8;
 #N canvas 2 87 1280 633 My_RSP_SelectAndPlayEngine8 0;
 #X obj 696 792 *~;
 #X msg 639 539 set \$1_right;
@@ -5612,7 +5639,7 @@ a wish for \; playback which will ONLY BE \; ACKNOWLEGDED by the metronome:)
 #X connect 52 3 53 0;
 #X connect 55 0 27 0;
 #X connect 55 1 23 1;
-#X restore 2137 478 pd My_RSP_SelectAndPlayEngine8;
+#X restore 2137 448 pd My_RSP_SelectAndPlayEngine8;
 #X obj 2137 24 inlet metronomeInlet8;
 #X obj -102 154 r currentSelectedIndexSP1;
 #X obj -117 178 f;
@@ -5683,22 +5710,6 @@ order to loop the sample that is currently played;
 #X obj 2240 303 s updateZlnthObjectsBang8;
 #X obj 2220 327 s lastIndexPlayedSP8;
 #X obj 2266 356 r loopingFire8;
-#X obj 392 513 hip~ 1;
-#X obj 436 513 hip~ 1;
-#X obj -180 491 hip~ 1;
-#X obj -136 491 hip~ 1;
-#X obj 683 483 hip~ 1;
-#X obj 728 483 hip~ 1;
-#X obj 987 493 hip~ 1;
-#X obj 1032 493 hip~ 1;
-#X obj 1245 487 hip~ 1;
-#X obj 1290 487 hip~ 1;
-#X obj 1505 491 hip~ 1;
-#X obj 1550 491 hip~ 1;
-#X obj 1844 507 hip~ 1;
-#X obj 1889 507 hip~ 1;
-#X obj 2136 514 hip~ 1;
-#X obj 2181 514 hip~ 1;
 #X obj 456 255 t b f b;
 #N canvas 0 93 1280 627 My_RSP_SampleNameDisplay2 0;
 #X obj 240 -267 zl nth;
@@ -5764,7 +5775,7 @@ implemented.;
 #X connect 25 0 13 0;
 #X connect 25 1 24 0;
 #X connect 25 2 26 0;
-#X restore 391 858 pd My_RSP_SampleNameDisplay2;
+#X restore 391 928 pd My_RSP_SampleNameDisplay2;
 #N canvas 0 93 1280 627 My_RSP_SampleNameDisplay1 0;
 #X obj 240 -267 zl nth;
 #X obj 356 -308 t b b f;
@@ -5894,7 +5905,7 @@ implemented.;
 #X connect 25 0 16 0;
 #X connect 25 1 23 0;
 #X connect 25 2 26 0;
-#X restore 681 857 pd My_RSP_SampleNameDisplay3;
+#X restore 681 927 pd My_RSP_SampleNameDisplay3;
 #N canvas 0 93 1280 627 My_RSP_SampleNameDisplay4 0;
 #X obj 240 -267 zl nth;
 #X obj 356 -308 t b b f;
@@ -5959,7 +5970,7 @@ implemented.;
 #X connect 25 0 16 0;
 #X connect 25 1 23 0;
 #X connect 25 2 26 0;
-#X restore 981 856 pd My_RSP_SampleNameDisplay4;
+#X restore 981 926 pd My_RSP_SampleNameDisplay4;
 #N canvas 0 93 1280 627 My_RSP_SampleNameDisplay5 0;
 #X obj 240 -267 zl nth;
 #X obj 356 -308 t b b f;
@@ -6024,7 +6035,7 @@ implemented.;
 #X connect 25 0 16 0;
 #X connect 25 1 23 0;
 #X connect 25 2 26 0;
-#X restore 1243 855 pd My_RSP_SampleNameDisplay5;
+#X restore 1243 925 pd My_RSP_SampleNameDisplay5;
 #N canvas 0 93 1280 627 My_RSP_SampleNameDisplay6 0;
 #X obj 240 -267 zl nth;
 #X obj 356 -308 t b b f;
@@ -6089,7 +6100,7 @@ implemented.;
 #X connect 25 0 16 0;
 #X connect 25 1 23 0;
 #X connect 25 2 26 0;
-#X restore 1500 858 pd My_RSP_SampleNameDisplay6;
+#X restore 1500 917 pd My_RSP_SampleNameDisplay6;
 #N canvas 0 93 1280 627 My_RSP_SampleNameDisplay7 0;
 #X obj 240 -267 zl nth;
 #X obj 356 -308 t b b f;
@@ -6154,7 +6165,7 @@ implemented.;
 #X connect 25 0 16 0;
 #X connect 25 1 23 0;
 #X connect 25 2 26 0;
-#X restore 1845 847 pd My_RSP_SampleNameDisplay7;
+#X restore 1845 917 pd My_RSP_SampleNameDisplay7;
 #N canvas 153 85 1083 528 My_RSP_SampleNameDisplay8 0;
 #X obj 240 -267 zl nth;
 #X obj 356 -308 t b b f;
@@ -6219,7 +6230,7 @@ implemented.;
 #X connect 24 0 15 0;
 #X connect 24 1 22 0;
 #X connect 24 2 25 0;
-#X restore 2139 848 pd My_RSP_SampleNameDisplay8;
+#X restore 2139 918 pd My_RSP_SampleNameDisplay8;
 #X obj -178 954 harmonyDetection, f 422;
 #N canvas 162 69 1075 621 My_RSP_SelectAndPlayEngine1_bpmSyncTest 0
 ;
@@ -6665,54 +6676,74 @@ and to parent patch;
 #X connect 123 0 124 0;
 #X connect 125 0 111 0;
 #X restore 20 463 pd My_RSP_SelectAndPlayEngine1_bpmSyncTest;
-#X obj 546 558 r metroWholeBeats;
-#X obj 554 579 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 558 518 r metroWholeBeats;
+#X obj 566 539 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 381 611 jakobsdelay;
-#X obj -178 804 dac~ 1 2;
-#X obj -178 804 dac~ 1 2;
-#X obj 38 568 r metroWholeBeats;
-#X obj 38 589 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 393 571 jakobsdelay;
+#X obj -179 804 dac~ 1 2;
+#X obj -179 804 dac~ 1 2;
+#X obj 34 538 r metroWholeBeats;
+#X obj 34 559 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj -179 621 jakobsdelay;
-#X obj 683 804 dac~ 1 2;
-#X obj 683 804 dac~ 1 2;
-#X obj 836 568 r metroWholeBeats;
-#X obj 836 589 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj -179 591 jakobsdelay;
+#X obj 684 804 dac~ 1 2;
+#X obj 684 804 dac~ 1 2;
+#X obj 836 518 r metroWholeBeats;
+#X obj 836 539 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 683 621 jakobsdelay;
-#X obj 986 804 dac~ 1 2;
-#X obj 986 804 dac~ 1 2;
-#X obj 1099 568 r metroWholeBeats;
-#X obj 1099 589 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 683 571 jakobsdelay;
+#X obj 986 894 dac~ 1 2;
+#X obj 986 894 dac~ 1 2;
+#X obj 1099 608 r metroWholeBeats;
+#X obj 1099 629 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 986 621 jakobsdelay;
-#X obj 1246 804 dac~ 1 2;
-#X obj 1246 804 dac~ 1 2;
-#X obj 1359 568 r metroWholeBeats;
-#X obj 1359 589 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 986 661 jakobsdelay;
+#X obj 1359 617 r metroWholeBeats;
+#X obj 1359 638 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1246 621 jakobsdelay;
-#X obj 1505 813 dac~ 1 2;
-#X obj 1505 813 dac~ 1 2;
-#X obj 1658 577 r metroWholeBeats;
-#X obj 1658 598 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1245 660 jakobsdelay;
+#X obj 1658 617 r metroWholeBeats;
+#X obj 1658 638 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1505 630 jakobsdelay;
-#X obj 1845 813 dac~ 1 2;
-#X obj 1845 813 dac~ 1 2;
-#X obj 1998 577 r metroWholeBeats;
-#X obj 1998 598 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1505 670 jakobsdelay;
+#X obj 1998 617 r metroWholeBeats;
+#X obj 1998 638 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1845 630 jakobsdelay;
-#X obj 2135 823 dac~ 1 2;
-#X obj 2135 823 dac~ 1 2;
-#X obj 2288 587 r metroWholeBeats;
-#X obj 2288 608 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1845 670 jakobsdelay;
+#X obj 2288 627 r metroWholeBeats;
+#X obj 2288 648 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 2135 640 jakobsdelay;
-#X connect 0 0 109 0;
-#X connect 0 1 110 0;
+#X obj 2135 680 jakobsdelay;
+#X obj -180 504 mono-pureverb4;
+#X obj -180 771 hip~ 1;
+#X obj -135 771 hip~ 1;
+#X obj 392 760 hip~ 1;
+#X obj 436 760 hip~ 1;
+#X obj 684 768 hip~ 1;
+#X obj 728 768 hip~ 1;
+#X obj 985 853 hip~ 1;
+#X obj 1029 853 hip~ 1;
+#X obj 987 513 mono-pureverb4;
+#X obj 1246 897 dac~ 1 2;
+#X obj 1246 897 dac~ 1 2;
+#X obj 1245 856 hip~ 1;
+#X obj 1289 856 hip~ 1;
+#X obj 1244 512 mono-pureverb4;
+#X obj 1508 890 dac~ 1 2;
+#X obj 1508 890 dac~ 1 2;
+#X obj 1507 849 hip~ 1;
+#X obj 1551 849 hip~ 1;
+#X obj 1847 890 dac~ 1 2;
+#X obj 1847 890 dac~ 1 2;
+#X obj 1846 849 hip~ 1;
+#X obj 1890 849 hip~ 1;
+#X obj 2137 895 dac~ 1 2;
+#X obj 2137 895 dac~ 1 2;
+#X obj 2136 854 hip~ 1;
+#X obj 2180 854 hip~ 1;
+#X obj 2138 549 mono-pureverb4;
+#X connect 0 0 148 0;
+#X connect 0 1 148 0;
 #X connect 1 0 0 0;
 #X connect 2 0 45 0;
 #X connect 3 0 0 1;
@@ -6722,50 +6753,50 @@ and to parent patch;
 #X connect 7 0 10 0;
 #X connect 8 0 10 1;
 #X connect 9 0 10 2;
-#X connect 10 0 107 0;
-#X connect 10 1 108 0;
+#X connect 10 0 120 0;
+#X connect 10 1 120 1;
 #X connect 13 0 16 0;
 #X connect 14 0 17 1;
 #X connect 15 0 17 2;
 #X connect 16 0 17 0;
-#X connect 17 0 111 0;
-#X connect 17 1 112 0;
+#X connect 17 0 130 0;
+#X connect 17 1 130 1;
 #X connect 18 0 20 1;
 #X connect 19 0 20 2;
-#X connect 20 0 113 0;
-#X connect 20 1 114 0;
+#X connect 20 0 157 0;
+#X connect 20 1 157 0;
 #X connect 21 0 20 0;
 #X connect 22 0 21 0;
 #X connect 23 0 76 0;
 #X connect 24 0 27 0;
 #X connect 25 0 27 1;
 #X connect 26 0 27 2;
-#X connect 27 0 115 0;
-#X connect 27 1 116 0;
+#X connect 27 0 162 0;
+#X connect 27 1 162 0;
 #X connect 28 0 24 0;
 #X connect 29 0 32 2;
 #X connect 30 0 32 0;
 #X connect 31 0 32 1;
-#X connect 32 0 117 0;
-#X connect 32 1 118 0;
+#X connect 32 0 141 0;
+#X connect 32 1 141 1;
 #X connect 33 0 30 0;
 #X connect 34 0 37 2;
 #X connect 35 0 37 0;
 #X connect 36 0 37 1;
-#X connect 37 0 119 0;
-#X connect 37 1 120 0;
+#X connect 37 0 144 0;
+#X connect 37 1 144 1;
 #X connect 38 0 35 0;
 #X connect 39 0 42 0;
 #X connect 40 0 42 1;
 #X connect 41 0 42 2;
-#X connect 42 0 121 0;
-#X connect 42 1 122 0;
+#X connect 42 0 175 0;
+#X connect 42 1 175 0;
 #X connect 43 0 39 0;
 #X connect 44 0 45 1;
 #X connect 44 0 46 0;
 #X connect 45 0 69 0;
 #X connect 48 0 1 2;
-#X connect 51 0 123 0;
+#X connect 51 0 107 0;
 #X connect 53 0 51 0;
 #X connect 54 0 51 1;
 #X connect 54 0 52 0;
@@ -6820,73 +6851,81 @@ and to parent patch;
 #X connect 103 0 99 1;
 #X connect 103 0 100 0;
 #X connect 106 0 39 2;
-#X connect 107 0 136 0;
-#X connect 108 0 136 1;
-#X connect 109 0 141 0;
-#X connect 110 0 141 1;
-#X connect 111 0 146 0;
-#X connect 112 0 146 1;
-#X connect 113 0 151 0;
-#X connect 114 0 151 1;
-#X connect 115 0 156 0;
-#X connect 116 0 156 1;
-#X connect 117 0 161 0;
-#X connect 118 0 161 1;
-#X connect 119 0 166 0;
-#X connect 120 0 166 1;
-#X connect 121 0 171 0;
-#X connect 122 0 171 1;
-#X connect 123 0 7 1;
-#X connect 123 1 55 0;
-#X connect 123 2 71 0;
-#X connect 124 0 132 2;
-#X connect 124 1 132 3;
-#X connect 125 0 132 0;
-#X connect 125 1 132 1;
-#X connect 126 0 132 4;
-#X connect 126 1 132 5;
-#X connect 127 0 132 6;
-#X connect 127 1 132 7;
-#X connect 128 0 132 8;
-#X connect 128 1 132 9;
-#X connect 129 0 132 10;
-#X connect 129 1 132 11;
-#X connect 130 0 132 12;
-#X connect 130 1 132 13;
-#X connect 131 0 132 14;
-#X connect 131 1 132 15;
-#X connect 134 0 135 0;
-#X connect 135 0 136 2;
-#X connect 136 0 11 0;
-#X connect 136 1 11 1;
+#X connect 107 0 7 1;
+#X connect 107 1 55 0;
+#X connect 107 2 71 0;
+#X connect 108 0 116 2;
+#X connect 108 1 116 3;
+#X connect 109 0 116 0;
+#X connect 109 1 116 1;
+#X connect 110 0 116 4;
+#X connect 110 1 116 5;
+#X connect 111 0 116 6;
+#X connect 111 1 116 7;
+#X connect 112 0 116 8;
+#X connect 112 1 116 9;
+#X connect 113 0 116 10;
+#X connect 113 1 116 11;
+#X connect 114 0 116 12;
+#X connect 114 1 116 13;
+#X connect 115 0 116 14;
+#X connect 115 1 116 15;
+#X connect 118 0 119 0;
+#X connect 119 0 120 2;
+#X connect 120 0 151 0;
+#X connect 120 1 152 0;
+#X connect 123 0 124 0;
+#X connect 124 0 125 2;
+#X connect 125 0 149 0;
+#X connect 125 1 150 0;
+#X connect 128 0 129 0;
+#X connect 129 0 130 2;
+#X connect 130 0 153 0;
+#X connect 130 1 154 0;
+#X connect 133 0 134 0;
+#X connect 134 0 135 2;
+#X connect 135 0 155 0;
+#X connect 135 1 156 0;
+#X connect 136 0 137 0;
+#X connect 137 0 138 2;
+#X connect 138 0 160 0;
+#X connect 138 1 161 0;
 #X connect 139 0 140 0;
 #X connect 140 0 141 2;
-#X connect 141 0 137 0;
-#X connect 141 1 137 1;
-#X connect 144 0 145 0;
-#X connect 145 0 146 2;
-#X connect 146 0 142 0;
-#X connect 146 1 142 1;
-#X connect 149 0 150 0;
-#X connect 150 0 151 2;
-#X connect 151 0 147 0;
-#X connect 151 1 147 1;
-#X connect 154 0 155 0;
-#X connect 155 0 156 2;
-#X connect 156 0 152 0;
-#X connect 156 1 152 1;
-#X connect 159 0 160 0;
-#X connect 160 0 161 2;
-#X connect 161 0 157 0;
-#X connect 161 1 157 1;
-#X connect 164 0 165 0;
-#X connect 165 0 166 2;
-#X connect 166 0 162 0;
-#X connect 166 1 162 1;
-#X connect 169 0 170 0;
-#X connect 170 0 171 2;
-#X connect 171 0 167 0;
-#X connect 171 1 167 1;
+#X connect 141 0 165 0;
+#X connect 141 1 166 0;
+#X connect 142 0 143 0;
+#X connect 143 0 144 2;
+#X connect 144 0 169 0;
+#X connect 144 1 170 0;
+#X connect 145 0 146 0;
+#X connect 146 0 147 2;
+#X connect 147 0 173 0;
+#X connect 147 1 174 0;
+#X connect 148 0 125 0;
+#X connect 148 0 125 1;
+#X connect 149 0 121 0;
+#X connect 150 0 121 1;
+#X connect 151 0 11 0;
+#X connect 152 0 11 1;
+#X connect 153 0 126 0;
+#X connect 154 0 126 1;
+#X connect 155 0 131 0;
+#X connect 156 0 131 1;
+#X connect 157 0 135 0;
+#X connect 157 0 135 1;
+#X connect 160 0 158 0;
+#X connect 161 0 158 1;
+#X connect 162 0 138 0;
+#X connect 162 0 138 1;
+#X connect 165 0 163 0;
+#X connect 166 0 163 1;
+#X connect 169 0 167 0;
+#X connect 170 0 167 1;
+#X connect 173 0 171 0;
+#X connect 174 0 171 1;
+#X connect 175 0 147 0;
+#X connect 175 0 147 1;
 #X restore 388 102 pd My_RSP_EightPlayAndSelectEngines;
 #X obj 830 465 s indexInit;
 #N canvas 182 89 960 583 My_RSP_LedLoadFinishAlert 0;
@@ -7284,52 +7323,52 @@ patch. The default bpm is 122 bpm.;
 -1 -1;
 #X obj 603 -48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 22 758 cnv 15 81 20 empty SP1CurrentlySelected leuchtturm 2
-12 0 10 -233017 -66577 0;
-#X obj 23 806 cnv 15 81 20 empty SP1CurrentlyPlaying leuchtturm 0 12
-0 10 -233017 -66577 0;
+#X obj 22 758 cnv 15 81 20 empty SP1CurrentlySelected svenneyaucut2
+2 12 0 10 -233017 -66577 0;
+#X obj 23 806 cnv 15 81 20 empty SP1CurrentlyPlaying svenneyaucut2
+0 12 0 10 -233017 -66577 0;
 #X text 20 788 playing;
 #X text 20 740 selected;
-#X obj 114 758 cnv 15 81 20 empty SP2CurrentlySelected pointybass 2
-12 0 10 -233017 -66577 0;
-#X obj 115 808 cnv 15 81 20 empty SP2CurrentlyPlaying pointybass 0
-12 0 10 -233017 -66577 0;
+#X obj 114 758 cnv 15 81 20 empty SP2CurrentlySelected pupubass 2 12
+0 10 -233017 -66577 0;
+#X obj 115 808 cnv 15 81 20 empty SP2CurrentlyPlaying pupubass 0 12
+0 10 -233017 -66577 0;
 #X text 112 790 playing;
 #X text 110 740 selected;
-#X obj 204 758 cnv 20 81 20 empty SP3CurrentlySelected JDP_kicky2 0
-12 0 10 -233017 -66577 0;
-#X obj 205 808 cnv 15 81 20 empty SP3CurrentlyPlaying JDP_kicky2 0
+#X obj 204 758 cnv 20 81 20 empty SP3CurrentlySelected DYNA_kicks7
+0 12 0 10 -233017 -66577 0;
+#X obj 205 808 cnv 15 81 20 empty SP3CurrentlyPlaying DYNA_kicks7 0
 12 0 10 -233017 -66577 0;
 #X text 202 790 playing;
 #X text 200 740 selected;
-#X obj 294 756 cnv 15 81 20 empty SP4CurrentlySelected SEA_spitzhhs1
-2 12 0 10 -233017 -66577 0;
-#X obj 295 806 cnv 15 81 20 empty SP4CurrentlyPlaying SEA_spitzhhs1
-0 12 0 10 -233017 -66577 0;
+#X obj 294 756 cnv 15 81 20 empty SP4CurrentlySelected SEA_hhoff3 2
+12 0 10 -233017 -66577 0;
+#X obj 295 806 cnv 15 81 20 empty SP4CurrentlyPlaying SEA_hhhard 0
+12 0 10 -233017 -66577 0;
 #X text 292 788 playing;
 #X text 290 738 selected;
-#X obj 390 756 cnv 20 81 20 empty SP5CurrentlySelected UHG_wandercut
-0 12 0 10 -233017 -66577 0;
-#X obj 391 806 cnv 15 81 20 empty SP5CurrentlyPlaying UHG_wandercut
-0 12 0 10 -233017 -66577 0;
+#X obj 390 756 cnv 20 81 20 empty SP5CurrentlySelected bassjump3 0
+12 0 10 -233017 -66577 0;
+#X obj 391 806 cnv 15 81 20 empty SP5CurrentlyPlaying bassjump3 0 12
+0 10 -233017 -66577 0;
 #X text 388 788 playing;
 #X text 386 738 selected;
-#X obj 480 756 cnv 20 81 20 empty SP6CurrentlySelected atmosubbass
-0 12 0 10 -233017 -66577 0;
-#X obj 481 806 cnv 15 81 20 empty SP6CurrentlyPlaying atmosubbass 0
-12 0 10 -233017 -66577 0;
+#X obj 480 756 cnv 20 81 20 empty SP6CurrentlySelected pupubass 0 12
+0 10 -233017 -66577 0;
+#X obj 481 806 cnv 15 81 20 empty SP6CurrentlyPlaying TK_opbass 0 12
+0 10 -233017 -66577 0;
 #X text 478 788 playing;
 #X text 476 738 selected;
 #X obj 570 756 cnv 15 81 20 empty SP7CurrentlySelected SEA_subkick
 2 12 0 10 -233017 -66577 0;
-#X obj 571 806 cnv 15 81 20 empty SP7CurrentlyPlaying SEA_subkick 0
+#X obj 571 806 cnv 15 81 20 empty SP7CurrentlyPlaying DYNA_kicks1 0
 12 0 10 -233017 -66577 0;
 #X text 568 788 playing;
 #X text 566 738 selected;
-#X obj 662 756 cnv 15 100 60 empty SP8CurrentlySelected S3PM_hhslight2
+#X obj 662 756 cnv 15 100 60 empty SP8CurrentlySelected SEA_hhoff4
 20 12 0 14 -233017 -66577 0;
-#X obj 663 806 cnv 15 81 20 empty SP8CurrentlyPlaying JDP_klackern2
-0 12 0 10 -233017 -66577 0;
+#X obj 663 806 cnv 15 81 20 empty SP8CurrentlyPlaying SEA_hhoff4 0
+12 0 10 -233017 -66577 0;
 #X text 660 788 playing;
 #X text 658 738 selected;
 #X obj 775 36 t b b b b b b b b b;
