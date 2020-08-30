@@ -283,7 +283,7 @@ f 244;
 #X obj 301 119 cnv 15 218 140 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #X obj 348 138 hsl 128 15 0 1 0 1 empty empty dry/wet -2 -8 0 10 -257985
--1 -1 11100 1;
+-1 -1 0 1;
 #X obj 346 185 hsl 128 15 0 1 0 1 empty empty feedback -2 -8 0 10 -257985
 -1 -1 8000 1;
 #X symbolatom 371 220 15 0 0 0 - - -;
@@ -304,6 +304,12 @@ f 244;
 #X msg 831 470 \; \$1-delay-time label hallo;
 #X obj 843 172 makefilename %d;
 #X msg 938 291 \; \$1-delay-time receive \$1;
+#X obj 824 49 inlet JD_dwSliderValue;
+#X obj 824 81 s \$0-dwSlider;
+#X obj 345 78 r \$0-dwSlider;
+#X obj 1004 82 s \$0-fbSlider;
+#X obj 1004 50 inlet JD_fbSliderValue;
+#X obj 451 77 r \$0-fbSlider;
 #X connect 0 0 10 0;
 #X connect 1 0 0 1;
 #X connect 1 0 2 1;
@@ -333,4 +339,8 @@ f 244;
 #X connect 27 0 28 0;
 #X connect 28 0 33 0;
 #X connect 33 0 32 0;
+#X connect 35 0 36 0;
+#X connect 37 0 20 0;
+#X connect 39 0 38 0;
+#X connect 40 0 21 0;
 #X coords 0 -1 1 1 220 160 1 300 100;
