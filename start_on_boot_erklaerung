@@ -1,0 +1,25 @@
+***start on boot on raspbian stretch with unit file and systemd***
+
+1) cd /lib/systemd/system
+2) sudo nano rspstart.service
+3) füge ein:
+
+[Unit]
+Description=My RSP Start Service
+After=multi-user.target
+
+[Service]
+Type=forking
+ExecStart=/bin/bash /home/pi/Documents/RSP/RSP/startScript.sh
+
+[Install]
+WantedBy=multi-user.target
+
+4) sudo chmod 644 /lib/systemd/system/rspmidistart.service
+5) sudo chmod +rwx /home/pi/Documents/RSP/RSP/startScript.sh
+6) sudo systemctl daemon-reload
+7) sudo systemctl enable rspstart.service
+8) Testen: sudo systemctl start rspstart.service
+9) Status bei Test: sudo systemctl status rspstart.service
+
+***
